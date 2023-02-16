@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tailwind from 'tailwindcss'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tailwind from "tailwindcss";
 
 export default defineConfig({
   plugins: [react()],
@@ -9,4 +9,4 @@ export default defineConfig({
       plugins: [tailwind],
     },
   },
-})
+});
