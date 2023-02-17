@@ -5,12 +5,13 @@ import { fragmentShader, vertexShader } from "./shaders";
 import polyline from "./polyline";
 import * as THREE from "three";
 
-export default function Background() {
+export default function Background({ className }: { className: string }) {
   const conf = {
     cscale: chroma
       .scale(["#916ECA", "#D05FAD", "#F2698B", "#FD9E7E", "#EDBA5E"])
       .mode("lch"),
     darken: -1,
+    sat: 0.25,
     angle: (Math.PI * 2) / 3,
     timeCoef: 0.04,
     nx: 40,
@@ -43,12 +44,15 @@ export default function Background() {
   }
 
   return (
-    <Canvas>
-      {polylines.map((pline: typeof polyline, i: number) => {
-        const deps = { uTime, uTimeCoef, rnd, mat2, conf };
-        return <CustomMesh deps={deps} pline={pline} key={i} i={i} />;
-      })}
-    </Canvas>
+    <div className={className}>
+      <div className="absolute z-10 h-full w-full bg-black opacity-30" />
+      <Canvas>
+        {polylines.map((pline: typeof polyline, i: number) => {
+          const deps = { uTime, uTimeCoef, rnd, mat2, conf };
+          return <CustomMesh deps={deps} pline={pline} key={i} i={i} />;
+        })}
+      </Canvas>
+    </div>
   );
 }
 
@@ -57,7 +61,6 @@ function CustomMesh({ deps, pline, i }: any) {
   useFrame(({ clock }) => {
     const t = clock.oldTime;
     uTime.value = t * 0.001;
-    // if mouse is over polyline
   });
   return (
     <mesh>
@@ -102,6 +105,7 @@ function CustomMesh({ deps, pline, i }: any) {
               conf
                 .cscale(i / conf.nx)
                 .darken(conf.darken)
+                .desaturate(conf.sat)
                 .hex(),
             ),
           },
