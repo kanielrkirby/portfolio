@@ -1,14 +1,7 @@
 import { useEffect } from "react";
-import Background from "./components/Background";
-import Inspo from "./components/Inspo";
+import Background from "./components/Background/Main";
 
 export default function App() {
-  useEffect(() => {
-    if (!document.querySelector("#canvas")) Inspo();
-  }, []);
-  return (
-    <div className="App">
-      <Background />
-    </div>
-  );
+  useEffect(() => {}, []);
+  return <div className="App">{<Background />}</div>;
 }
