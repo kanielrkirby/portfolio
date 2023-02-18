@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Fira+Mono:wght@400;500;700&display=swap");
 
 html,
 body,
@@ -15,9 +16,9 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-display;
+  @apply font-display text-2xl font-bold;
 }
 
 * {
-  @apply m-0 box-border p-0 font-body;
+  @apply m-0 box-border p-0 font-body text-white antialiased;
 }

@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["", "sans-serif"],
-        body: ["", "sans-serif"],
+        display: ["Comfortaa", "sans-serif"],
+        body: ["Fira Monospace", "monospace"],
       },
     },
   },
