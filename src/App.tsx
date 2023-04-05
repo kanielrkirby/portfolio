@@ -6,10 +6,18 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Background from "./components/Background/Main";
+import LoadScreen from "./components/LoadScreen";
 
 function PageWithNavbar() {
   return (
     <>
+      <LoadScreen
+        promise={
+          new Promise((resolve) => {
+            setTimeout(resolve, 1000);
+          })
+        }
+      />
       <Header />
       <Outlet />
       <Footer />

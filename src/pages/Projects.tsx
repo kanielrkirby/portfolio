@@ -1,4 +1,5 @@
 import Tippy from "@tippyjs/react";
+import { Link } from "react-router-dom";
 
 export default function Projects({ className }: { className: string }) {
   const projects = [
@@ -55,6 +56,12 @@ export default function Projects({ className }: { className: string }) {
               <div className="flex w-1/2 flex-col items-center justify-around gap-2 text-center">
                 <h2 className="text-xl">{title}</h2>
                 <p>{description.short}</p>
+                <Link
+                  to={`projects/${title.toLowerCase()}`}
+                  className="hover:text-blue-300 hover:underline"
+                >
+                  Breakdown
+                </Link>
               </div>
             </div>
           );
