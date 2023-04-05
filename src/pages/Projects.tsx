@@ -34,7 +34,7 @@ export default function Projects({ className }: { className: string }) {
 
   return (
     <div className={"flex flex-col items-center " + className}>
-      <h1>Projects</h1>
+      <h1 className="text-3xl">Projects</h1>
       <div className="flex flex-col gap-2">
         {projects.map(({ title, description, link, image, video }) => {
           return (
@@ -48,9 +48,9 @@ export default function Projects({ className }: { className: string }) {
                   <img src={image} alt={description.short} />
                 </video>
               </a>
-              <div className="flex w-1/2 flex-col items-center gap-2">
-                <h2>{title}</h2>
-                <p>{description.long}</p>
+              <div className="flex w-1/2 flex-col items-center justify-around gap-2 text-center">
+                <h2 className="text-xl">{title}</h2>
+                <p>{description.short}</p>
               </div>
             </div>
           );

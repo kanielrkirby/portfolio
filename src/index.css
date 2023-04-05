@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-display text-2xl font-bold;
+  @apply font-display font-bold;
 }
 
 * {

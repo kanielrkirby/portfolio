@@ -6,7 +6,8 @@ export default function Header({ className }: { className?: string }) {
   return (
     <div
       className={
-        "relative flex h-28 items-center justify-around p-2" + (className ?? "")
+        "relative mb-4 flex h-28 items-center justify-around p-2" +
+        (className ?? "")
       }
     >
       <div className="relative flex h-full w-full select-none items-center justify-center">
