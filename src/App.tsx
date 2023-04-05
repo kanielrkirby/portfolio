@@ -14,7 +14,7 @@ function PageWithNavbar() {
       <Header />
       <Outlet />
       <Footer />
-      <Background className="absolute top-0 -z-10 h-full w-full bg-black" />
+      <Background className="fixed top-0 -z-10 h-full w-full bg-black" />
     </>
   );
 }
