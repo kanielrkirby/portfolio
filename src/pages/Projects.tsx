@@ -1,3 +1,5 @@
+import Tippy from "@tippyjs/react";
+
 export default function Projects({ className }: { className: string }) {
   const projects = [
     {
@@ -39,15 +41,17 @@ export default function Projects({ className }: { className: string }) {
         {projects.map(({ title, description, link, image, video }) => {
           return (
             <div className="flex justify-around">
-              <a href={link}>
-                <video
-                  src={video}
-                  about={description.short}
-                  className="rounded-xl bg-black"
-                >
-                  <img src={image} alt={description.short} />
-                </video>
-              </a>
+              <Tippy content="Link to site">
+                <a href={link}>
+                  <video
+                    src={video}
+                    about={description.short}
+                    className="rounded-xl bg-black"
+                  >
+                    <img src={image} alt={description.short} />
+                  </video>
+                </a>
+              </Tippy>
               <div className="flex w-1/2 flex-col items-center justify-around gap-2 text-center">
                 <h2 className="text-xl">{title}</h2>
                 <p>{description.short}</p>
