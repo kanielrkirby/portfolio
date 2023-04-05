@@ -2,7 +2,6 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import Projects from "./pages/Projects";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -27,7 +26,6 @@ export default function App() {
           <Route index element={<Home className="h-full" />} />
           <Route path="projects" element={<Projects className="h-full" />} />
           <Route path="about" element={<About className="h-full" />} />
-          <Route path="contact" element={<Contact className="h-full" />} />
           <Route path="*" element={<NotFound className="h-full" />} />
         </Route>
       </Routes>

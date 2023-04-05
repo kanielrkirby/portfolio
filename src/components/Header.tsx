@@ -22,10 +22,10 @@ export default function Header({ className }: { className?: string }) {
       </Link>
       <div className="relative flex h-full w-full select-none items-center justify-center">
         <Link
-          to="/contact"
+          to="/about"
           className="relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
         >
-          Contact
+          About
         </Link>
       </div>
       <Settings className="absolute right-3" />

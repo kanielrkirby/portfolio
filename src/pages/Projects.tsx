@@ -33,8 +33,8 @@ export default function Projects({ className }: { className: string }) {
   ];
 
   return (
-    <div className={"flex flex-col " + className}>
-      <h1 className="left-0 right-0 mx-auto">Projects</h1>
+    <div className={"flex flex-col items-center " + className}>
+      <h1>Projects</h1>
       <div className="flex flex-col gap-2">
         {projects.map(({ title, description, link, image, video }) => {
           return (
