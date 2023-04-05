@@ -12,18 +12,18 @@ export default function Header({ className }: { className?: string }) {
       <div className="relative flex h-full w-full select-none items-center justify-center">
         <Link
           to="/projects"
-          className="absolute transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
+          className="relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
         >
           Projects
         </Link>
       </div>
-      <Link to="/" className="aspect-square w-20">
-        <Logo className="absolute left-0 right-0 top-0 bottom-0 m-auto w-20 rounded-xl shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 hover:-translate-x-1 hover:scale-105 hover:shadow-[3px_3px_10px_4px_#00000040]" />
+      <Link to="/" className="group relative aspect-square p-4">
+        <Logo className="relative left-0 right-0 top-0 bottom-0 m-auto w-20 rounded-xl shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:shadow-[3px_3px_10px_4px_#00000040]" />
       </Link>
       <div className="relative flex h-full w-full select-none items-center justify-center">
         <Link
           to="/contact"
-          className="absolute transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
+          className="relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
         >
           Contact
         </Link>
