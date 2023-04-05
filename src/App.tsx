@@ -30,7 +30,7 @@ function PageWithNavbar() {
 
 export default function App() {
   return (
-    <div className="App relative flex flex-col justify-between">
+    <div className="App relative flex flex-col justify-between ">
       <Routes>
         <Route path="/" element={<PageWithNavbar />}>
           <Route index element={<Home className="h-full" />} />
