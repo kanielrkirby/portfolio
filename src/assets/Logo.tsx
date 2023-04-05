@@ -9,7 +9,7 @@ export default function Logo(props: SVGAttributes<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_20_34)">
+      <g clipPath="url(#clip0_20_34)">
         <path
           d="M431.958 50H305.542C302.095 50 298.89 51.7762 297.062 54.7L59.5625 434.7C55.3997 441.361 60.1881 450 68.0425 450H194.458C197.905 450 201.11 448.224 202.938 445.3L440.438 65.3C444.6 58.6395 439.812 50 431.958 50Z"
           fill="white"
@@ -64,8 +64,8 @@ export default function Logo(props: SVGAttributes<SVGSVGElement>) {
           y2="388"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-opacity="0.51" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopOpacity="0.51" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_20_34"
@@ -75,8 +75,8 @@ export default function Logo(props: SVGAttributes<SVGSVGElement>) {
           y2="414.388"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-opacity="0.38" />
-          <stop offset="1" stop-opacity="0" />
+          <stop stopOpacity="0.38" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <clipPath id="clip0_20_34">
           <rect width="500" height="500" rx="50" fill="white" />

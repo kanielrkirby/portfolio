@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Outlet, useLocation } from "react-router-dom";
 import Projects from "./pages/Projects";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -6,21 +6,23 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Background from "./components/Background/Main";
-import LoadScreen from "./components/LoadScreen";
+import { Helmet } from "react-helmet";
+import useTitle from "./hooks/useTitle";
 
 function PageWithNavbar() {
+  const title = useTitle();
+
   return (
     <>
-      <LoadScreen
-        promise={
-          new Promise((resolve) => {
-            setTimeout(resolve, 1000);
-          })
-        }
-      />
       <Header />
-      <Outlet />
-      <Footer />
+      <div className="flex h-full w-full flex-col items-center">
+        <Helmet>
+          <title>Portfolio{title ? ` | ${title}` : ""}</title>
+        </Helmet>
+        <h1 className="mb-6 text-3xl">{title ? title : "Home"}</h1>
+        <Outlet />
+      </div>
+      <Footer className="fixed bottom-0 right-0" />
       <Background className="fixed top-0 -z-10 h-full w-full bg-black" />
     </>
   );
