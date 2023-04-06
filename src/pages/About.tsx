@@ -9,12 +9,12 @@ export default function About({ className }: { className: string }) {
         <title>About Me</title>
         <meta name="description" content="Kaniel Kirby's 'About Me' page." />
       </Helmet>
-      <div className="flex h-fit w-full items-start justify-around p-8 text-center">
+      <div className="flex items-start justify-around p-8 text-center">
         <div className="flex w-1/2 flex-col items-center gap-4">
           <img
             src="/src/assets/kaniel-kirby.jpg"
             alt="Picture of Kaniel Kirby"
-            className="w-[30rem] object-contain"
+            className="w-[30rem] overflow-hidden rounded-lg object-contain p-4"
           />
           <Link
             to="/contact"
@@ -64,11 +64,17 @@ export default function About({ className }: { className: string }) {
             adapt to new technologies and techniques to ensure projects are
             completed efficiently and to a high standard.
           </p>
-          <h3>My Projects</h3>
+          <h3>
+            <Link
+              to="/projects"
+              className={`relative font-normal text-blue-400 transition-all duration-150 [text-shadow:0_0_4px_#00000050] after:bg-blue-400 hover:text-blue-300 hover:[text-shadow:0_0_8px_#00000080] hover:after:bg-blue-300 ${fancyBorder}`}
+            >
+              My Projects
+            </Link>
+          </h3>
           <P>
             Throughout my journey as a web developer, I have successfully
-            completed multiple projects showcasing my skills in various areas,
-            such as:
+            completed multiple projects showcasing my skills in various areas.
           </P>
         </div>
       </div>

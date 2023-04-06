@@ -2,7 +2,15 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { Link } from "react-router-dom";
 
-export default function Icon({ name, link }: { name: string; link?: string }) {
+export default function Icon({
+  name,
+  link,
+  tippy,
+}: {
+  name: string;
+  link?: string;
+  tippy?: string;
+}) {
   const component = (
     <>
       <img
@@ -14,8 +22,8 @@ export default function Icon({ name, link }: { name: string; link?: string }) {
     </>
   );
   return (
-    <div className="relative aspect-square h-8 overflow-hidden">
-      <Tippy content={name}>
+    <div className="relative aspect-square h-8 w-8 overflow-hidden">
+      <Tippy content={tippy ?? name}>
         {(link && (
           <Link
             to={link}

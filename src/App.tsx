@@ -15,8 +15,8 @@ function PageWithLayout() {
   return (
     <>
       <Header />
-      <div className="flex h-fit flex-col items-center">
-        <h1 className="text-2xl">{title}</h1>
+      <div className="flex h-fit flex-grow flex-col items-center">
+        <h1 className="mb-4 text-2xl">{title}</h1>
         <Outlet />
       </div>
       <Footer />
@@ -27,16 +27,31 @@ function PageWithLayout() {
 
 export default function App() {
   return (
-    <div className="App -z-10 flex flex-col justify-between">
+    <div className="App fixed flex flex-col justify-between overflow-y-scroll">
       <Routes>
         <Route index element={<Navigate to="/projects" replace />} />
         <Route path="/" element={<PageWithLayout />}>
-          <Route path="projects" element={<Projects className="h-full" />} />
-          <Route path="projects/:id" element={<Project className="h-full" />} />
-          <Route path="about" element={<About className="h-full" />} />
-          <Route path="contact" element={<Contact className="h-full" />} />
-          <Route path="credits" element={<Credits className="h-full" />} />
-          <Route path="*" element={<NotFound className="h-full" />} />
+          <Route
+            path="projects"
+            element={<Projects className="h-full min-h-fit" />}
+          />
+          <Route
+            path="projects/:id"
+            element={<Project className="h-full min-h-fit" />}
+          />
+          <Route
+            path="about"
+            element={<About className="h-full min-h-fit" />}
+          />
+          <Route
+            path="contact"
+            element={<Contact className="h-full min-h-fit" />}
+          />
+          <Route
+            path="credits"
+            element={<Credits className="h-full min-h-fit" />}
+          />
+          <Route path="*" element={<NotFound className="h-full min-h-fit" />} />
         </Route>
       </Routes>
     </div>
