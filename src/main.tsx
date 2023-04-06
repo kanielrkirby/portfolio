@@ -8,9 +8,7 @@ import { LoadScreenProvider } from "./contexts/LoadScreen";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <LoadScreenProvider>
-        <App />
-      </LoadScreenProvider>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
 );

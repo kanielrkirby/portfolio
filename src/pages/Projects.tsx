@@ -1,5 +1,6 @@
 import Tippy from "@tippyjs/react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Project from "./Project";
 
 export default function Projects({ className }: { className: string }) {
   const projects = [
@@ -60,7 +61,7 @@ export default function Projects({ className }: { className: string }) {
                   className="text-center"
                 >
                   <Link
-                    to={`projects/${title.toLowerCase()}`}
+                    to={`/projects/${title.toLowerCase()}`}
                     className="relative text-blue-400 transition-all duration-150 after:absolute after:left-0 after:right-0 after:bottom-[2px] after:z-10 after:mx-auto after:flex after:h-[1.5px] after:w-0 after:rounded-lg after:bg-blue-400 after:transition-all after:duration-150 after:content-[''] hover:text-blue-500 hover:after:w-full hover:after:bg-blue-500"
                   >
                     See more!

@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { useLocation } from "react-router";
 
 export default function useTitle() {
-  const [title, setTitle] = useState("Portfolio");
   const location = useLocation();
-
+  const [title, setTitle] = useState<string | undefined>();
   useEffect(() => {
-    const array = location.pathname.split("/");
-    const raw = array[array.length - 1];
-    const formatted = raw.charAt(0).toUpperCase() + raw.slice(1);
-    setTitle(formatted);
+    const helmTitle = Helmet?.peek()?.title;
+    if (helmTitle && helmTitle !== title) setTitle(helmTitle);
   }, [location]);
-
   return title;
 }
