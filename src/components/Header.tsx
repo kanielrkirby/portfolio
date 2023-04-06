@@ -6,7 +6,7 @@ import "tippy.js/dist/tippy.css";
 
 export default function Header({ className }: { className?: string }) {
   return (
-    <div
+    <header
       className={
         "relative mb-4 flex h-28 items-center justify-around p-2" +
         (className ?? "")
@@ -42,6 +42,6 @@ export default function Header({ className }: { className?: string }) {
           <Settings />
         </div>
       </Tippy>
-    </div>
+    </header>
   );
 }
