@@ -8,9 +8,16 @@ import Footer from "./components/Footer";
 import Background from "./components/Background/Main";
 import { Helmet } from "react-helmet";
 import useTitle from "./hooks/useTitle";
+import { useEffect, useState } from "react";
 
 function PageWithNavbar() {
+  const [preload, setPreload] = useState(true);
   const title = useTitle();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setPreload(false), 10);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -23,14 +30,16 @@ function PageWithNavbar() {
         <Outlet />
       </div>
       <Footer className="fixed bottom-0 right-0" />
-      <Background className="fixed top-0 -z-10 h-full w-full bg-black" />
+      {preload ? null : (
+        <Background className="fixed top-0 -z-10 h-full w-full bg-black" />
+      )}
     </>
   );
 }
 
 export default function App() {
   return (
-    <div className="App relative flex flex-col justify-between ">
+    <div className="App -z-10 flex flex-col justify-between">
       <Routes>
         <Route path="/" element={<PageWithNavbar />}>
           <Route index element={<Home className="h-full" />} />
