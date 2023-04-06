@@ -38,9 +38,9 @@ export default function Projects({ className }: { className: string }) {
   return (
     <div className={"flex flex-col items-center " + className}>
       <div className="flex flex-col gap-2">
-        {projects.map(({ title, description, link, image, video }) => {
+        {projects.map(({ title, description, link, image, video }, index) => {
           return (
-            <div className="flex justify-around">
+            <div key={title + index} className="flex justify-around">
               <Tippy content="Link to site">
                 <a href={link}>
                   <video
@@ -52,15 +52,20 @@ export default function Projects({ className }: { className: string }) {
                   </video>
                 </a>
               </Tippy>
-              <div className="flex w-1/2 flex-col items-center justify-around gap-2 text-center">
-                <h2 className="text-xl">{title}</h2>
-                <p>{description.short}</p>
-                <Link
-                  to={`projects/${title.toLowerCase()}`}
-                  className="hover:text-blue-300 hover:underline"
+              <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
+                <h2 className="text-2xl">{title}</h2>
+                <p className="text-sm">{description.short}</p>
+                <Tippy
+                  content={`Get a closer look at how ${title} was made!`}
+                  className="text-center"
                 >
-                  Breakdown
-                </Link>
+                  <Link
+                    to={`projects/${title.toLowerCase()}`}
+                    className="relative text-blue-400 transition-all duration-150 after:absolute after:left-0 after:right-0 after:bottom-[2px] after:z-10 after:mx-auto after:flex after:h-[1.5px] after:w-0 after:rounded-lg after:bg-blue-400 after:transition-all after:duration-150 after:content-[''] hover:text-blue-500 hover:after:w-full hover:after:bg-blue-500"
+                  >
+                    See more!
+                  </Link>
+                </Tippy>
               </div>
             </div>
           );
