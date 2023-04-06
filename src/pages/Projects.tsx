@@ -47,7 +47,7 @@ export default function Projects({ className }: { className: string }) {
                 <title>Projects</title>
                 <meta name="description" content="A list of my projects." />
               </Helmet>
-              <Tippy content="Link to site">
+              <Tippy content="Link to site" placement="right">
                 <a href={link}>
                   <video
                     src={video}
@@ -64,6 +64,7 @@ export default function Projects({ className }: { className: string }) {
                 <Tippy
                   content={`Get a closer look at how ${title} was made!`}
                   className="text-center"
+                  placement="bottom"
                 >
                   <Link
                     to={`/projects/${title.toLowerCase()}`}

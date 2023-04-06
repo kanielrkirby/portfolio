@@ -11,11 +11,6 @@ export default function useTitle() {
     const helmTitle = Helmet?.peek()?.title;
     if (helmTitle && helmTitle !== title) setTitle(helmTitle);
   }, [location, loading]);
-  useEffect(() => {
-    setInterval(() => {
-      console.log(loading);
-    }, 500);
-  }, []);
 
   return title;
 }
