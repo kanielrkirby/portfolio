@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import Settings from "../assets/Settings";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import { useDev } from "../contexts/DevContext";
 
 export default function Header({ className }: { className?: string }) {
+  const { dev } = useDev();
+
   return (
     <header
       className={
@@ -38,7 +41,7 @@ export default function Header({ className }: { className?: string }) {
         </Tippy>
       </div>
       <Tippy content="Settings">
-        <div className="absolute right-3 overflow-hidden">
+        <div className="absolute right-3 flex h-20 w-20 items-center justify-center overflow-hidden">
           <Settings />
         </div>
       </Tippy>

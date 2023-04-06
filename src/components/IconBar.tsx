@@ -18,7 +18,7 @@ export default function IconBar({ className }: { className?: string }) {
           name="Reddit"
           link="https://www.reddit.com/user/CompetitiveAd7245/"
         />
-        <Icon name="Resume" />
+        <Icon name="Resume" link="https://www.google.com/drive/" />
       </ul>
     </div>
   );
