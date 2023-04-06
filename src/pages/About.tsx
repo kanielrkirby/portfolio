@@ -1,17 +1,15 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-
-const fancyBorder =
-  "after:absolute after:bottom-0 after:left-0 after:right-0 after:mx-auto after:h-1 after:w-0 after:rounded-lg after:transition-all after:duration-150 after:content-[''] hover:after:w-full";
+import { fancyBorder } from "../styles";
 
 export default function About({ className }: { className: string }) {
   return (
-    <div className={"w-full " + className}>
+    <div className={className}>
       <Helmet>
         <title>About Me</title>
         <meta name="description" content="Kaniel Kirby's 'About Me' page." />
       </Helmet>
-      <div className="flex w-full items-start justify-around p-8 text-center">
+      <div className="flex h-fit w-full items-start justify-around p-8 text-center">
         <div className="flex w-1/2 flex-col items-center gap-4">
           <img
             src="/src/assets/kaniel-kirby.jpg"

@@ -2,7 +2,7 @@ import Icon from "./Icon";
 
 export default function IconBar({ className }: { className?: string }) {
   return (
-    <div className={"pointer-events-none " + className}>
+    <div className={className}>
       <ul className="flex justify-end gap-4">
         <Icon name="Email" link="mailto:kanielrkirby@runbox.com" />
         <Icon

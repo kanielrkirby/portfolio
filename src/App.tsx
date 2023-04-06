@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Background from "./components/Background/Main";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
+import Credits from "./pages/Credits";
 import useTitle from "./hooks/useTitle";
 
 function PageWithLayout() {
@@ -14,7 +15,7 @@ function PageWithLayout() {
   return (
     <>
       <Header />
-      <div className="flex h-full w-full flex-col items-center">
+      <div className="flex h-fit flex-col items-center">
         <h1 className="text-2xl">{title}</h1>
         <Outlet />
       </div>
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="projects/:id" element={<Project className="h-full" />} />
           <Route path="about" element={<About className="h-full" />} />
           <Route path="contact" element={<Contact className="h-full" />} />
+          <Route path="credits" element={<Credits className="h-full" />} />
           <Route path="*" element={<NotFound className="h-full" />} />
         </Route>
       </Routes>

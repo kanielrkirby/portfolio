@@ -31,16 +31,15 @@ export default function Contact({ className }: { className: string }) {
         <meta name="description" content="Kaniel Kirby's 'Contact' page." />
       </Helmet>
       <div className="flex flex-col items-center gap-8">
-        <IconBar className="mt-6" />
         <Tippy content={content} hideOnClick={false}>
           <img
             src="/src/assets/kaniel-kirby-2.jpg"
             alt="Picture of Kaniel Kirby"
-            className="h-[20rem] w-[20rem] cursor-pointer rounded-[5rem] object-cover shadow-lg shadow-[#00000080] transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-[#00000080]"
+            className="h-[20rem] w-[20rem] cursor-pointer rounded-[5rem] object-cover shadow-lg shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
             onClick={() => setCounter(counter + 1)}
           />
         </Tippy>
-        <span className="-translate-y-6 text-xs">Click Me!</span>
+        <IconBar className="-mt-4" />
       </div>
     </div>
   );
