@@ -1,6 +1,7 @@
 import Tippy from "@tippyjs/react";
 import { Link, useParams } from "react-router-dom";
 import Project from "./Project";
+import { Helmet } from "react-helmet";
 
 export default function Projects({ className }: { className: string }) {
   const projects = [
@@ -42,6 +43,10 @@ export default function Projects({ className }: { className: string }) {
         {projects.map(({ title, description, link, image, video }, index) => {
           return (
             <div key={title + index} className="flex justify-around">
+              <Helmet>
+                <title>Projects</title>
+                <meta name="description" content="A list of my projects." />
+              </Helmet>
               <Tippy content="Link to site">
                 <a href={link}>
                   <video

@@ -1,10 +1,13 @@
 import Tippy from "@tippyjs/react";
 import { createContext, useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
-export const LoadScreenContext = createContext({
-  loading: true,
-  setLoading: (loading: boolean) => {},
-});
+interface ContextI {
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const LoadScreenContext = createContext({} as ContextI);
 
 export function LoadScreenProvider({
   children,
@@ -15,8 +18,10 @@ export function LoadScreenProvider({
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
+    const timer = setTimeout(() => {
+      setLoading(false);
+      clearTimeout(timer);
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -35,7 +40,10 @@ export function LoadScreenProvider({
             (loading ? "" : " pointer-events-none opacity-0")
           }
         >
-          <h1 className="text-2xl text-black">The site is loading...</h1>
+          <Helmet>
+            <title>Loading...</title>
+            <meta name="description" content="Loading..." />
+          </Helmet>
           <Tippy content="Loading...">
             <div className="relative aspect-square w-16 cursor-pointer bg-transparent hover:scale-105">
               <div className="absolute h-full w-full animate-spin rounded-full border-[.35rem] border-l-black bg-transparent opacity-50" />

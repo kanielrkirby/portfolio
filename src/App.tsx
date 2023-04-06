@@ -5,7 +5,6 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Background from "./components/Background/Main";
-import { LoadScreenProvider } from "./contexts/LoadScreen";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 import useTitle from "./hooks/useTitle";
@@ -13,7 +12,7 @@ import useTitle from "./hooks/useTitle";
 function PageWithNavbar() {
   const title = useTitle();
   return (
-    <LoadScreenProvider>
+    <>
       <Header />
       <div className="flex h-full w-full flex-col items-center">
         <h1 className="text-2xl">{title}</h1>
@@ -21,7 +20,7 @@ function PageWithNavbar() {
       </div>
       <Footer className="fixed bottom-0 right-0" />
       <Background className="fixed top-0 -z-10 h-full w-full bg-black" />
-    </LoadScreenProvider>
+    </>
   );
 }
 
@@ -29,7 +28,7 @@ export default function App() {
   return (
     <div className="App -z-10 flex flex-col justify-between">
       <Routes>
-        <Route index element={<Navigate to="/projects" />} />
+        <Route index element={<Navigate to="/projects" replace />} />
         <Route path="/" element={<PageWithNavbar />}>
           <Route path="projects" element={<Projects className="h-full" />} />
           <Route path="projects/:id" element={<Project className="h-full" />} />
