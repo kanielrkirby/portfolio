@@ -19,6 +19,30 @@ h6 {
   @apply font-display font-bold;
 }
 
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
 * {
   @apply m-0 box-border p-0 font-body text-white antialiased;
 }
