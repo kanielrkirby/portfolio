@@ -44,5 +44,9 @@ h6 {
 }
 
 * {
-  @apply m-0 box-border p-0 font-body text-white antialiased;
+  @apply m-0 box-border p-0 font-body text-white antialiased selection:bg-transparent selection:text-neutral-900;
+}
+
+.link {
+  /* @apply; */
 }

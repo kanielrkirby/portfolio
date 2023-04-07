@@ -6,10 +6,12 @@ export default function Icon({
   name,
   link,
   tippy,
+  place,
 }: {
   name: string;
   link?: string;
   tippy?: string;
+  place?: "top" | "bottom" | "left" | "right";
 }) {
   const component = (
     <>
@@ -23,7 +25,7 @@ export default function Icon({
   );
   return (
     <div className="relative aspect-square h-8 w-8 overflow-hidden">
-      <Tippy content={tippy ?? name}>
+      <Tippy content={tippy ?? name} placement={place}>
         {(link && (
           <Link
             to={link}

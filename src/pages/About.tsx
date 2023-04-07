@@ -14,12 +14,9 @@ export default function About({ className }: { className: string }) {
           <img
             src="/src/assets/kaniel-kirby.jpg"
             alt="Picture of Kaniel Kirby"
-            className="w-[30rem] overflow-hidden rounded-lg object-contain p-4"
+            className="m-4 w-[30rem] overflow-hidden rounded-[1.5rem] object-contain shadow-md shadow-[#00000080] transition-all duration-200 hover:shadow-xl hover:shadow-[#00000080]"
           />
-          <Link
-            to="/contact"
-            className={`relative text-2xl text-blue-400 transition-all duration-150 [text-shadow:0_0_2px_#00000050] hover:text-blue-300 hover:[text-shadow:0_0_4px_#00000050] ${fancyBorder} after:bg-blue-400 hover:after:bg-blue-300`}
-          >
+          <Link to="/contact" className="link">
             Contact Me
           </Link>
           <P>
@@ -65,10 +62,7 @@ export default function About({ className }: { className: string }) {
             completed efficiently and to a high standard.
           </p>
           <h3>
-            <Link
-              to="/projects"
-              className={`relative font-normal text-blue-400 transition-all duration-150 [text-shadow:0_0_4px_#00000050] after:bg-blue-400 hover:text-blue-300 hover:[text-shadow:0_0_8px_#00000080] hover:after:bg-blue-300 ${fancyBorder}`}
-            >
+            <Link to="/projects" className="link">
               My Projects
             </Link>
           </h3>

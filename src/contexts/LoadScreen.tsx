@@ -52,7 +52,7 @@ export function LoadScreenProvider({
           </Tippy>
         </div>
       )}
-      {loading ? null : children}
+      {children}
     </LoadScreenContext.Provider>
   );
 }

@@ -30,16 +30,17 @@ export default function Contact({ className }: { className: string }) {
         <title>Contact</title>
         <meta name="description" content="Kaniel Kirby's 'Contact' page." />
       </Helmet>
-      <div className="flex flex-col items-center gap-8">
+      <div className="relative flex flex-col items-center gap-8">
         <Tippy content={content} hideOnClick={false}>
           <img
             src="/src/assets/kaniel-kirby-2.jpg"
             alt="Picture of Kaniel Kirby"
-            className="h-[20rem] w-[20rem] cursor-pointer rounded-[5rem] object-cover shadow-lg shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
+            className="peer h-[20rem] w-[20rem] cursor-pointer rounded-[5rem] object-cover shadow-lg shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
             onClick={() => setCounter(counter + 1)}
           />
         </Tippy>
-        <IconBar className="-mt-4" />
+        <div className="peer pointer-events-none absolute z-10 h-[20rem] w-[20rem] rounded-[5rem] bg-black opacity-20 transition-all duration-200 peer-hover:scale-[102%]" />
+        <IconBar className="-mt-4" place="bottom" />
       </div>
     </div>
   );
