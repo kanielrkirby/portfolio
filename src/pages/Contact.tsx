@@ -14,11 +14,11 @@ export default function Contact() {
         <meta name="description" content="Kaniel Kirby's 'Contact' page." />
       </Helmet>
       <div className="relative flex flex-col items-center gap-8">
-        <Tippy content={message ?? "Image of Kaniel Kirby"} hideOnClick={false}>
+        <Tippy content={message ?? "Image of myself"} hideOnClick={false}>
           <img
-            src="/src/assets/kaniel-kirby-2.jpg"
-            alt="Picture of Kaniel Kirby"
-            className="peer h-[20rem] w-[20rem] cursor-pointer rounded-[5rem] object-cover shadow-lg shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
+            src="/src/assets/image-2.jpg"
+            alt="Image of myself"
+            className="peer flex h-[20rem] w-[20rem] cursor-pointer items-center justify-center rounded-[5rem] object-cover text-center shadow-lg shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
             onClick={decrement}
           />
         </Tippy>

@@ -69,8 +69,8 @@ export default function Credits({ className }: { className?: string }) {
                 target="_blank"
               >
                 <img
-                  src="/src/assets/kaniel-kirby.jpg"
-                  alt="Image of Kaniel Kirby"
+                  src="/src/assets/image.jpg"
+                  alt="Image of myself"
                   className={imgCl}
                 />
               </Link>
@@ -82,8 +82,8 @@ export default function Credits({ className }: { className?: string }) {
                 target="_blank"
               >
                 <img
-                  src="/src/assets/kaniel-kirby-2.jpg"
-                  alt="Image of Kaniel Kirby"
+                  src="/src/assets/image-2.jpg"
+                  alt="Image of myself"
                   className={imgCl}
                 />
               </Link>

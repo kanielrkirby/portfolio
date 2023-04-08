@@ -11,13 +11,13 @@ export default function About() {
       </Helmet>
       <div className="flex items-start justify-around p-8 text-center">
         <div className="flex w-1/2 flex-col items-center gap-4">
-          <Tippy content="Image of Kaniel Kirby" placement="right">
-            <div className="relative z-0 m-4 h-[40rem] w-[30rem] cursor-pointer overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]">
+          <Tippy content="Image of myself" placement="right">
+            <div className="relative z-0 m-4 flex h-[40rem] w-[30rem] cursor-pointer items-center justify-center overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]">
               <div className="pointer-events-none absolute top-0 left-0 z-20 h-full w-full bg-black opacity-20" />
               <img
-                src="/src/assets/kaniel-kirby.jpg"
-                alt="Picture of Kaniel Kirby"
-                className="absolute top-0 left-0 z-10 w-full object-contain"
+                src="/src/assets/image.jpg"
+                alt="Image of myself."
+                className="relative top-0 left-0 z-10 w-full object-contain text-center align-middle"
               />
             </div>
           </Tippy>
