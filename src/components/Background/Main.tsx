@@ -45,8 +45,7 @@ export default function Background({ className }: { className: string }) {
 
   return (
     <div className={className}>
-      <div className="absolute z-10 h-full w-full bg-black opacity-30" />
-      <Canvas>
+      <Canvas className="brightness-75" fallback={<img></img>}>
         {polylines.map((pline: typeof polyline, i: number) => {
           const deps = { uTime, uTimeCoef, rnd, mat2, conf };
           return <CustomMesh deps={deps} pline={pline} key={i} i={i} />;

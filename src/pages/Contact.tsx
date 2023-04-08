@@ -2,12 +2,13 @@ import { Helmet } from "react-helmet";
 import IconBar from "../components/IconBar";
 import Tippy from "@tippyjs/react";
 import { useDev } from "../contexts/DevContext";
+import { Link } from "react-router-dom";
 
-export default function Contact({ className }: { className: string }) {
+export default function Contact() {
   const { decrement, message } = useDev();
 
   return (
-    <div className={className}>
+    <>
       <Helmet>
         <title>Contact</title>
         <meta name="description" content="Kaniel Kirby's 'Contact' page." />
@@ -33,7 +34,10 @@ export default function Contact({ className }: { className: string }) {
           amazing web experiences!
         </P>
       </div>
-    </div>
+      <Link to="/credits" className="link fancy m-2 w-fit">
+        Attributions & Credits
+      </Link>
+    </>
   );
 }
 

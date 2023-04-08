@@ -1,11 +1,19 @@
+import { Link } from "react-router-dom";
+
 export default function Polychrome({ className }: { className?: string }) {
   return (
-    <div className="flex w-full flex-col items-center gap-6">
+    <>
       <h1 className="mb-4 text-2xl text-black">Polychrome</h1>
       <P>
         As my first solo project, I created{" "}
-        <span className="font-display font-bold text-red-600">Polychrome</span>,
-        a custom color palette generator built entirely from scratch over a
+        <a
+          href="https://piratey7007.github.io/polychrome/"
+          target="_blank"
+          className="blog-link blog-fancy"
+        >
+          Polychrome
+        </a>
+        , a custom color palette generator built entirely from scratch over a
         period of three months. I utilized TypeScript and PostCSS, ensuring that
         the app was performant and maintainable.
       </P>
@@ -28,7 +36,7 @@ export default function Polychrome({ className }: { className?: string }) {
         demonstrates my ability to create high-quality projects that solve
         real-world problems.
       </P>
-    </div>
+    </>
   );
 }
 

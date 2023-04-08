@@ -2,9 +2,9 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 
-export default function About({ className }: { className: string }) {
+export default function About() {
   return (
-    <div className={className}>
+    <>
       <Helmet>
         <title>About Me</title>
         <meta name="description" content="Kaniel Kirby's 'About Me' page." />
@@ -64,7 +64,7 @@ export default function About({ className }: { className: string }) {
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

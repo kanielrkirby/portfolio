@@ -12,7 +12,7 @@ export default function Project({ className }: { className?: string }) {
     .map((char, i) => (i === 0 ? char.toUpperCase() : char))
     .join("");
   return (
-    <div className="flex h-full min-h-fit w-full justify-center p-4">
+    <>
       <Helmet>
         <title>{title}</title>
         <meta
@@ -20,7 +20,7 @@ export default function Project({ className }: { className?: string }) {
           content={`Tells about the process that went into creating the project '${title}'.`}
         />
       </Helmet>
-      <div className="flex h-full min-h-fit w-full max-w-[85ch] rounded-md bg-white px-24 py-16 text-lg text-black selection:bg-red-300">
+      <div className="m-4 flex h-fit w-full max-w-[85ch] flex-col items-center gap-6 rounded-md bg-white px-24 py-16 text-lg text-black selection:bg-red-300">
         {(() => {
           switch (id) {
             case "polychrome":
@@ -34,6 +34,6 @@ export default function Project({ className }: { className?: string }) {
           }
         })()}
       </div>
-    </div>
+    </>
   );
 }

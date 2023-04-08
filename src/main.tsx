@@ -5,6 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { LoadScreenProvider } from "./contexts/LoadScreen";
 import { DevProvider } from "./contexts/DevContext";
+import Background from "./components/Background/Main";
 
 oncontextmenu = (e) => {
   const target = e.target as HTMLElement;

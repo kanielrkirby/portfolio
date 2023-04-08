@@ -16,7 +16,7 @@ export default function Credits({ className }: { className?: string }) {
         <title>Credits</title>
         <meta name="description" content="Gives credit to those that helped." />
       </Helmet>
-      <div className="flex w-[40rem] flex-col gap-2">
+      <div className="flex w-[40rem] flex-col items-center gap-2 text-center">
         <hr className="w-full" />
         <p>Hover over anything to see where it came from.</p>
         <p>Click anything to see more.</p>
@@ -91,16 +91,18 @@ export default function Credits({ className }: { className?: string }) {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-3">
-            <h5>Background Animation</h5>
+          <div className="flex gap-3">
             <Tippy content="Adapted from a CodePen by Kevin Levron">
-              <div className="h-fit w-fit overflow-hidden rounded-xl shadow-sm shadow-[#00000050] transition-all duration-200 hover:shadow-lg hover:shadow-[#00000080]">
-                <ReactCodepen
-                  hash="xxGqJxj"
-                  user="soju22"
-                  defaultTab="result"
-                  title={"Background Animation by Kevin Levron"}
-                />
+              <div>
+                <h5>Background Animation</h5>
+                <div className="h-fit w-fit overflow-hidden rounded-xl shadow-sm shadow-[#00000050] transition-all duration-200 hover:shadow-lg hover:shadow-[#00000080]">
+                  <ReactCodepen
+                    hash="xxGqJxj"
+                    user="soju22"
+                    defaultTab="result"
+                    title={"Background Animation by Kevin Levron"}
+                  />
+                </div>
               </div>
             </Tippy>
           </div>

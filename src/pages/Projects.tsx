@@ -2,7 +2,7 @@ import Tippy from "@tippyjs/react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-export default function Projects({ className }: { className: string }) {
+export default function Projects() {
   const projects = [
     {
       title: "Polychrome",
@@ -37,7 +37,7 @@ export default function Projects({ className }: { className: string }) {
   ];
 
   return (
-    <div className={"flex flex-col items-center " + className}>
+    <div className={"flex flex-col items-center "}>
       <div className="flex flex-col gap-2">
         {projects.map(({ title, description, link, image, video }, index) => {
           return (

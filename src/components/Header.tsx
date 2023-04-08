@@ -11,7 +11,7 @@ export default function Header({ className }: { className?: string }) {
   return (
     <header
       className={
-        "relative mb-4 flex h-28 items-center justify-around p-2" +
+        "relative mb-4 flex h-28 w-full items-center justify-around p-2" +
         (className ?? "")
       }
     >
@@ -41,7 +41,11 @@ export default function Header({ className }: { className?: string }) {
         </Tippy>
       </div>
       <Tippy content="Settings">
-        <div className="absolute right-3 flex h-20 w-20 items-center justify-center overflow-hidden">
+        <div
+          className={`absolute right-3 flex h-20 w-20 items-center justify-center overflow-hidden ${
+            dev ? "" : "pointer-events-none"
+          }`}
+        >
           <Settings />
         </div>
       </Tippy>
