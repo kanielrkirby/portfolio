@@ -34,9 +34,11 @@ export default function Contact() {
           amazing web experiences!
         </P>
       </div>
-      <Link to="/credits" className="link fancy m-2 w-fit">
-        Attributions & Credits
-      </Link>
+      <div className="w-full p-2">
+        <Link to="/credits" className="link fancy w-fit">
+          Attributions & Credits
+        </Link>
+      </div>
     </>
   );
 }

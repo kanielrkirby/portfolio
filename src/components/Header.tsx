@@ -25,7 +25,7 @@ export default function Header({ className }: { className?: string }) {
           </Link>
         </Tippy>
       </div>
-      <Tippy content="Home">
+      <Tippy content="Projects">
         <Link to="/projects" className="link group relative aspect-square p-4">
           <Logo className="relative left-0 right-0 top-0 bottom-0 m-auto w-20 rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
         </Link>

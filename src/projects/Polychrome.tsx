@@ -5,7 +5,7 @@ export default function Polychrome({ className }: { className?: string }) {
     <>
       <h1 className="mb-4 text-2xl text-black">Polychrome</h1>
       <P>
-        As my first solo project, I created{" "}
+        As my first real project, I created{" "}
         <a
           href="https://piratey7007.github.io/polychrome/"
           target="_blank"
@@ -14,27 +14,34 @@ export default function Polychrome({ className }: { className?: string }) {
           Polychrome
         </a>
         , a custom color palette generator built entirely from scratch over a
-        period of three months. I utilized TypeScript and PostCSS, ensuring that
-        the app was performant and maintainable.
+        period of three months. I utilized TypeScript and PostCSS.
       </P>
       <P>
-        One of the unique features of Polychrome is its extensive use of many
-        color algorithms to generate custom palettes. I developed each algorithm
-        myself, leveraging my extensive knowledge of color theory and
-        programming skills to create an effective tool for designers.
+        One of the more difficult aspects of working on Polychrome was
+        implementing its many color algorithms to generate palettes. I developed
+        each algorithm myself, spending a lot of time researching color theory
+        to understand how colors interact with each other. I also had to
+        implement a way to convert between different color spaces, such as RGB
+        and HSL, to ensure that the algorithms would work properly.
       </P>
       <P>
-        I also designed Polychrome's UI from scratch in Figma, and created all
-        of the icons as scalable vector graphics. The app also includes drag and
-        drop functionality with swatches, which enhances the user experience and
-        makes it more intuitive to use.
+        As for Polychrome's UI, it was created using Figma. All of the icons are
+        scalable vector graphics (SVGs) which I worked on myself, including the
+        logo. The landing page was designed to be simple and clean, with a
+        minimal amount of text and a large button to get started. The app itself
+        is designed to be intuitive and easy to use, with a simple color wheel
+        and a "Generate" button to generate a palette. The most difficult part
+        of the design, by far, was making the website responsive for mobile
+        devices. I had to make sure that the app would work on a variety of
+        screen sizes, and would still be easy to use on a small screen.
       </P>
       <P>
-        Overall, Polychrome showcases my skills in design, programming, and my
-        deep understanding of color theory. I'm proud of this project and the
-        effort that went into creating it from scratch, and I believe it
-        demonstrates my ability to create high-quality projects that solve
-        real-world problems.
+        The app includes drag and drop functionality for each swatch to make it
+        more intuitive to use, a copy/paste feature to easily copy palettes and
+        colors, a save feature to save palettes to local storage, color-locking
+        to prevent a color from being changed, and a custom-made modal
+        component. I learned a lot about the underlying methods used to create
+        these features, and I'm proud of how they turned out.
       </P>
     </>
   );

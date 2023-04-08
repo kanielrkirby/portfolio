@@ -21,19 +21,21 @@ export default function Project({ className }: { className?: string }) {
         />
       </Helmet>
       <div className="m-4 flex h-fit w-full max-w-[85ch] flex-col items-center gap-6 rounded-md bg-white px-24 py-16 text-lg text-black selection:bg-red-300">
-        {(() => {
-          switch (id) {
-            case "polychrome":
-              return <Polychrome className={className} />;
-            case "banter":
-              return <Banter className={className} />;
-            case "bazaar":
-              return <Bazaar className={className} />;
-            default:
-              <Navigate to="/404" replace />;
-          }
-        })()}
+        {getProject(id)}
       </div>
     </>
   );
+}
+
+function getProject(id: string) {
+  switch (id) {
+    case "polychrome":
+      return <Polychrome />;
+    case "banter":
+      return <Banter />;
+    case "bazaar":
+      return <Bazaar />;
+    default:
+      return <Navigate to="/404" replace />;
+  }
 }

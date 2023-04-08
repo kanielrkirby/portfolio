@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet, Navigate } from "react-router-dom";
+import { Routes, Route, Outlet, Navigate, useLocation } from "react-router-dom";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -9,6 +9,9 @@ import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 import Credits from "./pages/Credits";
 import useTitle from "./hooks/useTitle";
+import { useEffect } from "react";
+
+const html = document.querySelector("html")!;
 
 function PageWithLayout() {
   const title = useTitle();
@@ -21,6 +24,15 @@ function PageWithLayout() {
 }
 
 export default function App() {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/about") {
+      html.classList.add("scroll");
+    } else {
+      html.classList.remove("scroll");
+    }
+  }, [location]);
+
   return (
     <>
       <div className="App fixed z-10 flex flex-grow flex-col items-center justify-between overflow-y-scroll">
