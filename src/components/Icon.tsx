@@ -30,7 +30,7 @@ export default function Icon({
           <Link
             to={link}
             target="_blank"
-            className="group pointer-events-auto relative block h-full w-full"
+            className="link group pointer-events-auto relative block h-full w-full"
           >
             {component}
           </Link>

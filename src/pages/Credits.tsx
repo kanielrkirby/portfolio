@@ -95,7 +95,7 @@ export default function Credits({ className }: { className?: string }) {
             <Tippy content="Adapted from a CodePen by Kevin Levron">
               <div>
                 <Link
-                  className="link"
+                  className="link fancy"
                   to="https://codepen.io/soju22/pen/xxGqJxj"
                   target="_blank"
                 >
@@ -115,13 +115,17 @@ export default function Credits({ className }: { className?: string }) {
           <h5>Libraries</h5>
           <div className="grid grid-cols-2 justify-items-center gap-1">
             <Tippy content="React">
-              <Link className="link" to="https://reactjs.org/" target="_blank">
+              <Link
+                className="link fancy"
+                to="https://reactjs.org/"
+                target="_blank"
+              >
                 React
               </Link>
             </Tippy>
             <Tippy content="Tippy.js">
               <Link
-                className="link"
+                className="link fancy"
                 to="https://atomiks.github.io/tippyjs/"
                 target="_blank"
               >
@@ -130,7 +134,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React Helmet">
               <Link
-                className="link"
+                className="link fancy"
                 to="https://www.npmjs.com/package/react-helmet"
                 target="_blank"
               >
@@ -139,7 +143,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React CodePen Embed">
               <Link
-                className="link"
+                className="link fancy"
                 to="https://www.npmjs.com/package/react-codepen-embed/"
                 target="_blank"
               >
@@ -148,7 +152,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React Router">
               <Link
-                className="link"
+                className="link fancy"
                 to="https://reactrouter.com/"
                 target="_blank"
               >
@@ -157,7 +161,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="Tailwind CSS">
               <Link
-                className="link"
+                className="link fancy"
                 to="https://tailwindcss.com/"
                 target="_blank"
               >
@@ -165,13 +169,17 @@ export default function Credits({ className }: { className?: string }) {
               </Link>
             </Tippy>
             <Tippy content="Vite">
-              <Link className="link" to="https://vitejs.dev/" target="_blank">
+              <Link
+                className="link fancy"
+                to="https://vitejs.dev/"
+                target="_blank"
+              >
                 Vite
               </Link>
             </Tippy>
             <Tippy content="TypeScript">
               <Link
-                className="link"
+                className="link fancy"
                 to="https://www.typescriptlang.org/"
                 target="_blank"
               >
@@ -180,7 +188,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React Three Fiber">
               <Link
-                className="link"
+                className="link fancy"
                 to="docs.pmnd.rs/react-three-fiber"
                 target="_blank"
               >
@@ -188,13 +196,17 @@ export default function Credits({ className }: { className?: string }) {
               </Link>
             </Tippy>
             <Tippy content="ThreeJS">
-              <Link className="link" to="https://threejs.org/" target="_blank">
+              <Link
+                className="link fancy"
+                to="https://threejs.org/"
+                target="_blank"
+              >
                 ThreeJS
               </Link>
             </Tippy>
             <Tippy content="ChromaJS">
               <Link
-                className="link"
+                className="link fancy"
                 to="https://gka.github.io/chroma.js/"
                 target="_blank"
               >
@@ -202,7 +214,11 @@ export default function Credits({ className }: { className?: string }) {
               </Link>
             </Tippy>
             <Tippy content="Prettier">
-              <Link className="link" to="https://prettier.io/" target="_blank">
+              <Link
+                className="link fancy"
+                to="https://prettier.io/"
+                target="_blank"
+              >
                 Prettier
               </Link>
             </Tippy>

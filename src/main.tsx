@@ -6,14 +6,14 @@ import { BrowserRouter } from "react-router-dom";
 import { LoadScreenProvider } from "./contexts/LoadScreen";
 import { DevProvider } from "./contexts/DevContext";
 
-const html = document.documentElement;
-
-onmouseup = () => {
-  html.classList.add("user-is-interacting");
-};
-
-onmousedown = () => {
-  html.classList.remove("user-is-interacting");
+oncontextmenu = (e) => {
+  const target = e.target as HTMLElement;
+  const a = target.closest("a.link") as HTMLLinkElement;
+  if (a) {
+    e.preventDefault();
+    navigator.clipboard.writeText(a.href);
+    alert("Copied link to clipboard!");
+  }
 };
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
