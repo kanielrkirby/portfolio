@@ -22,7 +22,7 @@ export default function About({ className }: { className: string }) {
               />
             </div>
           </Tippy>
-          <Link to="/contact" className="link">
+          <Link to="/contact" className="link fancy">
             Contact Me
           </Link>
           <P>
@@ -68,7 +68,7 @@ export default function About({ className }: { className: string }) {
             completed efficiently and to a high standard.
           </p>
           <h3>
-            <Link to="/projects" className="link">
+            <Link to="/projects" className="link fancy">
               My Projects
             </Link>
           </h3>

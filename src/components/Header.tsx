@@ -19,14 +19,14 @@ export default function Header({ className }: { className?: string }) {
         <Tippy content="Contact">
           <Link
             to="/contact"
-            className="relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
+            className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
           >
             Contact
           </Link>
         </Tippy>
       </div>
       <Tippy content="Home">
-        <Link to="/projects" className="group relative aspect-square p-4">
+        <Link to="/projects" className="link group relative aspect-square p-4">
           <Logo className="relative left-0 right-0 top-0 bottom-0 m-auto w-20 rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
         </Link>
       </Tippy>
@@ -34,7 +34,7 @@ export default function Header({ className }: { className?: string }) {
         <Tippy content="About">
           <Link
             to="/about"
-            className="relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
+            className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000] max-sm:hidden"
           >
             About
           </Link>
