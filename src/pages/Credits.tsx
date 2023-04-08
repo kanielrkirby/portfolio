@@ -91,16 +91,10 @@ export default function Credits({ className }: { className?: string }) {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex gap-3">
+          <div className="flex flex-col gap-3">
+            <h5>Background Animation</h5>
             <Tippy content="Adapted from a CodePen by Kevin Levron">
-              <div>
-                <Link
-                  className="link fancy"
-                  to="https://codepen.io/soju22/pen/xxGqJxj"
-                  target="_blank"
-                >
-                  Background Animation
-                </Link>
+              <div className="h-fit w-fit overflow-hidden rounded-xl shadow-sm shadow-[#00000050] transition-all duration-200 hover:shadow-lg hover:shadow-[#00000080]">
                 <ReactCodepen
                   hash="xxGqJxj"
                   user="soju22"

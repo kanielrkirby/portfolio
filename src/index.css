@@ -7,7 +7,7 @@ html,
 body,
 #root,
 .App {
-  @apply h-full w-full;
+  @apply m-0 h-full w-full p-0;
 }
 
 h1,
@@ -48,5 +48,5 @@ h6 {
 }
 
 .link.fancy {
-  @apply pointer-events-auto relative font-bold text-blue-400 [text-shadow:0_0_5px_#00000030] after:pointer-events-none after:absolute after:left-0 after:right-0 after:bottom-0 after:z-10 after:mx-auto after:h-full after:w-0 after:rounded-sm after:bg-white after:mix-blend-difference after:transition-all after:duration-200 after:ease-in-out after:content-[''] hover:after:w-full hover:after:scale-x-[115%] hover:after:scale-y-105;
+  @apply pointer-events-auto relative text-green-300 transition-all duration-200 [text-shadow:0_0_5px_#00000030] after:pointer-events-none after:absolute after:left-0 after:right-0 after:bottom-0 after:z-10 after:mx-auto after:h-full after:w-0 after:rounded-sm after:bg-white after:mix-blend-difference after:transition-all after:duration-200 after:ease-in-out after:content-[''] hover:text-white hover:after:w-full hover:after:scale-x-[115%] hover:after:scale-y-105;
 }

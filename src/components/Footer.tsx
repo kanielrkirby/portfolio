@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import IconBar from "./IconBar";
-import { fancyBorder } from "../styles";
 import Tippy from "@tippyjs/react";
 
 export default function Footer({}: {}) {

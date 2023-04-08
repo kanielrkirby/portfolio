@@ -1,6 +1,5 @@
 import Tippy from "@tippyjs/react";
-import { Link, useParams } from "react-router-dom";
-import Project from "./Project";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 export default function Projects({ className }: { className: string }) {
@@ -64,13 +63,13 @@ export default function Projects({ className }: { className: string }) {
                 <Tippy
                   content={`Get a closer look at how ${title} was made!`}
                   className="text-center"
-                  placement="bottom"
+                  placement="right"
                 >
                   <Link
                     to={`/projects/${title.toLowerCase()}`}
-                    className="link fancy relative text-blue-400 transition-all duration-150 after:absolute after:left-0 after:right-0 after:bottom-[2px] after:z-10 after:mx-auto after:flex after:h-[1.5px] after:w-0 after:rounded-lg after:bg-blue-400 after:transition-all after:duration-150 after:content-[''] hover:text-blue-500 hover:after:w-full hover:after:bg-blue-500"
+                    className="link fancy relative"
                   >
-                    See more!
+                    More Info
                   </Link>
                 </Tippy>
               </div>
