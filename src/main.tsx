@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { LoadScreenProvider } from "./contexts/LoadScreen";
 import { DevProvider } from "./contexts/DevContext";
 import Background from "./components/Background/Main";
+import { ModalProvider } from "./contexts/ModalContext";
 
 oncontextmenu = (e) => {
   const target = e.target as HTMLElement;
@@ -22,7 +23,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <DevProvider>
       <LoadScreenProvider>
         <BrowserRouter>
-          <App />
+          <ModalProvider>
+            <App />
+          </ModalProvider>
         </BrowserRouter>
       </LoadScreenProvider>
     </DevProvider>

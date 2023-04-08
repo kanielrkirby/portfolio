@@ -45,12 +45,18 @@ export default function Background({ className }: { className: string }) {
 
   return (
     <div className={className}>
-      <Canvas className="brightness-75" fallback={<img></img>}>
+      <Canvas
+        className="bg-canvas brightness-75"
+        fallback={
+          <div className="no-bg-canvas h-full w-full bg-gradient-to-br from-amber-400 to-violet-900"></div>
+        }
+      >
         {polylines.map((pline: typeof polyline, i: number) => {
           const deps = { uTime, uTimeCoef, rnd, mat2, conf };
           return <CustomMesh deps={deps} pline={pline} key={i} i={i} />;
         })}
       </Canvas>
+      <div className="no-bg-canvas h-full w-full bg-gradient-to-br from-amber-400 to-violet-900"></div>
     </div>
   );
 }

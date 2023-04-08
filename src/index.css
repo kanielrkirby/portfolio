@@ -63,3 +63,11 @@ html:not(.scroll) .App {
 html:not(.scroll) .App::-webkit-scrollbar {
   display: none;
 }
+
+html.no-bg .bg-canvas {
+  display: none;
+}
+
+html.no-bg .no-bg-canvas {
+  display: block;
+}

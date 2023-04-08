@@ -4,9 +4,11 @@ import Settings from "../assets/Settings";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { useDev } from "../contexts/DevContext";
+import { useModal } from "../contexts/ModalContext";
 
 export default function Header({ className }: { className?: string }) {
   const { dev } = useDev();
+  const { setModalOpen } = useModal();
 
   return (
     <header
@@ -42,6 +44,7 @@ export default function Header({ className }: { className?: string }) {
       </div>
       <Tippy content="Settings">
         <div
+          onClick={() => setModalOpen(true)}
           className={`absolute right-3 flex h-20 w-20 items-center justify-center overflow-hidden ${
             dev ? "" : "pointer-events-none"
           }`}
