@@ -13,21 +13,17 @@ import useTitle from "./hooks/useTitle";
 function PageWithLayout() {
   const title = useTitle();
   return (
-    <>
-      <Header />
-      <div className="flex h-fit flex-grow flex-col items-center">
-        <h1 className="mb-4 text-2xl">{title}</h1>
-        <Outlet />
-      </div>
-      <Footer />
-      <Background className="fixed top-0 -z-10 h-full w-full bg-black" />
-    </>
+    <div className="flex h-fit flex-grow flex-col items-center">
+      <h1 className="mb-4 text-2xl">{title}</h1>
+      <Outlet />
+    </div>
   );
 }
 
 export default function App() {
   return (
     <div className="App fixed flex flex-col justify-between overflow-y-scroll">
+      <Header />
       <Routes>
         <Route index element={<Navigate to="/projects" replace />} />
         <Route path="/" element={<PageWithLayout />}>
@@ -54,6 +50,8 @@ export default function App() {
           <Route path="*" element={<NotFound className="h-full min-h-fit" />} />
         </Route>
       </Routes>
+      <Footer />
+      <Background className="fixed top-0 -z-10 h-full w-full bg-black" />
     </div>
   );
 }

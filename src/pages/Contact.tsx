@@ -8,15 +8,15 @@ import { useDev } from "../contexts/DevContext";
 
 export default function Contact({ className }: { className: string }) {
   const [counter, setCounter] = useState(0);
-  const [content, setContent] = useState("Kaniel Kirby");
+  const [content, setContent] = useState("Image of Kaniel Kirby");
   const { dev, setDev } = useDev();
 
   useEffect(() => {
-    if (counter >= 3) {
+    if (counter >= 1) {
       if (counter > 9) {
         if (!dev) setDev(true);
         if (counter > 10) {
-          setContent("You're a developer already!");
+          setContent("You're already a developer!");
           return;
         }
       }

@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { fragmentShader, vertexShader } from "./shaders";
 import polyline from "./polyline";
 import * as THREE from "three";

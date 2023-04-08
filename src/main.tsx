@@ -6,22 +6,15 @@ import { BrowserRouter } from "react-router-dom";
 import { LoadScreenProvider } from "./contexts/LoadScreen";
 import { DevProvider } from "./contexts/DevContext";
 
-// wrap all selected text in a span anytime the user selects text
-document.addEventListener("selectionchange", handleSelection, { once: true });
+const html = document.documentElement;
 
-function handleSelection() {
-  for (const span of document.querySelectorAll(".selected-text")) {
-    span.replaceWith(...span.childNodes);
-  }
-  const selection = document.getSelection();
-  if (selection?.rangeCount) {
-    const range = selection.getRangeAt(0);
-    const span = document.createElement("span");
-    span.className = "selected-text";
-    range.surroundContents(span);
-  }
-  document.addEventListener("selectionchange", handleSelection, { once: true });
-}
+onmouseup = () => {
+  html.classList.add("user-is-interacting");
+};
+
+onmousedown = () => {
+  html.classList.remove("user-is-interacting");
+};
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { fancyBorder } from "../styles";
+import Tippy from "@tippyjs/react";
 
 export default function About({ className }: { className: string }) {
   return (
@@ -11,11 +12,16 @@ export default function About({ className }: { className: string }) {
       </Helmet>
       <div className="flex items-start justify-around p-8 text-center">
         <div className="flex w-1/2 flex-col items-center gap-4">
-          <img
-            src="/src/assets/kaniel-kirby.jpg"
-            alt="Picture of Kaniel Kirby"
-            className="m-4 w-[30rem] overflow-hidden rounded-[1.5rem] object-contain shadow-md shadow-[#00000080] transition-all duration-200 hover:shadow-xl hover:shadow-[#00000080]"
-          />
+          <Tippy content="Image of Kaniel Kirby">
+            <div className="relative z-0 m-4 h-[40rem] w-[30rem] cursor-pointer overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]">
+              <div className="pointer-events-none absolute top-0 left-0 z-20 h-full w-full bg-black opacity-20" />
+              <img
+                src="/src/assets/kaniel-kirby.jpg"
+                alt="Picture of Kaniel Kirby"
+                className="absolute top-0 left-0 z-10 w-full object-contain"
+              />
+            </div>
+          </Tippy>
           <Link to="/contact" className="link">
             Contact Me
           </Link>

@@ -30,6 +30,7 @@ export function LoadScreenProvider({
 
   return (
     <LoadScreenContext.Provider value={{ loading, setLoading }}>
+      {children}
       {hidden ? null : (
         <div
           onTransitionEnd={() => {
@@ -52,7 +53,6 @@ export function LoadScreenProvider({
           </Tippy>
         </div>
       )}
-      {children}
     </LoadScreenContext.Provider>
   );
 }
