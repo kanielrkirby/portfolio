@@ -20,7 +20,7 @@ export default function Icon({
         alt={name}
         className="absolute top-0 bottom-0 right-0 left-0 z-0 m-auto h-full w-full cursor-pointer opacity-40 transition-all duration-150 ease-out group-hover:scale-110 group-hover:opacity-80"
       />
-      <div className="absolute top-0 bottom-0 -left-2 -z-10 my-auto h-[150%] w-[150%] rounded-full bg-gradient-radial from-black to-transparent opacity-10 transition-all duration-150 group-hover:scale-125 group-hover:opacity-25" />
+      <div className="absolute top-0 bottom-0 -left-2 -z-10 my-auto h-[150%] w-[150%] rounded-full bg-gradient-radial from-black to-transparent opacity-10 transition-all duration-100 group-hover:scale-125 group-hover:opacity-25" />
     </>
   );
   return (

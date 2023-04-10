@@ -27,6 +27,7 @@ export default function Header({ className }: { className?: string }) {
         <Link
           to="/contact"
           className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:scale-110 hover:bg-[#ffffff20] hover:[text-shadow:2px_2px_8px_#000000]"
+          onClick={() => setNavOpen(false)}
         >
           Contact
         </Link>
@@ -35,6 +36,7 @@ export default function Header({ className }: { className?: string }) {
         <Link
           to="/about"
           className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:scale-110 hover:bg-[#ffffff20] hover:[text-shadow:2px_2px_8px_#000000]"
+          onClick={() => setNavOpen(false)}
         >
           About
         </Link>

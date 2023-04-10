@@ -13,7 +13,6 @@ export default function useLocal() {
   const { setDev } = useDev();
 
   useEffect(() => {
-    console.log("here");
     const stored = localStorage.getItem("settings");
     if (stored) {
       setSettings(JSON.parse(stored));

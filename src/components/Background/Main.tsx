@@ -18,7 +18,6 @@ export default function Background({ className }: { className: string }) {
     ny: 100,
   };
 
-  useEffect(() => {}, [window.innerWidth, window.innerHeight]);
   const uTime = { value: 0 },
     uTimeCoef = { value: conf.timeCoef },
     dx = 2 / conf.nx,
