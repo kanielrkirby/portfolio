@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Credits from "./pages/Credits";
 import useTitle from "./hooks/useTitle";
 import { useEffect } from "react";
+import { useLoadScreen } from "./contexts/LoadScreen";
 
 const html = document.querySelector("html")!;
 
@@ -24,22 +25,29 @@ function PageWithLayout() {
 }
 
 export default function App() {
-  const location = useLocation();
+  const { setIsLoading } = useLoadScreen();
   useEffect(() => {
     if (location.pathname === "/about") {
       html.classList.add("scroll");
     } else {
       html.classList.remove("scroll");
     }
-  }, [location]);
+    onclick = (e) => {
+      if (e.button !== 0) return;
+      const element = (e.target as HTMLLinkElement).closest("a");
+      if (!element) return;
+      if (element.pathname === location.pathname) return e.preventDefault();
+      setIsLoading(true, 500);
+    };
+  }, []);
 
   return (
     <>
       <div className="App fixed z-10 flex flex-grow flex-col items-center justify-between overflow-y-scroll">
         <Header />
         <Routes>
-          <Route index element={<Navigate to="/projects" replace />} />
           <Route path="/" element={<PageWithLayout />}>
+            <Route index element={<Navigate to="/projects" replace />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<Project />} />
             <Route path="about" element={<About />} />

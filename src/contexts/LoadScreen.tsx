@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 interface ContextI {
   loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsLoading: (loading: boolean, timeout?: number) => void;
 }
 
 export const LoadScreenContext = createContext({} as ContextI);
@@ -24,12 +24,24 @@ export function LoadScreenProvider({
     }, 1000);
   }, []);
 
+  function setIsLoading(loading: boolean, timeout?: number) {
+    if (timeout) {
+      setLoading(loading);
+      const timer = setTimeout(() => {
+        setLoading(!loading);
+        clearTimeout(timer);
+      }, timeout);
+    } else {
+      setLoading(loading);
+    }
+  }
+
   useEffect(() => {
     if (loading && hidden) setHidden(false);
   }, [loading]);
 
   return (
-    <LoadScreenContext.Provider value={{ loading, setLoading }}>
+    <LoadScreenContext.Provider value={{ loading, setIsLoading }}>
       {children}
       {hidden ? null : (
         <div
