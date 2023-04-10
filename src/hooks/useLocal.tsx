@@ -3,6 +3,7 @@ import { useDev } from "../contexts/DevContext";
 
 interface SettingsI {
   background?: boolean;
+  "invert-background"?: boolean;
   dev?: boolean;
 }
 
@@ -19,7 +20,11 @@ export default function useLocal() {
     } else {
       localStorage.setItem(
         "settings",
-        JSON.stringify({ background: true, dev: false }),
+        JSON.stringify({
+          background: true,
+          "invert-background": false,
+          dev: false,
+        }),
       );
     }
   }, []);
@@ -33,6 +38,13 @@ export default function useLocal() {
             html.classList.add("no-bg");
           } else {
             html.classList.remove("no-bg");
+          }
+          break;
+        case "invert-background":
+          if (settings[key]) {
+            html.classList.add("invert-bg");
+          } else {
+            html.classList.remove("invert-bg");
           }
           break;
         case "dev":

@@ -2,15 +2,21 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import useBreakpoint from "../hooks/useBreakpoint";
+import { useDev } from "../contexts/DevContext";
 
 export default function About() {
   const { isSm, isMd } = useBreakpoint();
+  const { decrement, message } = useDev();
   const image = (
     <Tippy
-      content="Image of myself"
+      content={message || "Image of myself."}
+      hideOnClick={false}
       placement={isSm || isMd ? "bottom" : "right"}
     >
-      <div className="relative z-0 m-4 flex h-fit w-full cursor-pointer items-center justify-center overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]">
+      <div
+        onClick={decrement}
+        className="relative z-0 m-4 flex h-fit w-full cursor-pointer items-center justify-center overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
+      >
         <div className="pointer-events-none absolute top-0 left-0 z-20 h-full w-full bg-black opacity-20" />
         <img
           src="/src/assets/image.jpg"

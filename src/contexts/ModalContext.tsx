@@ -60,18 +60,41 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
                   </div>
                 </button>
                 <h2 className="text-black">Settings</h2>
-                <div className="flex w-full items-center justify-around">
-                  <label className="text-black" htmlFor="background">
-                    Moving Background
-                  </label>
-                  <input
-                    className=""
-                    id="background"
-                    name="background"
-                    type="checkbox"
-                    defaultChecked={get("background")}
-                    onClick={() => toggle("background")}
-                  />
+                <div className="flex h-full w-full justify-center gap-24">
+                  <div className="flex h-full flex-col justify-around">
+                    <label className="text-black" htmlFor="background">
+                      Moving Background
+                    </label>
+                    <label className="text-black" htmlFor="invert-background">
+                      Invert Background
+                    </label>
+                    <label className="text-black" htmlFor="dev">
+                      Developer Mode
+                    </label>
+                  </div>
+                  <div className="flex h-full flex-col justify-around">
+                    <input
+                      id="background"
+                      name="background"
+                      type="checkbox"
+                      defaultChecked={get("background")}
+                      onClick={() => toggle("background")}
+                    />
+                    <input
+                      id="invert-background"
+                      name="invert-background"
+                      type="checkbox"
+                      defaultChecked={get("invert-background")}
+                      onClick={() => toggle("invert-background")}
+                    />
+                    <input
+                      id="dev"
+                      name="dev"
+                      type="checkbox"
+                      defaultChecked={get("dev")}
+                      onClick={() => toggle("dev")}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

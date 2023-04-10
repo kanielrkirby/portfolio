@@ -14,8 +14,8 @@ export default function Background({ className }: { className: string }) {
     sat: 0.25,
     angle: (Math.PI * 2) / 3,
     timeCoef: 0.04,
-    nx: 40,
-    ny: 100,
+    nx: 25,
+    ny: 70,
   };
 
   const uTime = { value: 0 },
@@ -56,6 +56,7 @@ export default function Background({ className }: { className: string }) {
         })}
       </Canvas>
       <div className="no-bg-canvas h-full w-full bg-gradient-to-br from-amber-400 to-violet-900"></div>
+      <div className="bg-overlay fixed top-0 left-0 z-10 h-full w-full brightness-75 backdrop-invert transition-all duration-500"></div>
     </div>
   );
 }
