@@ -1,8 +1,10 @@
 import Tippy from "@tippyjs/react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import useBreakpoint from "../hooks/useBreakpoint";
 
 export default function Projects() {
+  const { isSm } = useBreakpoint();
   const projects = [
     {
       title: "Polychrome",
@@ -37,46 +39,51 @@ export default function Projects() {
   ];
 
   return (
-    <div className={"flex flex-col items-center "}>
-      <div className="flex flex-col gap-2">
-        {projects.map(({ title, description, link, image, video }, index) => {
-          return (
-            <div key={title + index} className="flex justify-around">
-              <Helmet>
-                <title>Projects</title>
-                <meta name="description" content="A list of my projects." />
-              </Helmet>
-              <Tippy content="Link to site" placement="right">
-                <a href={link}>
-                  <video
-                    src={video}
-                    about={description.short}
-                    className="rounded-xl bg-black"
-                  >
-                    <img src={image} alt={description.short} />
-                  </video>
-                </a>
-              </Tippy>
-              <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
-                <h2 className="text-2xl">{title}</h2>
-                <p className="text-sm">{description.short}</p>
-                <Tippy
-                  content={`Get a closer look at how ${title} was made!`}
-                  className="text-center"
-                  placement="right"
+    <div className={"flex w-full flex-col items-center gap-2"}>
+      {projects.map(({ title, description, link, image, video }, index) => {
+        return (
+          <div
+            key={title + index}
+            className={`flex w-full items-center p-4 ${
+              isSm ? "flex-col-reverse justify-around" : "justify-center"
+            }`}
+          >
+            <Helmet>
+              <title>Projects</title>
+              <meta name="description" content="A list of my projects." />
+            </Helmet>
+            <Tippy content="Link to site" placement="right">
+              <a href={link} className="w-fit">
+                <video
+                  src={video}
+                  about={description.short}
+                  className="w-[30rem] max-w-full rounded-xl bg-black"
                 >
-                  <Link
-                    to={`/projects/${title.toLowerCase()}`}
-                    className="link fancy relative"
-                  >
-                    More Info
-                  </Link>
-                </Tippy>
-              </div>
+                  <img src={image} alt={description.short} />
+                </video>
+              </a>
+            </Tippy>
+            <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
+              <h2 className="text-2xl">{title}</h2>
+              <p className={`text-sm ${isSm ? "w-[50ch]" : "w-[30ch]"}`}>
+                {description.short}
+              </p>
+              <Tippy
+                content={`Get a closer look at how ${title} was made!`}
+                className="text-center"
+                placement="right"
+              >
+                <Link
+                  to={`/projects/${title.toLowerCase()}`}
+                  className="link fancy relative"
+                >
+                  More Info
+                </Link>
+              </Tippy>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
