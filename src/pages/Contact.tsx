@@ -35,9 +35,11 @@ export default function Contact() {
         </P>
       </div>
       <div className="w-full p-2">
-        <Link to="/credits" className="link fancy w-fit">
-          Attributions & Credits
-        </Link>
+        <Tippy content="Attributions & Credits">
+          <Link to="/credits" className="link fancy w-fit">
+            Attributions & Credits
+          </Link>
+        </Tippy>
       </div>
     </>
   );

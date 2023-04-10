@@ -27,6 +27,7 @@ export function LoadScreenProvider({
   function setIsLoading(loading: boolean, timeout?: number) {
     if (timeout) {
       setLoading(loading);
+      setHidden(false);
       const timer = setTimeout(() => {
         setLoading(!loading);
         clearTimeout(timer);

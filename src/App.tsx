@@ -36,7 +36,6 @@ export default function App() {
       if (e.button !== 0) return;
       const element = (e.target as HTMLLinkElement).closest("a");
       if (!element) return;
-      if (element.pathname === location.pathname) return e.preventDefault();
       setIsLoading(true, 500);
     };
   }, []);

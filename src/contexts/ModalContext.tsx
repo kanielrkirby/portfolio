@@ -47,7 +47,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
               }`}
             >
               <div
-                className={`relative flex h-[30rem] w-[40rem] flex-col items-center gap-4 rounded-md bg-white p-16 transition-all duration-300 ease-in-out ${
+                className={`relative flex h-[30rem] w-[40rem] max-w-[90%] flex-col items-center gap-4 rounded-md bg-white p-16 transition-all duration-300 ease-in-out ${
                   modalOpen ? "" : "translate-y-full"
                 }`}
               >

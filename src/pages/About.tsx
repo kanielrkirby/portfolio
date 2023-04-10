@@ -6,7 +6,10 @@ import useBreakpoint from "../hooks/useBreakpoint";
 export default function About() {
   const { isSm, isMd } = useBreakpoint();
   const image = (
-    <Tippy content="Image of myself" placement="right">
+    <Tippy
+      content="Image of myself"
+      placement={isSm || isMd ? "bottom" : "right"}
+    >
       <div className="relative z-0 m-4 flex h-fit w-full cursor-pointer items-center justify-center overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]">
         <div className="pointer-events-none absolute top-0 left-0 z-20 h-full w-full bg-black opacity-20" />
         <img
@@ -28,25 +31,29 @@ export default function About() {
           isMd || isSm ? "flex-col-reverse" : ""
         }`}
       >
-        <div className={`flex w-[20rem] flex-col items-center gap-4`}>
+        <div
+          className={`flex w-[20rem] flex-col items-center gap-4 ${
+            isSm || isMd ? "" : "sticky bottom-12 top-24"
+          }`}
+        >
           {image}
           <div className="mx-4 flex w-full justify-center gap-12">
-            <Link
-              to="/contact"
-              className={`link fancy w-full ${
-                isSm ? "text-lg" : isMd ? "text-xl" : "text-2xl"
-              }`}
-            >
-              Contact Me
-            </Link>
-            <Link
-              to="/projects"
-              className={`link fancy w-full ${
-                isSm ? "text-lg" : isMd ? "text-xl" : "text-2xl"
-              }`}
-            >
-              My Projects
-            </Link>
+            <Tippy content="Contact Me">
+              <Link
+                to="/contact"
+                className={`link fancy w-full ${isSm ? "text-lg" : "text-xl"}`}
+              >
+                Contact Me
+              </Link>
+            </Tippy>
+            <Tippy content="My Projects">
+              <Link
+                to="/projects"
+                className={`link fancy w-full ${isSm ? "text-lg" : "text-xl"}`}
+              >
+                My Projects
+              </Link>
+            </Tippy>
           </div>
         </div>
         <div

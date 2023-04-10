@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import useBreakpoint from "../hooks/useBreakpoint";
 
 export default function Projects() {
-  const { isSm } = useBreakpoint();
+  const { isSm, isMd } = useBreakpoint();
   const projects = [
     {
       title: "Polychrome",
@@ -52,7 +52,10 @@ export default function Projects() {
               <title>Projects</title>
               <meta name="description" content="A list of my projects." />
             </Helmet>
-            <Tippy content="Link to site" placement="right">
+            <Tippy
+              content="Link to site"
+              placement={isMd || isSm ? "bottom" : "right"}
+            >
               <a href={link} className="w-fit">
                 <video
                   src={video}
@@ -71,7 +74,7 @@ export default function Projects() {
               <Tippy
                 content={`Get a closer look at how ${title} was made!`}
                 className="text-center"
-                placement="right"
+                placement={isSm || isMd ? "bottom" : "left"}
               >
                 <Link
                   to={`/projects/${title.toLowerCase()}`}
