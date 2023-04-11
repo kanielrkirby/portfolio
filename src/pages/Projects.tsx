@@ -14,7 +14,7 @@ export default function Projects() {
       },
       link: "https://piratey7007.github.io/polychrome/",
       image: "https://piratey7007.github.io/polychrome/polychrome.png",
-      video: "https://www.youtube.com/embed/",
+      video: "/src/assets/polychrome.gif",
     },
     {
       title: "Banter",
@@ -24,7 +24,7 @@ export default function Projects() {
       },
       link: "https://piratey7007.github.io/banter/",
       image: "https://piratey7007.github.io/banter/banter.png",
-      video: "https://www.youtube.com/embed/",
+      video: "/src/assets/banter.gif",
     },
     {
       title: "Bazaar",
@@ -34,7 +34,7 @@ export default function Projects() {
       },
       link: "https://We-Got-This-2023.github.io/bazaar/",
       image: "https://We-Got-This-2023.github.io/bazaar/bazaar.png",
-      video: "https://www.youtube.com/embed/",
+      video: "/src/assets/bazaar.gif",
     },
   ];
 
@@ -57,13 +57,12 @@ export default function Projects() {
               placement={isMd || isSm ? "bottom" : "right"}
             >
               <a href={link} className="w-fit">
-                <video
+                <img
                   src={video}
                   about={description.short}
-                  className="w-[30rem] max-w-full rounded-xl bg-black"
-                >
-                  <img src={image} alt={description.short} />
-                </video>
+                  className="flex h-fit min-h-[20rem] w-[30rem] max-w-full items-center justify-center rounded-xl bg-black shadow-sm transition-all duration-300 hover:scale-[102%] hover:shadow-xl"
+                  alt={"GIF of " + title}
+                />
               </a>
             </Tippy>
             <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
