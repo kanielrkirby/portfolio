@@ -1,4 +1,4 @@
-export default function Bazaar({ className }: { className?: string }) {
+export default function Bazaar() {
   return (
     <>
       <h1 className="mb-4 text-2xl text-black">Bazaar</h1>

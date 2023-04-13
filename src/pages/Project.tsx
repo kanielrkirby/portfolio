@@ -4,7 +4,7 @@ import Banter from "../projects/Banter";
 import Bazaar from "../projects/Bazaar";
 import { Helmet } from "react-helmet";
 
-export default function Project({ className }: { className?: string }) {
+export default function Project() {
   const { id } = useParams();
   if (!id) return <Navigate to="/404" replace />;
   const title = id

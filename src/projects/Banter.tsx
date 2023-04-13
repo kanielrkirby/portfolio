@@ -1,4 +1,4 @@
-export default function Banter({ className }: { className?: string }) {
+export default function Banter() {
   return (
     <>
       <h1 className="mb-4 text-2xl text-black">Banter</h1>

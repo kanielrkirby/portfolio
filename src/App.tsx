@@ -1,10 +1,9 @@
-import { Routes, Route, Outlet, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Background from "./components/Background/Main";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 import Credits from "./pages/Credits";
@@ -34,8 +33,8 @@ export default function App() {
     }
     onclick = (e) => {
       if (e.button !== 0) return;
-      const element = (e.target as HTMLLinkElement).closest("a");
-      if (!element) return;
+      const link = (e.target as HTMLLinkElement).closest("a");
+      if (!link) return;
       setIsLoading(true, 500);
     };
   }, []);
