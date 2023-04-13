@@ -9,7 +9,7 @@ export default function IconBar({
 }) {
   return (
     <div className={className}>
-      <ul className="flex justify-end gap-4">
+      <ul className="flex flex-wrap justify-center gap-4">
         <Icon
           name="Email"
           link="mailto:kanielrkirby@runbox.com"

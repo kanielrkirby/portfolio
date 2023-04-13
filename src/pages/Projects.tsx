@@ -60,7 +60,9 @@ export default function Projects() {
                 <img
                   src={video}
                   about={description.short}
-                  className="flex h-fit min-h-[20rem] w-[30rem] max-w-full items-center justify-center rounded-xl bg-black shadow-sm transition-all duration-300 hover:scale-[102%] hover:shadow-xl"
+                  className={`flex aspect-[2/1.25] h-fit w-[30rem] max-w-[90vw] items-center justify-center bg-black object-cover shadow-sm transition-all duration-300 hover:scale-[102%] hover:shadow-xl ${
+                    isSm ? "rounded-md" : "rounded-lg"
+                  }`}
                   alt={"GIF of " + title}
                 />
               </a>

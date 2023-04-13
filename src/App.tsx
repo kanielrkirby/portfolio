@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <>
-      <div className="App fixed z-10 flex flex-grow flex-col items-center justify-between overflow-y-scroll text-clamp-1">
+      <div className="App fixed z-10 flex w-full flex-grow flex-col items-center justify-between overflow-y-scroll text-clamp-1">
         <Header />
         <Routes>
           <Route path="/" element={<PageWithLayout />}>

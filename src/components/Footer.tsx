@@ -12,7 +12,7 @@ export default function Footer({}: {}) {
       }`}
     >
       <Tippy content="Attributions & Credits">
-        <Link to="/credits" className="link fancy">
+        <Link to="/credits" className="link fancy text-center">
           Attributions & Credits
         </Link>
       </Tippy>

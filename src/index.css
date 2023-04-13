@@ -111,3 +111,11 @@ h5 {
 h6 {
   @apply text-clamp-1;
 }
+
+.tippy-box {
+  @apply text-center;
+}
+
+p {
+  @apply w-[80ch] max-w-[90vw] text-center;
+}

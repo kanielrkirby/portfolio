@@ -56,7 +56,7 @@ export default function Header({ className }: { className?: string }) {
         <Tippy content="Navigation">
           <div
             onClick={() => setNavOpen(true)}
-            className={`absolute left-3 flex h-20 w-20 cursor-pointer items-center justify-center overflow-hidden transition-all duration-300 ease-in-out hover:rotate-12`}
+            className={`absolute left-3 flex w-14 cursor-pointer items-center justify-center overflow-hidden transition-all duration-300 ease-in-out hover:rotate-12`}
           >
             <Nav />
           </div>
@@ -76,7 +76,7 @@ export default function Header({ className }: { className?: string }) {
       )}
       <Tippy content="Projects">
         <Link to="/projects" className="link group relative aspect-square p-4">
-          <Logo className="relative left-0 right-0 top-0 bottom-0 m-auto w-20 rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
+          <Logo className="relative left-0 right-0 top-0 bottom-0 m-auto w-[15vw] min-w-[3rem] max-w-[4.5rem] rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
         </Link>
       </Tippy>
       {!(isSm || isMd) && (
@@ -94,7 +94,7 @@ export default function Header({ className }: { className?: string }) {
       <Tippy content="Settings">
         <div
           onClick={() => setModalOpen(true)}
-          className={`absolute right-3 flex h-20 w-20 items-center justify-center overflow-hidden ${
+          className={`absolute right-3 flex w-[15vw] min-w-[3rem] max-w-[4.5rem] items-center justify-center overflow-hidden ${
             dev ? "" : "pointer-events-none"
           }`}
         >
