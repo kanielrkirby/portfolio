@@ -13,7 +13,7 @@ export default function Contact() {
         <title>Contact</title>
         <meta name="description" content="Kaniel Kirby's 'Contact' page." />
       </Helmet>
-      <div className="relative flex flex-col items-center gap-8">
+      <div className="relative flex max-w-[95vw] flex-col items-center gap-8">
         <Tippy content={message ?? "Image of myself"} hideOnClick={false}>
           <img
             src="/src/assets/image-2.jpg"
@@ -36,7 +36,7 @@ export default function Contact() {
       </div>
       <div className="w-full p-2">
         <Tippy content="Attributions & Credits">
-          <Link to="/credits" className="link fancy w-fit">
+          <Link to="/credits" className="link fancy">
             Attributions & Credits
           </Link>
         </Tippy>

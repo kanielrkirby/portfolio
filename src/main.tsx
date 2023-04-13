@@ -8,16 +8,6 @@ import { DevProvider } from "./contexts/DevContext";
 import Background from "./components/Background/Main";
 import { ModalProvider } from "./contexts/ModalContext";
 
-oncontextmenu = (e) => {
-  const target = e.target as HTMLElement;
-  const a = target.closest("a.link") as HTMLLinkElement;
-  if (a) {
-    e.preventDefault();
-    navigator.clipboard.writeText(a.href);
-    alert("Copied link to clipboard!");
-  }
-};
-
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <DevProvider>

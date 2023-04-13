@@ -3,27 +3,33 @@ import Icon from "../components/Icon";
 import Tippy from "@tippyjs/react";
 import { Link } from "react-router-dom";
 import ReactCodepen from "react-codepen-embed";
+import useBreakpoint from "../hooks/useBreakpoint";
 
 const imgCl =
   "h-40 aspect-square rounded-lg object-cover shadow-lg shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]";
 
 export default function Credits({ className }: { className?: string }) {
+  const { isSm, isMd } = useBreakpoint();
   return (
     <div
-      className={`flex flex-col items-center gap-4 text-center ${className}`}
+      className={`mb-8 flex flex-col items-center gap-4 text-center ${className}`}
     >
       <Helmet>
         <title>Credits</title>
         <meta name="description" content="Gives credit to those that helped." />
       </Helmet>
       <div className="flex w-[40rem] flex-col items-center gap-2 text-center">
-        <hr className="w-full" />
-        <p>Hover over anything to see where it came from.</p>
+        <hr className="w-full max-w-[90vw]" />
+        <p>Hover anything to see where it came from.</p>
         <p>Click anything to see more.</p>
-        <p>Anything else is made by me.</p>
-        <hr className="w-full" />
+        <p>Everything else is made by me.</p>
+        <hr className="w-full max-w-[90vw]" />
       </div>
-      <div className="grid grid-cols-2 justify-items-center gap-8">
+      <div
+        className={`grid justify-items-center gap-8 ${
+          isSm || isMd ? "grid-cols-1" : "grid-cols-2"
+        }`}
+      >
         <div className="flex flex-col gap-4">
           <h5>Icons</h5>
           <div className="grid grid-cols-3 grid-rows-2 gap-4">
@@ -112,7 +118,7 @@ export default function Credits({ className }: { className?: string }) {
           <div className="grid grid-cols-2 justify-items-center gap-1">
             <Tippy content="React">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://reactjs.org/"
                 target="_blank"
               >
@@ -121,7 +127,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="Tippy.js">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://atomiks.github.io/tippyjs/"
                 target="_blank"
               >
@@ -130,7 +136,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React Helmet">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://www.npmjs.com/package/react-helmet"
                 target="_blank"
               >
@@ -139,7 +145,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React CodePen Embed">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://www.npmjs.com/package/react-codepen-embed/"
                 target="_blank"
               >
@@ -148,7 +154,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React Router">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://reactrouter.com/"
                 target="_blank"
               >
@@ -157,7 +163,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="Tailwind CSS">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://tailwindcss.com/"
                 target="_blank"
               >
@@ -166,7 +172,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="Vite">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://vitejs.dev/"
                 target="_blank"
               >
@@ -175,7 +181,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="TypeScript">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://www.typescriptlang.org/"
                 target="_blank"
               >
@@ -184,7 +190,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="React Three Fiber">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="docs.pmnd.rs/react-three-fiber"
                 target="_blank"
               >
@@ -193,7 +199,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="ThreeJS">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://threejs.org/"
                 target="_blank"
               >
@@ -202,7 +208,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="ChromaJS">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://gka.github.io/chroma.js/"
                 target="_blank"
               >
@@ -211,7 +217,7 @@ export default function Credits({ className }: { className?: string }) {
             </Tippy>
             <Tippy content="Prettier">
               <Link
-                className="link fancy"
+                className="link fancy whitespace-nowrap"
                 to="https://prettier.io/"
                 target="_blank"
               >
