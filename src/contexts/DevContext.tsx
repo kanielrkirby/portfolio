@@ -14,7 +14,7 @@ export function DevProvider({ children }: { children: React.ReactNode }) {
   const [dev, setDev] = useState(false);
   const [counter, setCounter] = useState(10);
   const [message, setMessage] = useState<string>();
-  const { get, set } = useLocal();
+  const { get, set, settings } = useLocal();
 
   const decrement = () => setCounter((counter) => counter - 1);
 
@@ -29,8 +29,12 @@ export function DevProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (counter < 1) {
       setMessage("Congrats, you're a developer!");
+      console.log("_______________");
+      console.log(settings);
       setDev(true);
       set("dev", true);
+      console.log(settings);
+      console.log("_______________");
     } else if (counter < 10) {
       if (get("dev")) return setCounter(0);
       setMessage(`${counter} clicks until you're a developer.`);

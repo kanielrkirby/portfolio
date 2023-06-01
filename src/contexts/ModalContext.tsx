@@ -11,7 +11,7 @@ export const ModalContext = createContext({} as ContextI);
 export function ModalProvider({ children }: { children: React.ReactNode }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [hidden, setHidden] = useState(true);
-  const { get, toggle } = useLocal();
+  const { toggle, settings } = useLocal();
 
   function handleModalOpen(modal: boolean) {
     if (modal) {
@@ -42,7 +42,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
         <>
           {!hidden && (
             <div
-              className={`fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50 transition-all duration-300 ease-in-out selection:bg-red-300 ${
+              className={`fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50 transition-all duration-300 ease-in-out selection:bg-red-300 ${
                 modalOpen ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
@@ -52,10 +52,10 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
                 }`}
               >
                 <button
-                  className="group absolute top-0 right-0 z-10 h-fit w-fit cursor-pointer p-5"
+                  className="group absolute right-0 top-0 z-10 h-fit w-fit cursor-pointer p-5"
                   onClick={() => handleModalOpen(false)}
                 >
-                  <div className="relative block cursor-pointer text-black transition-all duration-150 after:pointer-events-none after:absolute after:top-0 after:bottom-0 after:right-0 after:left-0 after:-z-10 after:m-auto after:scale-x-0 after:scale-y-100 after:rounded-sm after:bg-black after:p-0 after:transition-all after:duration-150 after:content-[''] group-hover:text-red-500 group-hover:after:scale-x-[125%] group-hover:after:scale-y-[125%]">
+                  <div className="relative block cursor-pointer text-black transition-all duration-150 after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:-z-10 after:m-auto after:scale-x-0 after:scale-y-100 after:rounded-sm after:bg-black after:p-0 after:transition-all after:duration-150 after:content-[''] group-hover:text-red-500 group-hover:after:scale-x-[125%] group-hover:after:scale-y-[125%]">
                     Close
                   </div>
                 </button>
@@ -77,21 +77,21 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
                       id="background"
                       name="background"
                       type="checkbox"
-                      defaultChecked={get("background")}
+                      defaultChecked={settings?.background}
                       onClick={() => toggle("background")}
                     />
                     <input
                       id="invert-background"
                       name="invert-background"
                       type="checkbox"
-                      defaultChecked={get("invert-background")}
+                      defaultChecked={settings?.["invert-background"]}
                       onClick={() => toggle("invert-background")}
                     />
                     <input
                       id="dev"
                       name="dev"
                       type="checkbox"
-                      defaultChecked={get("dev")}
+                      defaultChecked={settings?.dev}
                       onClick={() => toggle("dev")}
                     />
                   </div>
@@ -100,7 +100,7 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
             </div>
           )}
         </>,
-        document.getElementById("modal-root") as HTMLElement,
+        document.getElementById("modal-root") as HTMLElement
       )}
     </ModalContext.Provider>
   );
