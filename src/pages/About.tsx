@@ -30,13 +30,13 @@ export default function About() {
           >
             <div
               onClick={decrement}
-              className="relative z-0 m-4 flex h-fit w-full max-w-[25rem] cursor-pointer items-center justify-center overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
+              className="relative z-0 m-4 flex h-fit min-h-[30rem] w-full max-w-[25rem] cursor-pointer items-center justify-center overflow-hidden rounded-[1.5rem] shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]"
             >
-              <div className="pointer-events-none absolute top-0 left-0 z-20 h-full w-full bg-black opacity-20" />
+              <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-full bg-black opacity-20" />
               <img
                 src="/src/assets/image.jpg"
                 alt="Image of myself."
-                className="relative top-0 left-0 z-10 w-full max-w-[95vw] object-contain text-center align-middle"
+                className="relative left-0 top-0 z-10 w-full max-w-[95vw] object-contain text-center align-middle"
               />
             </div>
           </Tippy>
