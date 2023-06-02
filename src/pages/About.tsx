@@ -2,11 +2,11 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import useBreakpoint from "../hooks/useBreakpoint";
-import { useDev } from "../contexts/DevContext";
+import useLocal from "../hooks/useLocal";
 
 export default function About() {
   const { isSm, isMd } = useBreakpoint();
-  const { decrement, message } = useDev();
+  const { decrement, message } = useLocal();
   return (
     <>
       <Helmet>

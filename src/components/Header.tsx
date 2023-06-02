@@ -3,20 +3,18 @@ import { Link } from "react-router-dom";
 import Settings from "../assets/Settings";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-import { useDev } from "../contexts/DevContext";
 import { useModal } from "../contexts/ModalContext";
 import useBreakpoint from "../hooks/useBreakpoint";
 import Nav from "../assets/Nav";
 import { useState } from "react";
 
 export default function Header({ className }: { className?: string }) {
-  const { dev } = useDev();
   const { isSm, isMd } = useBreakpoint();
   const { setModalOpen } = useModal();
   const [navOpen, setNavOpen] = useState(false);
   const nav = (
     <div
-      className={`justify-top fixed top-0 left-0 z-10 flex h-full w-full flex-col items-start pt-24 backdrop-blur-sm transition-all duration-500 ease-in-out ${
+      className={`justify-top fixed left-0 top-0 z-10 flex h-full w-full flex-col items-start pt-24 backdrop-blur-sm transition-all duration-500 ease-in-out ${
         navOpen ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
@@ -76,7 +74,7 @@ export default function Header({ className }: { className?: string }) {
       )}
       <Tippy content="Projects">
         <Link to="/projects" className="link group relative aspect-square p-4">
-          <Logo className="relative left-0 right-0 top-0 bottom-0 m-auto w-[15vw] min-w-[3rem] max-w-[4.5rem] rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
+          <Logo className="relative bottom-0 left-0 right-0 top-0 m-auto w-[15vw] min-w-[3rem] max-w-[4.5rem] rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
         </Link>
       </Tippy>
       {!(isSm || isMd) && (
@@ -94,9 +92,7 @@ export default function Header({ className }: { className?: string }) {
       <Tippy content="Settings">
         <div
           onClick={() => setModalOpen(true)}
-          className={`absolute right-3 flex w-[15vw] min-w-[3rem] max-w-[4.5rem] items-center justify-center overflow-hidden ${
-            dev ? "" : "pointer-events-none"
-          }`}
+          className={`dev-pointer-rule absolute right-3 flex w-[15vw] min-w-[3rem] max-w-[4.5rem] items-center justify-center overflow-hidden`}
         >
           <Settings />
         </div>

@@ -1,5 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useDev } from "../contexts/DevContext";
+import { createContext, useEffect, useState } from "react";
 
 interface SettingsI {
   background?: boolean;
@@ -11,6 +10,9 @@ interface ContextI {
   set(key: keyof SettingsI, value: any): void;
   get(key: keyof SettingsI): boolean | undefined;
   toggle(key: keyof SettingsI): void;
+  decrement(): void;
+  message?: string;
+  counter?: number;
 }
 
 const html = document.querySelector("html")!;
@@ -18,8 +20,10 @@ const html = document.querySelector("html")!;
 export const LocalContext = createContext({} as ContextI);
 
 export function LocalProvider({ children }: { children: React.ReactNode }) {
+  const [counter, setCounter] = useState(10);
+  const [message, setMessage] = useState<string>();
   const [settings, setSettings] = useState<SettingsI>();
-  const { setDev } = useDev();
+  const decrement = () => setCounter((counter) => counter - 1);
 
   useEffect(() => {
     const stored = localStorage.getItem("settings");
@@ -38,31 +42,31 @@ export function LocalProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    console.log("update");
-    console.log(settings);
+    if (counter < 1) {
+      setMessage("Congrats, you're a developer!");
+      set("dev", true);
+    } else if (counter < 10) {
+      if (get("dev")) return setCounter(0);
+      setMessage(`${counter} clicks until you're a developer.`);
+    } else setMessage(undefined);
+  }, [counter]);
+
+  useEffect(() => {
     if (!settings) return;
     for (const key in settings) {
       switch (key) {
         case "background":
-          if (!settings[key]) {
-            html.classList.add("no-bg");
-          } else {
-            html.classList.remove("no-bg");
-          }
+          if (!settings[key]) html.classList.add("no-bg");
+          else html.classList.remove("no-bg");
           break;
         case "invert-background":
-          if (settings[key]) {
-            html.classList.add("invert-bg");
-          } else {
-            html.classList.remove("invert-bg");
-          }
+          if (settings[key]) html.classList.add("invert-bg");
+          else html.classList.remove("invert-bg");
           break;
         case "dev":
-          if (settings[key]) {
-            if (setDev) setDev(true);
-          } else {
-            if (setDev) setDev(false);
-          }
+          if (settings[key]) html.classList.add("dev");
+          else html.classList.remove("dev");
+          break;
         default:
           break;
       }
@@ -93,6 +97,9 @@ export function LocalProvider({ children }: { children: React.ReactNode }) {
         set,
         get,
         toggle,
+        decrement,
+        message,
+        counter,
       }}
     >
       {children}

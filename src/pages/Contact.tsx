@@ -1,13 +1,13 @@
 import { Helmet } from "react-helmet";
 import IconBar from "../components/IconBar";
 import Tippy from "@tippyjs/react";
-import { useDev } from "../contexts/DevContext";
+import useLocal from "../hooks/useLocal";
 import { Link } from "react-router-dom";
 import useBreakpoint from "../hooks/useBreakpoint";
 
 export default function Contact() {
-  const { decrement, message } = useDev();
-  const { isSm, isMd } = useBreakpoint();
+  const { decrement, message } = useLocal();
+  const { isSm } = useBreakpoint();
 
   return (
     <>

@@ -1,18 +1,13 @@
 import { SVGAttributes } from "react";
-import { useDev } from "../contexts/DevContext";
 
 export default function Settings({ ...props }: SVGAttributes<SVGSVGElement>) {
-  const { dev } = useDev();
-
   return (
     <svg
       viewBox="0 0 500 500"
       fill="none"
       width="0"
       xmlns="http://www.w3.org/2000/svg"
-      className={`relative box-content cursor-pointer transition-all duration-300 hover:rotate-90 hover:scale-105 ${
-        dev ? "w-20" : "w-0"
-      }`}
+      className={`dev-wheel-rule relative box-content cursor-pointer transition-all duration-300 hover:rotate-90 hover:scale-105`}
       {...props}
     >
       <path

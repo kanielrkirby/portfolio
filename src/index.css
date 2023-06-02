@@ -86,6 +86,14 @@ html.invert-bg {
   @apply selection:bg-red-300;
 }
 
+html:not(.dev) .dev-pointer-rule{
+  @apply pointer-events-none;
+}
+
+html.dev .dev-wheel-rule {
+  @apply w-20;
+}
+
 html:not(.scroll) .App {
   scroll-snap-type: mandatory;
   scrollbar-width: none;
