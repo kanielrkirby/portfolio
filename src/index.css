@@ -1,7 +1,30 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Fira+Mono:wght@400;500;700&display=swap");
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url('/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf'),
+       url("https://fonts.bunnyfonts.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap")
+}
+@font-face {
+  font-family: "Fira Mono";
+  font-weight: normal;
+  src: url('/src/assets/fonts/Fira_Mono/FiraMono-Regular.ttf'),
+       url("https://fonts.bunnyfonts.net/css2?family=Fira+Mono:wght@400&display=swap")
+}
+@font-face {
+  font-family: "Fira Mono";
+  font-weight: bold;
+  src: url('/src/assets/fonts/Fira_Mono/FiraMono-Bold.ttf'),
+       url("https://fonts.bunnyfonts.net/css2?family=Fira+Mono:wght@700&display=swap")
+}
+@font-face {
+  font-family: "Fira Mono";
+  font-weight: medium;
+  src: url('/src/assets/fonts/Fira_Mono/FiraMono-Medium.ttf'),
+       url("https://fonts.bunnyfonts.net/css2?family=Fira+Mono:wght@500&display=swap")
+}
 
 html,
 body,

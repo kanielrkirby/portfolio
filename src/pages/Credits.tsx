@@ -75,7 +75,7 @@ export default function Credits({ className }: { className?: string }) {
                 target="_blank"
               >
                 <img
-                  src="/src/assets/image.jpg"
+                  src="/public/image.jpg"
                   alt="Image of myself"
                   className={imgCl}
                 />
@@ -88,7 +88,7 @@ export default function Credits({ className }: { className?: string }) {
                 target="_blank"
               >
                 <img
-                  src="/src/assets/image-2.jpg"
+                  src="/public/image-2.jpg"
                   alt="Image of myself"
                   className={imgCl}
                 />
