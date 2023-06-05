@@ -54,8 +54,7 @@ export default function Background({ className }: { className: string }) {
           return <CustomMesh deps={deps} pline={pline} key={i} i={i} />;
         })}
       </Canvas>
-      <div className="no-bg-canvas h-full w-full bg-gradient-to-br from-amber-400 to-violet-900"></div>
-      <div className="bg-overlay fixed top-0 left-0 z-10 h-full w-full brightness-75 backdrop-invert transition-all duration-500"></div>
+      <div className="bg-overlay fixed left-0 top-0 z-10 h-full w-full brightness-75 backdrop-invert transition-all duration-500"></div>
     </div>
   );
 }
@@ -100,7 +99,7 @@ function CustomMesh({ deps, pline, i }: any) {
             value: new THREE.Vector3(
               rnd(0.2, 0.5),
               rnd(0.3, 0.6),
-              rnd(0.4, 0.7),
+              rnd(0.4, 0.7)
             ),
           },
           uColor1: { value: new THREE.Color(conf.cscale(i / conf.nx).hex()) },
@@ -110,7 +109,7 @@ function CustomMesh({ deps, pline, i }: any) {
                 .cscale(i / conf.nx)
                 .darken(conf.darken)
                 .desaturate(conf.sat)
-                .hex(),
+                .hex()
             ),
           },
         }}
