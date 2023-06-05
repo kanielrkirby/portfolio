@@ -14,17 +14,7 @@ export default function Projects() {
       },
       link: "https://piratey7007.github.io/polychrome/",
       image: "https://piratey7007.github.io/polychrome/polychrome.png",
-      video: "/src/assets/polychrome.gif",
-    },
-    {
-      title: "Banter",
-      description: {
-        short: "A real-time chat app with customizable profiles.",
-        long: "Banter is a real-time chat app that allows users to create customizable profiles, engage in instant messaging, and more. Built using React TypeScript and Tailwind, Banter provides a modern and interactive chatting experience.",
-      },
-      link: "https://piratey7007.github.io/banter/",
-      image: "https://piratey7007.github.io/banter/banter.png",
-      video: "/src/assets/banter.gif",
+      video: "/public/polychrome.gif",
     },
     {
       title: "Bazaar",
@@ -34,7 +24,7 @@ export default function Projects() {
       },
       link: "https://We-Got-This-2023.github.io/bazaar/",
       image: "https://We-Got-This-2023.github.io/bazaar/bazaar.png",
-      video: "/src/assets/bazaar.gif",
+      video: "/public/bazaar.gif",
     },
   ];
 
