@@ -15,3 +15,5 @@ resources/.arch-internal-preview.css
 node_modules/
 yarn-error.log
 dist
+# Local Netlify folder
+.netlify

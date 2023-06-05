@@ -74,11 +74,7 @@ export default function Credits({ className }: { className?: string }) {
                 to="https://www.linkedin.com/in/zoe-harris-cadmuswriting/"
                 target="_blank"
               >
-                <img
-                  src="/public/image.jpg"
-                  alt="Image of myself"
-                  className={imgCl}
-                />
+                <img src="/image.jpg" alt="Image of myself" className={imgCl} />
               </Link>
             </Tippy>
             <Tippy content="Taken by Zoe M. Harris">
@@ -88,7 +84,7 @@ export default function Credits({ className }: { className?: string }) {
                 target="_blank"
               >
                 <img
-                  src="/public/image-2.jpg"
+                  src="/image-2.jpg"
                   alt="Image of myself"
                   className={imgCl}
                 />

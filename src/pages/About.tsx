@@ -34,7 +34,7 @@ export default function About() {
             >
               <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-full bg-black opacity-20" />
               <img
-                src="/public/image.jpg"
+                src="/image.jpg"
                 alt="Image of myself."
                 className="relative left-0 top-0 z-10 w-full max-w-[95vw] object-contain text-center align-middle"
               />

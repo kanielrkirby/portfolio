@@ -24,7 +24,7 @@ export default function Contact() {
             onClick={decrement}
           >
             <img
-              src="/public/image-2.jpg"
+              src="/image-2.jpg"
               alt="Image of myself"
               className={`peer w-[20rem] max-w-[90vw] cursor-pointer object-cover text-center transition-all duration-200 ${
                 isSm ? "rounded-[1.5rem]" : "rounded-[3rem]"
