@@ -16,7 +16,7 @@ export default function Icon({
   const component = (
     <>
       <img
-        src={`/${name.toLowerCase()}.png`}
+        src={`${import.meta.env.VITE_IMAGE_URL}/${name.toLowerCase()}.png`}
         alt={name}
         className="absolute bottom-0 left-0 right-0 top-0 z-0 m-auto flex h-full w-full cursor-pointer items-center justify-center text-center align-middle text-[.7rem] font-bold opacity-40 transition-all duration-150 ease-out group-hover:scale-110 group-hover:opacity-80"
       />
