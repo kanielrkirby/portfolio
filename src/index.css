@@ -103,12 +103,20 @@ html:not(.scroll) .App::-webkit-scrollbar {
   display: none;
 }
 
-html.no-bg .bg-canvas {
+html:not(.no-bg) .no-bg-canvas {
+  display: block;
+}
+
+html:not(.no-bg) .bg-canvas {
   display: none;
 }
 
-html.no-bg .no-bg-canvas {
+html.no-bg .bg-canvas {
   display: block;
+}
+
+html.no-bg .no-bg-canvas {
+  display: none;
 }
 
 div.bg-overlay {
