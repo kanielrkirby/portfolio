@@ -14,7 +14,7 @@ export default function Projects() {
       },
       link: "https://piratey7007.github.io/polychrome/",
       image: "https://piratey7007.github.io/polychrome/polychrome.png",
-      video: "/public/polychrome.gif",
+      video: `${import.meta.env.VITE_IMAGE_URL}/polychrome.gif`,
     },
     {
       title: "Bazaar",
@@ -24,7 +24,7 @@ export default function Projects() {
       },
       link: "https://We-Got-This-2023.github.io/bazaar/",
       image: "https://We-Got-This-2023.github.io/bazaar/bazaar.png",
-      video: "/public/bazaar.gif",
+      video: `${import.meta.env.VITE_IMAGE_URL}/bazaar.gif`,
     },
   ];
 
