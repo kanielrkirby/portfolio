@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d141992e1d6e6aafacc13c03524e0341c860c9a50e142de98ec86e4d3b5fc6ba
-size 709
+import { useEffect, useState } from "react";
+
+export default function useBreakpoint() {
+  const [isSm, setIsSm] = useState(false);
+  const [isMd, setIsMd] = useState(false);
+  const [isLg, setIsLg] = useState(false);
+  const set = (keep = "") => {
+    setIsSm(keep === "sm");
+    setIsMd(keep === "md");
+    setIsLg(keep === "lg");
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth < 640) set("sm");
+    else if (window.innerWidth < 768) set("md");
+    else set("lg");
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return {
+    isSm,
+    isMd,
+    isLg,
+  };
+}

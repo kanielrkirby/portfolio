@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bd36fd3974b3b98cbea7b07b12f5c1df6124b659c4dcc73f062a263bd97ab705
-size 529
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+import { useLocation } from "react-router";
+import { useLoadScreen } from "../contexts/LoadScreen";
+
+export default function useTitle() {
+  const location = useLocation();
+  const { loading } = useLoadScreen();
+  const [title, setTitle] = useState<string | undefined>();
+  useEffect(() => {
+    const helmTitle = Helmet?.peek()?.title;
+    if (helmTitle && helmTitle !== title) setTitle(helmTitle);
+  }, [location, loading]);
+
+  return title;
+}

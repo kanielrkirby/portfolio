@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b83c634b50bec5af1cf5a167194c69e48a632f1b3dd4a5434b4f36cf84735994
-size 844
+import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { LoadScreenProvider } from "./contexts/LoadScreen";
+import Background from "./components/Background/Main";
+import { ModalProvider } from "./contexts/ModalContext";
+import { LocalProvider } from "./contexts/LocalContext";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <LocalProvider>
+      <LoadScreenProvider>
+        <BrowserRouter>
+          <ModalProvider>
+            <App />
+            <Background className="fixed bottom-0 left-0 right-0 top-0 m-auto h-screen w-screen bg-black" />
+          </ModalProvider>
+        </BrowserRouter>
+      </LoadScreenProvider>
+    </LocalProvider>
+  </React.StrictMode>
+);

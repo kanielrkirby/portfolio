@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37f49bdebef43c1f49c12b579a7eed7d8e5935c3478b3fc5644de2eb58783863
-size 656
+import { Link } from "react-router-dom";
+import IconBar from "./IconBar";
+import Tippy from "@tippyjs/react";
+import useBreakpoint from "../hooks/useBreakpoint";
+
+export default function Footer({}: {}) {
+  const { isSm, isMd } = useBreakpoint();
+  return (
+    <footer
+      className={`pointer-events-none relative bottom-0 flex w-full items-center justify-between p-2 ${
+        isMd || isSm ? "flex-col-reverse gap-8" : ""
+      }`}
+    >
+      <Tippy content="Attributions & Credits">
+        <Link to="/credits" className="link fancy text-center">
+          Attributions & Credits
+        </Link>
+      </Tippy>
+      <IconBar />
+    </footer>
+  );
+}
