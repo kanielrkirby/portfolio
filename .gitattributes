@@ -1,9 +1,0 @@
-public/email.png filter=lfs diff=lfs merge=lfs -text
-public/github.png filter=lfs diff=lfs merge=lfs -text
-public/kaniel-kirby-2.jpg filter=lfs diff=lfs merge=lfs -text
-public/reddit.png filter=lfs diff=lfs merge=lfs -text
-public/resume.png filter=lfs diff=lfs merge=lfs -text
-public/discord.png filter=lfs diff=lfs merge=lfs -text
-public/kaniel-kirby-1.jpg filter=lfs diff=lfs merge=lfs -text
-public/linkedin.png filter=lfs diff=lfs merge=lfs -text
-public/polychrome.gif filter=lfs diff=lfs merge=lfs -text
