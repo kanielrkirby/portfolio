@@ -1,12 +1,3 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import tailwind from "tailwindcss";
-
-export default defineConfig({
-  plugins: [react()],
-  css: {
-    postcss: {
-      plugins: [tailwind],
-    },
-  },
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:528192bd55a14fcf4df3dcb7bfcac87d3832da4659cf03f21dde61db7bbf6623
+size 239

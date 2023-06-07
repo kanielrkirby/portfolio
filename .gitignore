@@ -1,19 +1,3 @@
-.architect
-bootstrap.css
-bootstrap.js
-bootstrap.json
-bootstrap.jsonp
-build/
-classic.json
-classic.jsonp
-ext/
-modern.json
-modern.jsonp
-resources/sass/.sass-cache/
-resources/.arch-internal-preview.css
-.arch-internal-preview.css
-node_modules/
-yarn-error.log
-dist
-# Local Netlify folder
-.netlify
+version https://git-lfs.github.com/spec/v1
+oid sha256:09be96e1755c46abc884b5811cc94a68907a7a89bf75417e9045ccd4266a5aa7
+size 291
