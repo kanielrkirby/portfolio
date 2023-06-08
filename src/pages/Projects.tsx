@@ -8,29 +8,28 @@ export default function Projects() {
   const projects = [
     {
       title: "Polychrome",
-      description: {
-        short: "A versatile color palette generator with multiple algorithms.",
-        long: "Polychrome is a versatile color palette generator that features multiple color algorithms, drag and drop swatches, copy/paste functionality, and more. As my first project, it took 3 months to complete and was built using Plain TypeScript and PostCSS, with minimal reliance on external libraries.",
-      },
+      description:
+        "A versatile color palette generator with multiple algorithms.",
       link: "https://piratey7007.github.io/polychrome/",
-      image: "https://piratey7007.github.io/polychrome/polychrome.png",
       video: `${import.meta.env.VITE_IMAGE_URL}/polychrome.gif`,
     },
     {
       title: "Bazaar",
-      description: {
-        short: "A feature-rich online marketplace.",
-        long: "Bazaar is a comprehensive online marketplace that allows users to create accounts, post products, search for items based on filters, add items to their cart, and complete a simulated checkout process. Users can also review their previous orders. Bazaar was built using React TypeScript, Tailwind, NestJS, and makes use of numerous libraries to provide a seamless shopping experience.",
-      },
+      description: "A feature-rich online marketplace.",
       link: "https://We-Got-This-2023.github.io/bazaar/",
-      image: "https://We-Got-This-2023.github.io/bazaar/bazaar.png",
       video: `${import.meta.env.VITE_IMAGE_URL}/bazaar.gif`,
+    },
+    {
+      title: "Doctor Jay's Clinic",
+      description: "A web portal for a healthcare professional.",
+      link: "https://piratey7007.github.io/healthcare-portal/",
+      video: `${import.meta.env.VITE_IMAGE_URL}/healthcare-portal.gif`,
     },
   ];
 
   return (
     <div className={"flex w-full flex-col items-center gap-2"}>
-      {projects.map(({ title, description, link, image, video }, index) => {
+      {projects.map(({ title, description, link, video }, index) => {
         return (
           <div
             key={title + index}
@@ -49,7 +48,7 @@ export default function Projects() {
               <a href={link} className="w-fit">
                 <img
                   src={video}
-                  about={description.short}
+                  about={description}
                   className={`flex aspect-[2/1.25] h-fit w-[30rem] max-w-[90vw] items-center justify-center bg-black object-cover shadow-sm transition-all duration-300 hover:scale-[102%] hover:shadow-xl ${
                     isSm ? "rounded-md" : "rounded-lg"
                   }`}
@@ -60,7 +59,7 @@ export default function Projects() {
             <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
               <h2 className="text-2xl">{title}</h2>
               <p className={`text-sm ${isSm ? "w-[50ch]" : "w-[30ch]"}`}>
-                {description.short}
+                {description}
               </p>
               <Tippy
                 content={`Get a closer look at how ${title} was made!`}

@@ -1,6 +1,6 @@
 import { Navigate, useParams } from "react-router-dom";
 import Polychrome from "../projects/Polychrome";
-import Banter from "../projects/Banter";
+import HealthcarePortal from "../projects/HealthcarePortal";
 import Bazaar from "../projects/Bazaar";
 import { Helmet } from "react-helmet";
 
@@ -31,8 +31,8 @@ function getProject(id: string) {
   switch (id) {
     case "polychrome":
       return <Polychrome />;
-    case "banter":
-      return <Banter />;
+    case "HealthcarePortal":
+      return <HealthcarePortal />;
     case "bazaar":
       return <Bazaar />;
     default:
