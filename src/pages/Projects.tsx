@@ -20,7 +20,7 @@ export default function Projects() {
       video: `${import.meta.env.VITE_IMAGE_URL}/bazaar.gif`,
     },
     {
-      title: "Doctor Jay's Clinic",
+      title: "Healthcare Portal",
       description: "A web portal for a healthcare professional.",
       link: "https://piratey7007.github.io/healthcare-portal/",
       video: `${import.meta.env.VITE_IMAGE_URL}/healthcare-portal.gif`,
@@ -67,7 +67,10 @@ export default function Projects() {
                 placement={isSm || isMd ? "bottom" : "left"}
               >
                 <Link
-                  to={`/projects/${title.toLowerCase()}`}
+                  to={`/projects/${title
+                    .toLowerCase()
+                    .replaceAll(" ", "-")
+                    .replaceAll("'", "")}`}
                   className="link fancy relative"
                 >
                   More Info

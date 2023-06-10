@@ -31,7 +31,7 @@ function getProject(id: string) {
   switch (id) {
     case "polychrome":
       return <Polychrome />;
-    case "HealthcarePortal":
+    case "healthcare-portal":
       return <HealthcarePortal />;
     case "bazaar":
       return <Bazaar />;
