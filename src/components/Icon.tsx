@@ -24,7 +24,7 @@ export default function Icon({
     </>
   );
   return (
-    <div className="relative aspect-square h-8 w-8 overflow-visible">
+    <div className="relative aspect-square h-9 overflow-visible">
       <Tippy content={tippy ?? name} placement={place}>
         {(link && (
           <Link
