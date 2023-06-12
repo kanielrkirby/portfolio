@@ -21,6 +21,15 @@ export default function Header({ className }: { className?: string }) {
       <div
         className={`fixed top-0 h-full w-full bg-black bg-opacity-50 transition-all duration-500`}
       />
+      <Tippy content="My Projects" placement="right">
+        <Link
+          to="/projects"
+          className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:scale-110 hover:bg-[#ffffff20] hover:[text-shadow:2px_2px_8px_#000000]"
+          onClick={() => setNavOpen(false)}
+        >
+          My Projects
+        </Link>
+      </Tippy>
       <Tippy content="Contact" placement="right">
         <Link
           to="/contact"
@@ -48,6 +57,15 @@ export default function Header({ className }: { className?: string }) {
           Services
         </Link>
       </Tippy>
+      <Tippy content="My Business Card" placement="right">
+        <Link
+          to="/business-card"
+          className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:scale-110 hover:bg-[#ffffff20] hover:[text-shadow:2px_2px_8px_#000000]"
+          onClick={() => setNavOpen(false)}
+        >
+          My Business Card
+        </Link>
+      </Tippy>
     </div>
   );
 
@@ -67,7 +85,7 @@ export default function Header({ className }: { className?: string }) {
         </Link>
       </Tippy>
       {nav && nav}
-      {(isSm || isMd) && (
+      {isSm && (
         <Tippy content="Navigation">
           <div
             onClick={() => setNavOpen(true)}
@@ -77,7 +95,7 @@ export default function Header({ className }: { className?: string }) {
           </div>
         </Tippy>
       )}
-      {!(isSm || isMd) && (
+      {!isSm && (
         <>
           <div className="relative flex h-full w-full select-none items-center justify-center">
             <Tippy content="Projects">
