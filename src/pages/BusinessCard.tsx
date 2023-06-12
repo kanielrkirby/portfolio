@@ -6,6 +6,7 @@ import useLocal from "../hooks/useLocal";
 import Logo from "../assets/Logo";
 import { useEffect, useState } from "react";
 import Flip from "../assets/Flip";
+import mail from "../assets/icons/mail.png";
 
 export default function BusinessCard() {
   const { isSm, isMd } = useBreakpoint();
@@ -95,7 +96,7 @@ export default function BusinessCard() {
                           className="flex items-center gap-[7%] transition-all duration-200 group-hover:scale-105"
                         >
                           <img
-                            src="../assets/icons/mail.png"
+                            src={mail}
                             alt=""
                             className="w-[8%] drop-shadow-lg transition-all duration-200 group-hover:-rotate-12"
                           />
