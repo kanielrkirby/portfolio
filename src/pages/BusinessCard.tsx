@@ -22,9 +22,17 @@ export default function BusinessCard() {
         <Card
           front={
             <>
-              <Logo className="mb-[1%] w-[30%]" />
-              <h1 className="mb-[2%] text-[6vw]">Kaniel Kirby</h1>
-              <h2 className="text-[3.5vw] opacity-70">Web Developer</h2>
+              <div className="flex h-full w-full flex-col items-center justify-center">
+                <Logo className="mb-[1%] aspect-square h-[50%]" />
+                <div className="flex flex-col gap-[1vw]">
+                  <h1 className="font-body text-[6vw] [line-height:7vw]">
+                    Kaniel Kirby
+                  </h1>
+                  <h2 className="font-body text-[3.5vw] opacity-70">
+                    Web Developer
+                  </h2>
+                </div>
+              </div>
             </>
           }
           back={
@@ -130,7 +138,7 @@ function Card({
   }, []);
   return (
     <div
-      className={`relative aspect-[3.5/2] h-fit w-[90%] min-w-[25rem] transition-all duration-300 [perspective:1000px] ${
+      className={`relative aspect-[3.5/2] h-fit w-[85%] min-w-[25rem] transition-all duration-300 [perspective:1000px] ${
         className ?? ""
       }`}
     >

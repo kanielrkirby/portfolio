@@ -58,6 +58,14 @@ export default function Header({ className }: { className?: string }) {
         (className ?? "")
       }
     >
+      <Tippy content="My Business Card">
+        <Link
+          to="/business-card"
+          className="link group relative aspect-square p-4"
+        >
+          <Logo className="relative bottom-0 left-0 right-0 top-0 m-auto w-[15vw] min-w-[3rem] max-w-[4.5rem] rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
+        </Link>
+      </Tippy>
       {nav && nav}
       {(isSm || isMd) && (
         <Tippy content="Navigation">
@@ -70,33 +78,48 @@ export default function Header({ className }: { className?: string }) {
         </Tippy>
       )}
       {!(isSm || isMd) && (
-        <div className="relative flex h-full w-full select-none items-center justify-center">
-          <Tippy content="Contact">
-            <Link
-              to="/contact"
-              className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
-            >
-              Contact
-            </Link>
-          </Tippy>
-        </div>
-      )}
-      <Tippy content="Projects">
-        <Link to="/projects" className="link group relative aspect-square p-4">
-          <Logo className="relative bottom-0 left-0 right-0 top-0 m-auto w-[15vw] min-w-[3rem] max-w-[4.5rem] rounded-xl bg-transparent shadow-[1px_1px_6px_2px_#00000050] transition-all duration-300 group-hover:-translate-x-1 group-hover:scale-105 group-hover:bg-[#ffffff15] group-hover:shadow-[3px_3px_10px_4px_#00000020]" />
-        </Link>
-      </Tippy>
-      {!(isSm || isMd) && (
-        <div className="relative flex h-full w-full select-none items-center justify-center">
-          <Tippy content="About">
-            <Link
-              to="/about"
-              className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
-            >
-              About
-            </Link>
-          </Tippy>
-        </div>
+        <>
+          <div className="relative flex h-full w-full select-none items-center justify-center">
+            <Tippy content="Projects">
+              <Link
+                to="/projects"
+                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+              >
+                My Projects
+              </Link>
+            </Tippy>
+          </div>
+          <div className="relative flex h-full w-full select-none items-center justify-center">
+            <Tippy content="Contact">
+              <Link
+                to="/contact"
+                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+              >
+                Contact
+              </Link>
+            </Tippy>
+          </div>
+          <div className="relative flex h-full w-full select-none items-center justify-center">
+            <Tippy content="About">
+              <Link
+                to="/about"
+                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+              >
+                About
+              </Link>
+            </Tippy>
+          </div>
+          <div className="relative flex h-full w-full select-none items-center justify-center">
+            <Tippy content="Services">
+              <Link
+                to="/services"
+                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+              >
+                Services
+              </Link>
+            </Tippy>
+          </div>
+        </>
       )}
       <Tippy content="Settings">
         <div
