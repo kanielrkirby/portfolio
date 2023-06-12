@@ -15,7 +15,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <BrowserRouter>
           <ModalProvider>
             <App />
-            <Background className="fixed bottom-0 left-0 right-0 top-0 m-auto h-screen w-screen bg-black" />
           </ModalProvider>
         </BrowserRouter>
       </LoadScreenProvider>
