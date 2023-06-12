@@ -163,7 +163,7 @@ function Card({
   }, []);
   return (
     <div
-      className={`relative h-fit transition-all duration-300 [perspective:1000px] ${
+      className={`relative transition-all duration-300 [perspective:1000px] ${
         className ?? ""
       } ${
         isMd || isSm
