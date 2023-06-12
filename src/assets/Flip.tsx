@@ -3,7 +3,6 @@ import { SVGAttributes } from "react";
 export default function Flip(props: SVGAttributes<SVGSVGElement>) {
   return (
     <svg
-      width="0"
       viewBox="0 0 800 800"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
