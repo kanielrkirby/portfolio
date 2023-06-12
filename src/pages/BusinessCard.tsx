@@ -57,7 +57,9 @@ export default function BusinessCard() {
           }
           back={
             <>
-              <div className="me relative z-10 flex h-full w-full flex-row-reverse items-center justify-start">
+              <div
+                className={`me relative z-10 flex h-full w-full flex-row-reverse items-center`}
+              >
                 <Tippy content="My Website" placement="left">
                   <Link to="/" className="mr-[3%] w-[26%]">
                     <img
@@ -151,7 +153,7 @@ function Card({
     <Flip
       id={`business-card-${pos}-flip-icon`}
       className={`absolute right-[2%] top-[4%] z-10 cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
-        isSm || isMd ? "h-[6%]" : "w-[6%]"
+        isSm ? "h-[6%]" : "w-[6%]"
       }`}
       onClick={(e) => {
         setFlipped((prev) => !prev);
