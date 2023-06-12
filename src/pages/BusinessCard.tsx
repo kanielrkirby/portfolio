@@ -7,6 +7,11 @@ import Logo from "../assets/Logo";
 import { useEffect, useState } from "react";
 import Flip from "../assets/Flip";
 import mail from "../assets/icons/mail.png";
+import phone from "../assets/icons/phone.png";
+import qr from "../assets/icons/qr-code.png";
+import linkedin from "../assets/icons/linkedin.png";
+import blueSplash from "../assets/paint-splashes/blue-pink-splash.png";
+import redSplash from "../assets/paint-splashes/red-purple-splash.png";
 
 export default function BusinessCard() {
   const { isSm, isMd } = useBreakpoint();
@@ -56,7 +61,7 @@ export default function BusinessCard() {
                 <Tippy content="My Website" placement="left">
                   <Link to="/" className="mr-[3%] w-[26%]">
                     <img
-                      src="/src/assets/icons/qr-code.png"
+                      src={qr}
                       alt=""
                       className="aspect-square w-full cursor-pointer rounded-lg border-solid border-black shadow-md transition-all duration-200 [border-width:.35vw] hover:scale-105 hover:shadow-xl"
                     />
@@ -81,7 +86,7 @@ export default function BusinessCard() {
                           className="flex items-center gap-[7%] transition-all duration-200 group-hover:scale-105"
                         >
                           <img
-                            src="/src/assets/icons/phone.png"
+                            src={phone}
                             alt=""
                             className="w-[8%] drop-shadow-lg transition-all duration-200 group-hover:-rotate-12"
                           />
@@ -111,7 +116,7 @@ export default function BusinessCard() {
                           className="flex items-center gap-[7%] transition-all duration-200 group-hover:scale-105"
                         >
                           <img
-                            src="/src/assets/icons/linkedin.png"
+                            src={linkedin}
                             alt=""
                             className="w-[8%] drop-shadow-lg transition-all duration-200 group-hover:-rotate-12"
                           />
@@ -197,14 +202,14 @@ function CardBG({ flipped = false }: { flipped?: boolean }) {
       }`}
     >
       <img
-        src="/src/assets/paint-splashes/blue-pink-splash.png"
+        src={blueSplash}
         alt=""
         className={`absolute w-[60%] opacity-70 ${
           flipped ? "bottom-[-70%] right-[-40%]" : "bottom-[-70%] right-[-30%]"
         }`}
       />
       <img
-        src="/src/assets/paint-splashes/blue-pink-splash.png"
+        src={blueSplash}
         alt=""
         className={`absolute opacity-70 ${
           isSm || isMd
@@ -215,7 +220,7 @@ function CardBG({ flipped = false }: { flipped?: boolean }) {
         }`}
       />
       <img
-        src="/src/assets/paint-splashes/red-purple-splash.png"
+        src={redSplash}
         alt=""
         className={`absolute opacity-70 ${
           isSm || isMd
@@ -226,7 +231,7 @@ function CardBG({ flipped = false }: { flipped?: boolean }) {
         }`}
       />
       <img
-        src="/src/assets/paint-splashes/red-purple-splash.png"
+        src={redSplash}
         alt=""
         className={`absolute bottom-[-73%] left-[-25%] w-[60%] opacity-70 ${
           isSm || isMd ? "" : flipped ? "hidden" : ""
