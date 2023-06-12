@@ -5,7 +5,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { useModal } from "../contexts/ModalContext";
 import useBreakpoint from "../hooks/useBreakpoint";
-import Nav from "../assets/Nav";
+import Menu from "../assets/Menu";
 import { useState } from "react";
 
 export default function Header({ className }: { className?: string }) {
@@ -14,7 +14,7 @@ export default function Header({ className }: { className?: string }) {
   const [navOpen, setNavOpen] = useState(false);
   const nav = (
     <div
-      className={`justify-top fixed left-0 top-0 z-10 flex h-full w-full flex-col items-start pt-24 backdrop-blur-sm transition-all duration-500 ease-in-out ${
+      className={`justify-top fixed left-0 top-0 z-10 flex h-full w-full flex-col items-start pt-24 backdrop-blur-md transition-all duration-500 ease-in-out backdrop:blur-lg ${
         navOpen ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
@@ -39,6 +39,15 @@ export default function Header({ className }: { className?: string }) {
           About
         </Link>
       </Tippy>
+      <Tippy content="Services" placement="right">
+        <Link
+          to="/services"
+          className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:scale-110 hover:bg-[#ffffff20] hover:[text-shadow:2px_2px_8px_#000000]"
+          onClick={() => setNavOpen(false)}
+        >
+          Services
+        </Link>
+      </Tippy>
     </div>
   );
 
@@ -56,7 +65,7 @@ export default function Header({ className }: { className?: string }) {
             onClick={() => setNavOpen(true)}
             className={`absolute left-3 flex w-14 cursor-pointer items-center justify-center overflow-hidden transition-all duration-300 ease-in-out hover:rotate-12`}
           >
-            <Nav />
+            <Menu />
           </div>
         </Tippy>
       )}
@@ -65,7 +74,7 @@ export default function Header({ className }: { className?: string }) {
           <Tippy content="Contact">
             <Link
               to="/contact"
-              className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+              className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
             >
               Contact
             </Link>
@@ -82,7 +91,7 @@ export default function Header({ className }: { className?: string }) {
           <Tippy content="About">
             <Link
               to="/about"
-              className="link relative px-10 py-5 transition-all duration-200 [text-shadow:0px_0px_5px_#000000] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+              className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
             >
               About
             </Link>

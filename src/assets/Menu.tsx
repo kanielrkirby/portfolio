@@ -3,7 +3,7 @@ import { SVGProps } from "react";
 export default function Menu(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width="0"
+      width="full"
       viewBox="0 0 500 500"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

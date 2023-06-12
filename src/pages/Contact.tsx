@@ -42,7 +42,7 @@ export default function Contact() {
           like to discuss a project or just chat about web development or
           programming, feel free to contact me through the following channels:
         </p>
-        <IconBar className="-mt-4" place="bottom" />
+        <IconBar className="-mt-4" place="bottom" short />
         <p>
           I look forward to connecting with you and working together to create
           amazing web experiences!

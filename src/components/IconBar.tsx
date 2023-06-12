@@ -3,9 +3,11 @@ import Icon from "./Icon";
 export default function IconBar({
   className,
   place,
+  short = false,
 }: {
   className?: string;
   place?: "top" | "bottom" | "left" | "right";
+  short?: boolean;
 }) {
   return (
     <div className={className}>
@@ -35,11 +37,13 @@ export default function IconBar({
           link="https://www.reddit.com/user/CompetitiveAd7245/"
           place={place}
         />
-        <Icon
-          name="Resume"
-          link="https://www.google.com/drive/"
-          place={place}
-        />
+        {!short && (
+          <Icon
+            name="Resume"
+            link="https://www.google.com/drive/"
+            place={place}
+          />
+        )}
       </ul>
     </div>
   );

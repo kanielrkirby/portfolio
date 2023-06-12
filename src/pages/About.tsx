@@ -40,7 +40,7 @@ export default function About() {
               />
             </div>
           </Tippy>
-          <div className="mx-4 flex w-full max-w-[25rem] flex-wrap justify-between gap-4">
+          <div className="mx-4 flex w-full max-w-[25rem] flex-col flex-wrap items-center justify-between gap-4">
             <Tippy content="Contact Me">
               <Link
                 to="/contact"
@@ -56,6 +56,14 @@ export default function About() {
               >
                 My Projects
               </Link>
+            </Tippy>
+            <Tippy content="My Resume">
+              <a
+                href="https://www.google.com"
+                className={`link fancy w-fit whitespace-nowrap`}
+              >
+                My Resume
+              </a>
             </Tippy>
           </div>
         </div>
