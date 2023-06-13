@@ -233,7 +233,7 @@ function Card({
                   setFlipped((prev) => !prev);
                 }}
               >
-                <Flip />
+                <Flip className="h-full w-full" />
               </div>
             </Tippy>
             {front}
