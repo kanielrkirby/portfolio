@@ -73,14 +73,14 @@ export default function About() {
           }`}
         >
           <h3>Hey there!</h3>
-          <p>
+          <p className="mb-4 w-full max-w-[60ch]">
             I'm Kaniel Kirby, a 20-year-old web developer from Abilene, Texas. I
             have a passion for creating beautiful, user-friendly websites that
             are interactive and visually engaging. I am proficient in
-            React-Typescript, a kind of tech stack that I use to build and
-            design user interfaces that are as functional as they are aesthetic.
+            React-Typescript, a tech stack I use to build and design user
+            interfaces that are as functional as they are aesthetic.
           </p>
-          <p>
+          <p className="mb-4 w-full max-w-[60ch]">
             When I'm not building websites, I enjoy drinking coffee, making
             music, and biking. I aspire to build a career around my skills and
             talents in web development by creating functional and engaging
@@ -89,8 +89,11 @@ export default function About() {
             things, I quickly adapt to new technologies and techniques to ensure
             my clients are satisfied with their results.
           </p>
-          <p>
-            I began programming because I want to build websites the right way.
+          <p className="mb-4 w-full max-w-[60ch]">
+            I began programming because I wanted to build websites{" "}
+            <strong className="inline-block scale-105 font-black [text-shadow:1px_1px_2px_#00000050]">
+              the right way.
+            </strong>{" "}
             I believe every client deserves a website that is built with the
             kind of care and passion that I put into my projects. Tired of
             outdated, clunky web pages? So am I. I want to work with you every
