@@ -7,7 +7,7 @@ export default function Settings({ ...props }: SVGAttributes<SVGSVGElement>) {
       fill="none"
       width="0"
       xmlns="http://www.w3.org/2000/svg"
-      className={`dev-wheel-rule relative box-content cursor-pointer transition-all duration-300 hover:rotate-90 hover:scale-105`}
+      className={`dev-wheel-rule relative box-content w-full cursor-pointer transition-all duration-300 hover:rotate-90 hover:scale-105`}
       {...props}
     >
       <path

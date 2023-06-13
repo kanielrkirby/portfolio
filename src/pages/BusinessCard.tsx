@@ -24,7 +24,7 @@ export default function BusinessCard() {
           content="Kaniel Kirby's Virtual Business Card."
         />
       </Helmet>
-      <div className="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-neutral-900 text-center">
+      <div className="fixed left-0 top-0 z-10 flex h-full w-full flex-col items-center justify-center gap-[1rem] bg-neutral-900 text-center">
         <Card
           front={
             <div
@@ -180,6 +180,9 @@ export default function BusinessCard() {
             </div>
           }
         />
+        <Link to="/" className="fancy link">
+          Back to my site!
+        </Link>
       </div>
     </>
   );

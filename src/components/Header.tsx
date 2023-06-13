@@ -71,10 +71,9 @@ export default function Header({ className }: { className?: string }) {
 
   return (
     <header
-      className={
-        "relative mb-4 flex h-28 w-full items-center justify-around p-2" +
-        (className ?? "")
-      }
+      className={`relative mb-4 flex h-28 w-full items-center p-2 ${
+        isSm || isMd ? "justify-center" : "justify-between"
+      } ${className ?? ""}`}
     >
       <Tippy content="My Business Card">
         <Link
@@ -85,7 +84,7 @@ export default function Header({ className }: { className?: string }) {
         </Link>
       </Tippy>
       {nav && nav}
-      {isSm && (
+      {(isSm || isMd) && (
         <Tippy content="Navigation">
           <div
             onClick={() => setNavOpen(true)}
@@ -95,58 +94,62 @@ export default function Header({ className }: { className?: string }) {
           </div>
         </Tippy>
       )}
-      {!isSm && (
-        <>
-          <div className="relative flex h-full w-full select-none items-center justify-center">
-            <Tippy content="Projects">
-              <Link
-                to="/projects"
-                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
-              >
-                My Projects
-              </Link>
-            </Tippy>
+      <div className="flex items-center justify-end">
+        {!isSm && !isMd && (
+          <>
+            <div className="relative flex h-full w-full select-none items-center justify-center">
+              <Tippy content="Projects">
+                <Link
+                  to="/projects"
+                  className="link relative whitespace-nowrap px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                >
+                  My Projects
+                </Link>
+              </Tippy>
+            </div>
+            <div className="relative flex h-full w-full select-none items-center justify-center">
+              <Tippy content="Contact">
+                <Link
+                  to="/contact"
+                  className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                >
+                  Contact
+                </Link>
+              </Tippy>
+            </div>
+            <div className="relative flex h-full w-full select-none items-center justify-center">
+              <Tippy content="About">
+                <Link
+                  to="/about"
+                  className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                >
+                  About
+                </Link>
+              </Tippy>
+            </div>
+            <div className="relative flex h-full w-full select-none items-center justify-center">
+              <Tippy content="Services">
+                <Link
+                  to="/services"
+                  className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                >
+                  Services
+                </Link>
+              </Tippy>
+            </div>
+          </>
+        )}
+        <Tippy content="Settings">
+          <div
+            onClick={() => setModalOpen(true)}
+            className={`dev-pointer-rule flex min-w-[4rem] max-w-[4.5rem] items-center justify-center overflow-hidden ${
+              isSm || isMd ? "top absolute right-3" : ""
+            }`}
+          >
+            <Settings />
           </div>
-          <div className="relative flex h-full w-full select-none items-center justify-center">
-            <Tippy content="Contact">
-              <Link
-                to="/contact"
-                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
-              >
-                Contact
-              </Link>
-            </Tippy>
-          </div>
-          <div className="relative flex h-full w-full select-none items-center justify-center">
-            <Tippy content="About">
-              <Link
-                to="/about"
-                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
-              >
-                About
-              </Link>
-            </Tippy>
-          </div>
-          <div className="relative flex h-full w-full select-none items-center justify-center">
-            <Tippy content="Services">
-              <Link
-                to="/services"
-                className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
-              >
-                Services
-              </Link>
-            </Tippy>
-          </div>
-        </>
-      )}
-      <Tippy content="Settings">
-        <div
-          onClick={() => setModalOpen(true)}
-          className={`dev-pointer-rule absolute right-3 flex w-[15vw] min-w-[3rem] max-w-[4.5rem] items-center justify-center overflow-hidden`}
-        >
-          <Settings />
-        </div>
-      </Tippy>
+        </Tippy>
+      </div>
     </header>
   );
 }

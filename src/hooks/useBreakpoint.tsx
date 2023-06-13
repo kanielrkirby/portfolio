@@ -12,7 +12,7 @@ export default function useBreakpoint() {
 
   const handleResize = () => {
     if (window.innerWidth < 640) set("sm");
-    else if (window.innerWidth < 768) set("md");
+    else if (window.innerWidth < 900) set("md");
     else set("lg");
   };
 
