@@ -15,7 +15,7 @@ export default function Contact() {
         <title>Contact</title>
         <meta name="description" content="Kaniel Kirby's 'Contact' page." />
       </Helmet>
-      <div className="relative flex flex-col items-center gap-8">
+      <div className="relative flex flex-col items-center gap-4">
         <Tippy content={message ?? "Image of myself"} hideOnClick={false}>
           <div
             className={`relative z-0 m-4 flex aspect-square h-fit w-fit cursor-pointer items-center justify-center overflow-hidden ${
@@ -42,7 +42,7 @@ export default function Contact() {
           like to discuss a project or just chat about web development or
           programming, feel free to contact me through the following channels:
         </p>
-        <IconBar className="-mt-4" place="bottom" short />
+        <IconBar className="" place="bottom" short />
         <p>
           I look forward to connecting with you and working together to create
           amazing web experiences!

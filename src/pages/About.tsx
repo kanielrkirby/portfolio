@@ -13,6 +13,7 @@ export default function About() {
         <title>About Me</title>
         <meta name="description" content="Kaniel Kirby's 'About Me' page." />
       </Helmet>
+      <h1 className="text-4xl font-bold">About Me</h1>
       <div
         className={`flex w-full items-center justify-around gap-8 p-8 text-center ${
           isMd || isSm ? "flex-col-reverse" : ""

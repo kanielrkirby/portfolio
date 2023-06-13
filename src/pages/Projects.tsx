@@ -24,7 +24,7 @@ export default function Projects() {
       video: `${import.meta.env.VITE_IMAGE_URL}/bazaar.gif`,
     },
     {
-      title: "Healthcare Portal",
+      title: "Doctor Jay's Clinic",
       description: "A web portal for a healthcare professional.",
       summary: "",
       link: "https://piratey7007.github.io/healthcare-portal/",
@@ -34,6 +34,7 @@ export default function Projects() {
 
   return (
     <div className={"flex w-full flex-col items-center gap-2"}>
+      <h1 className="mb-5 text-4xl font-bold">My Projects</h1>
       {projects.map(({ title, description, summary, link, video }, index) => {
         return (
           <div
@@ -46,28 +47,21 @@ export default function Projects() {
               <title>Projects</title>
               <meta name="description" content="A list of my projects." />
             </Helmet>
-            <Tippy
-              content="Link to site"
-              placement={isMd || isSm ? "bottom" : "right"}
-            >
-              <a href={link} className="w-fit">
-                <img
-                  src={video}
-                  about={description}
-                  className={`flex aspect-[2/1.25] h-fit w-[30rem] max-w-[90vw] items-center justify-center bg-black object-cover shadow-sm transition-all duration-300 hover:scale-[102%] hover:shadow-xl ${
-                    isSm ? "rounded-md" : "rounded-lg"
-                  }`}
-                  alt={"GIF of " + title}
-                />
-              </a>
-            </Tippy>
+            <img
+              src={video}
+              about={description}
+              className={`flex aspect-[2/1.25] h-fit w-[30rem] max-w-[90vw] items-center justify-center bg-black object-cover shadow-sm transition-all duration-300 hover:scale-[102%] hover:shadow-xl ${
+                isSm ? "rounded-md" : "rounded-lg"
+              }`}
+              alt={"GIF of " + title}
+            />
             <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
-              <h2 className="text-3xl">{title}</h2>
+              <h2 className="whitespace-nowrap text-3xl">{title}</h2>
               <p className={`${isSm ? "w-[50ch]" : "w-[30ch]"}`}>
                 {description}
               </p>
               <Tippy
-                content={`Get a closer look at how ${title} was made!`}
+                content={`Get a closer look at ${title}!`}
                 className="text-center"
                 placement={isSm || isMd ? "bottom" : "left"}
               >
@@ -76,7 +70,7 @@ export default function Projects() {
                     .toLowerCase()
                     .replaceAll(" ", "-")
                     .replaceAll("'", "")}`}
-                  className="link fancy relative"
+                  className="link fancy relative whitespace-nowrap"
                 >
                   See it yourself.
                 </Link>
