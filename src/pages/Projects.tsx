@@ -10,18 +10,23 @@ export default function Projects() {
       title: "Polychrome",
       description:
         "A versatile color palette generator with multiple algorithms.",
+      summary:
+        "I have developed Polychrome, a custom color palette generator that offers a range of versatile algorithms. This innovative tool took me three months to build entirely from scratch. By incorporating TypeScript and PostCSS, I streamlined the development process to be efficient and accessible. In order to create the most effective algorithms, I dedicated significant time to studying color theory and delving into the intricacies of color interactions. Additionally, I personally designed and crafted all the scalable vector graphics (SVGs), including the logo and icons. Furthermore, I made sure to optimize the website for seamless responsiveness on mobile devices.",
       link: "https://piratey7007.github.io/polychrome/",
       video: `${import.meta.env.VITE_IMAGE_URL}/polychrome.gif`,
     },
     {
       title: "Bazaar",
       description: "A feature-rich online marketplace.",
+      summary:
+        "Bazaar is a comprehensive online marketplace that provides users with the ability to create accounts, post products, search for items based on filters, add items to their cart, and complete a simulated checkout process. In addition, users can review their previous orders and manage their profile and payment information. The platform was developed using a range of technologies, including React TypeScript, Tailwind, and NestJS, and leverages various libraries to deliver a seamless and efficient development experience. Additionally, I leveraged Figma to create a wireframe for the platform. Bazaar was my first team project where I worked with other developers to create a more expansive website than what I could create on my own. The experience taught me vital communication and team building skills.",
       link: "https://We-Got-This-2023.github.io/bazaar/",
       video: `${import.meta.env.VITE_IMAGE_URL}/bazaar.gif`,
     },
     {
       title: "Healthcare Portal",
       description: "A web portal for a healthcare professional.",
+      summary: "",
       link: "https://piratey7007.github.io/healthcare-portal/",
       video: `${import.meta.env.VITE_IMAGE_URL}/healthcare-portal.gif`,
     },
@@ -29,7 +34,7 @@ export default function Projects() {
 
   return (
     <div className={"flex w-full flex-col items-center gap-2"}>
-      {projects.map(({ title, description, link, video }, index) => {
+      {projects.map(({ title, description, summary, link, video }, index) => {
         return (
           <div
             key={title + index}
