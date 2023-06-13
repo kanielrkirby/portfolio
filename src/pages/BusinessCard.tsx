@@ -7,6 +7,7 @@ import Logo from "../assets/Logo";
 import { useEffect, useState } from "react";
 import Flip from "../assets/Flip";
 import mail from "../assets/icons/mail.png";
+import link from "/link.png";
 import phone from "../assets/icons/phone.png";
 import qr from "../assets/icons/qr-code.png";
 import linkedin from "../assets/icons/linkedin.png";
@@ -182,7 +183,8 @@ export default function BusinessCard() {
         />
         <Tippy content="My Website" placement="bottom">
           <div>
-            <Link to="/" className="fancy link">
+            <Link to="/" className="fancy link group flex gap-4">
+              <img src={link} className="w-8" alt="" />
               Back to my website!
             </Link>
           </div>
