@@ -101,7 +101,7 @@ export default function Header({ className }: { className?: string }) {
               <Tippy content="Projects">
                 <Link
                   to="/projects"
-                  className="link relative whitespace-nowrap px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                  className="link relative whitespace-nowrap px-10 py-5 font-body text-[1.3rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
                 >
                   My Projects
                 </Link>
@@ -111,7 +111,7 @@ export default function Header({ className }: { className?: string }) {
               <Tippy content="Contact">
                 <Link
                   to="/contact"
-                  className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                  className="link relative px-10 py-5 font-body text-[1.3rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:-rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
                 >
                   Contact
                 </Link>
@@ -121,7 +121,7 @@ export default function Header({ className }: { className?: string }) {
               <Tippy content="About">
                 <Link
                   to="/about"
-                  className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                  className="link relative px-10 py-5 font-body text-[1.3rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
                 >
                   About
                 </Link>
@@ -131,7 +131,7 @@ export default function Header({ className }: { className?: string }) {
               <Tippy content="Services">
                 <Link
                   to="/services"
-                  className="link relative px-10 py-5 font-body text-[1.5rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
+                  className="link relative px-10 py-5 font-body text-[1.3rem] transition-all duration-200 [text-shadow:1px_1px_10px_#00000080] hover:rotate-3 hover:scale-110 hover:[text-shadow:2px_2px_8px_#000000]"
                 >
                   Services
                 </Link>
