@@ -4,10 +4,8 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 import Credits from "./pages/Credits";
-import useTitle from "./hooks/useTitle";
 import { useEffect } from "react";
 import { useLoadScreen } from "./contexts/LoadScreen";
 import Background from "./components/Background/Main";
@@ -57,7 +55,6 @@ export default function App() {
             <Route path="/" element={<PageWithFooter />}>
               <Route index element={<Navigate to="/projects" replace />} />
               <Route path="projects" element={<Projects />} />
-              <Route path="projects/:id" element={<Project />} />
               <Route path="about" element={<About />} />
               <Route path="credits" element={<Credits />} />
               <Route path="*" element={<NotFound />} />

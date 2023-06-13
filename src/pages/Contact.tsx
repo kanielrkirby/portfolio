@@ -16,9 +16,9 @@ export default function Contact() {
         <meta name="description" content="Kaniel Kirby's 'Contact' page." />
       </Helmet>
       <div className="relative flex flex-col items-center gap-4">
-        <Tippy content={message ?? "Image of myself"} hideOnClick={false}>
+        <Tippy content={message ?? "Click me!"} hideOnClick={false}>
           <div
-            className={`relative z-0 m-4 flex aspect-square h-fit w-fit cursor-pointer items-center justify-center overflow-hidden ${
+            className={`relative z-0 m-4 -mt-4 flex aspect-square h-fit w-fit cursor-pointer items-center justify-center overflow-hidden ${
               isSm ? "rounded-[1.5rem]" : "rounded-[3rem]"
             } shadow-md shadow-[#00000080] transition-all duration-200 hover:scale-[102%] hover:shadow-xl hover:shadow-[#00000080]`}
             onClick={decrement}

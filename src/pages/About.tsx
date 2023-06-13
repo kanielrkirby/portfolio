@@ -25,7 +25,7 @@ export default function About() {
           }`}
         >
           <Tippy
-            content={message || "Image of myself."}
+            content={message ?? "Click me!"}
             hideOnClick={false}
             placement={isSm || isMd ? "bottom" : "right"}
           >
