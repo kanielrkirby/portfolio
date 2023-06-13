@@ -103,7 +103,7 @@ export default function BusinessCard() {
                 >
                   <Tippy
                     content="My Cell"
-                    placement={isSm || isMd ? "bottom" : "right"}
+                    placement={isSm || isMd ? "bottom" : "top"}
                   >
                     <li className="group">
                       <a
@@ -127,7 +127,7 @@ export default function BusinessCard() {
                   </Tippy>
                   <Tippy
                     content="My Email"
-                    placement={isSm || isMd ? "bottom" : "right"}
+                    placement={isSm || isMd ? "bottom" : "top"}
                   >
                     <li className="group">
                       <a
@@ -153,7 +153,7 @@ export default function BusinessCard() {
                   </Tippy>
                   <Tippy
                     content="My LinkedIn"
-                    placement={isSm || isMd ? "bottom" : "right"}
+                    placement={isSm || isMd ? "bottom" : "top"}
                   >
                     <li className="group">
                       <a
@@ -195,21 +195,8 @@ function Card({
   className?: string;
 }) {
   const [flipped, setFlipped] = useState(false);
-  const [icon, setIcon] = useState<any>();
   const { isSm, isMd } = useBreakpoint();
-  const flip = () => (
-    <Flip
-      className={`absolute right-[2%] top-[4%] cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
-        isSm || isMd ? "h-[6%]" : "w-[8%]"
-      }`}
-      onClick={(e) => {
-        setFlipped((prev) => !prev);
-      }}
-    />
-  );
-  useEffect(() => {
-    setIcon(flip());
-  }, []);
+
   return (
     <div
       className={`relative transition-all duration-300 [perspective:1000px] ${
@@ -230,14 +217,36 @@ function Card({
       >
         <div className="absolute flex h-full w-full flex-col items-center justify-center rounded-md bg-black transition-all duration-300 [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
           <div className={`relative h-full w-full ${!flipped ? "z-10" : ""}`}>
-            <Tippy content="Flip card for more!">{icon}</Tippy>
+            <Tippy content="Flip card for more!" placement="bottom">
+              <div
+                className={`absolute right-[2%] top-[4%] cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
+                  isSm || isMd ? "h-[6%]" : "w-[8%]"
+                }`}
+                onClick={(e) => {
+                  setFlipped((prev) => !prev);
+                }}
+              >
+                <Flip />
+              </div>
+            </Tippy>
             {front}
           </div>
           <CardBG />
         </div>
         <div className="absolute flex h-full w-full flex-col items-center justify-center rounded-md bg-black transition-all duration-300 [transform:rotate3d(0,1,0,180deg)] [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
           <div className={`relative h-full w-full ${flipped ? "z-10" : ""}`}>
-            <Tippy content="Go back">{icon}</Tippy>
+            <Tippy content="Go back" placement="bottom">
+              <div
+                className={`absolute right-[2%] top-[4%] cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
+                  isSm || isMd ? "h-[6%]" : "w-[8%]"
+                }`}
+                onClick={(e) => {
+                  setFlipped((prev) => !prev);
+                }}
+              >
+                <Flip />
+              </div>
+            </Tippy>
             {back}
           </div>
           <CardBG flipped />
