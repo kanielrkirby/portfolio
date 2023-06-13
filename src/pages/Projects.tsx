@@ -2,6 +2,7 @@ import Tippy from "@tippyjs/react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import useBreakpoint from "../hooks/useBreakpoint";
+import { SetStateAction, cloneElement, useRef, useState } from "react";
 
 export default function Projects() {
   const { isSm, isMd } = useBreakpoint();
@@ -36,6 +37,7 @@ export default function Projects() {
     <div className={"flex w-full flex-col items-center gap-2"}>
       <h1 className="mb-5 text-4xl font-bold">My Projects</h1>
       {projects.map(({ title, description, summary, link, video }, index) => {
+        const openState = useState(false);
         return (
           <div
             key={title + index}
@@ -57,28 +59,88 @@ export default function Projects() {
             />
             <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
               <h2 className="whitespace-nowrap text-3xl">{title}</h2>
-              <p className={`${isSm ? "w-[50ch]" : "w-[30ch]"}`}>
+              <p
+                onClick={() => openState[1](true)}
+                className={`${isSm ? "w-[50ch]" : "w-[30ch]"}`}
+              >
                 {description}
               </p>
-              <Tippy
-                content={`Get a closer look at ${title}!`}
-                className="text-center"
-                placement={isSm || isMd ? "bottom" : "left"}
-              >
-                <Link
-                  to={`/projects/${title
-                    .toLowerCase()
-                    .replaceAll(" ", "-")
-                    .replaceAll("'", "")}`}
-                  className="link fancy relative whitespace-nowrap"
+              <div className="flex flex-col justify-between">
+                <Tippy
+                  content={`Look into how ${title} was made!`}
+                  className="text-center"
+                  placement={isSm || isMd ? "bottom" : "left"}
                 >
-                  See it yourself.
-                </Link>
-              </Tippy>
+                  <Popover content={summary} openState={openState}>
+                    <span
+                      onClick={() => openState[1]((prev) => !prev)}
+                      className="link fancy relative cursor-pointer whitespace-nowrap"
+                    >
+                      More info.
+                    </span>
+                  </Popover>
+                </Tippy>
+                <Tippy
+                  content={`Get a closer look at ${title}!`}
+                  className="text-center"
+                  placement={isSm || isMd ? "bottom" : "left"}
+                >
+                  <Link
+                    to={link}
+                    className="link fancy relative whitespace-nowrap"
+                  >
+                    See it yourself.
+                  </Link>
+                </Tippy>
+              </div>
             </div>
           </div>
         );
       })}
     </div>
+  );
+}
+
+function Popover({
+  content,
+  children: anchor,
+  openState,
+}: {
+  content: string;
+  children: JSX.Element;
+  openState: [boolean, React.Dispatch<SetStateAction<boolean>>];
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const a = useState();
+  const [open, setOpen] = openState;
+  return (
+    <>
+      <div
+        className={`fixed bottom-0 left-0 right-0 top-0 z-50 m-auto h-full w-full backdrop-blur-md transition-all duration-200 ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <div className="h-full w-full bg-black opacity-50" />
+        <div
+          className={`absolute bottom-0 left-0 right-0 top-0 m-auto h-fit w-full max-w-[45rem] rounded-md bg-white px-4 py-12 text-black transition-all duration-200`}
+        >
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="z-index:50 group absolute right-0 top-0 m-2 p-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:z-40 after:m-auto after:h-full after:w-0 after:rounded-md after:bg-black after:transition-all after:duration-200 after:content-[''] hover:after:w-[105%]"
+          >
+            <span className="relative z-50 text-black group-hover:font-bold group-hover:text-red-500">
+              Close
+            </span>
+          </button>
+          <button onClick={() => setOpen((prev) => !prev)} />
+          {content}
+        </div>
+      </div>
+      {cloneElement(anchor, {
+        ...anchor.props,
+        key: anchor.key,
+        ref,
+      })}
+    </>
   );
 }
