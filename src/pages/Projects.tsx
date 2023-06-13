@@ -57,8 +57,8 @@ export default function Projects() {
               </a>
             </Tippy>
             <div className="flex w-1/2 flex-col items-center justify-around gap-2 p-4 text-center">
-              <h2 className="text-2xl">{title}</h2>
-              <p className={`text-sm ${isSm ? "w-[50ch]" : "w-[30ch]"}`}>
+              <h2 className="text-3xl">{title}</h2>
+              <p className={`${isSm ? "w-[50ch]" : "w-[30ch]"}`}>
                 {description}
               </p>
               <Tippy
@@ -73,7 +73,7 @@ export default function Projects() {
                     .replaceAll("'", "")}`}
                   className="link fancy relative"
                 >
-                  More Info
+                  See it yourself.
                 </Link>
               </Tippy>
             </div>
