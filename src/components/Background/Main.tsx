@@ -28,7 +28,7 @@ export default function Background({ className }: { className: string }) {
     const stoppedCanvas = (
       <Canvas
         id="stopped-canvas"
-        className="bg-canvas brightness-75"
+        className="bg-canvas h-full w-full brightness-75"
         fallback={<div className="fixed h-full w-full bg-black" />}
       >
         {init(true)}
