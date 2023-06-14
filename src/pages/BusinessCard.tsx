@@ -29,7 +29,7 @@ export default function BusinessCard() {
         <Card
           front={
             <div
-              className={`flex h-full w-full flex-col items-center justify-center`}
+              className={`-z-10 flex h-full w-full flex-col items-center justify-center`}
             >
               <Logo
                 className={`mb-[1%] aspect-square ${
@@ -58,7 +58,7 @@ export default function BusinessCard() {
           }
           back={
             <div
-              className={`relative flex h-full w-full items-center ${
+              className={`relative -z-10 flex h-full w-full items-center ${
                 (isMd || isSm) && !isSideways
                   ? "flex-col-reverse"
                   : "flex-row-reverse"
@@ -179,7 +179,7 @@ export default function BusinessCard() {
                   <li
                     className={`group absolute ${
                       (isMd || isSm) && !isSideways
-                        ? "left-[-1%] top-[58.5%]"
+                        ? "left-[-1.75%] top-[58.5%]"
                         : "left-[5%] top-[87%]"
                     }`}
                   >
@@ -212,7 +212,7 @@ export default function BusinessCard() {
         />
         <Tippy content="My Website" placement="bottom">
           <div>
-            <Link to="/" className="group flex gap-4 text-[1vw]">
+            <Link to="/" className="group flex gap-4">
               <img src={link} className="w-8" alt="" />
               <span className="link fancy">Back to my website!</span>
             </Link>
@@ -247,7 +247,7 @@ function Card({
       `}
     >
       <div
-        className={`relative h-full w-full rounded-md transition-all duration-300 [transform-style:preserve-3d] ${
+        className={`relative h-full w-full rounded-md transition-all duration-300 [transform-style:preserve-3d]  ${
           flipped
             ? "shadow-[-7px_3px_13px_3px_#00000050] [transform:rotate3d(0,1,0,180deg)]"
             : "shadow-[7px_3px_13px_3px_#00000050] [transform:rotate3d(0,1,0,0deg)]"
@@ -282,7 +282,7 @@ function Card({
                   setFlipped((prev) => !prev);
                 }}
               >
-                <Flip />
+                <Flip className="h-full w-full" />
               </div>
             </Tippy>
             {back}
