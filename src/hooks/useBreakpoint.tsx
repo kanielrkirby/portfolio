@@ -4,6 +4,7 @@ export default function useBreakpoint() {
   const [isSm, setIsSm] = useState(false);
   const [isMd, setIsMd] = useState(false);
   const [isLg, setIsLg] = useState(false);
+  const [isSideways, setIsSideways] = useState(false);
   const set = (keep = "") => {
     setIsSm(keep === "sm");
     setIsMd(keep === "md");
@@ -11,8 +12,12 @@ export default function useBreakpoint() {
   };
 
   const handleResize = () => {
-    if (window.innerWidth < 640) set("sm");
-    else if (window.innerWidth < 900) set("md");
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    if (w > h) setIsSideways(true);
+    else setIsSideways(false);
+    if (w < 640) set("sm");
+    else if (w < 900) set("md");
     else set("lg");
   };
 
@@ -26,5 +31,6 @@ export default function useBreakpoint() {
     isSm,
     isMd,
     isLg,
+    isSideways,
   };
 }

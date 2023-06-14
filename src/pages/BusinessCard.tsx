@@ -15,7 +15,7 @@ import blueSplash from "../assets/paint-splashes/blue-pink-splash.png";
 import redSplash from "../assets/paint-splashes/red-purple-splash.png";
 
 export default function BusinessCard() {
-  const { isSm, isMd } = useBreakpoint();
+  const { isSm, isMd, isSideways } = useBreakpoint();
   return (
     <>
       <Helmet>
@@ -33,13 +33,13 @@ export default function BusinessCard() {
             >
               <Logo
                 className={`mb-[1%] aspect-square ${
-                  isSm || isMd ? "w-[50%]" : "h-[50%]"
+                  (isMd || isSm) && !isSideways ? "w-[50%]" : "h-[50%]"
                 }`}
               />
-              <div className="flex flex-col gap-[1vw]">
+              <div className="flex flex-col gap-[3%]">
                 <h1
                   className={`font-body ${
-                    isSm || isMd
+                    (isMd || isSm) && !isSideways
                       ? "text-[6vh] [line-height:7vh] "
                       : "text-[6vw] [line-height:7vw] "
                   }`}
@@ -48,7 +48,7 @@ export default function BusinessCard() {
                 </h1>
                 <h2
                   className={`font-body opacity-70 ${
-                    isSm || isMd ? "text-[3vh]" : "text-[3vw]"
+                    (isMd || isSm) && !isSideways ? "text-[3vh]" : "text-[3vw]"
                   }`}
                 >
                   Web Developer
@@ -58,134 +58,163 @@ export default function BusinessCard() {
           }
           back={
             <div
-              className={`flex h-full w-full items-center ${
-                isSm || isMd ? "flex-col-reverse" : "flex-row-reverse"
+              className={`relative flex h-full w-full items-center ${
+                (isMd || isSm) && !isSideways
+                  ? "flex-col-reverse"
+                  : "flex-row-reverse"
               }`}
             >
               <Tippy
                 content="My Website"
-                placement={isSm || isMd ? "bottom" : "left"}
+                placement={(isMd || isSm) && !isSideways ? "bottom" : "left"}
               >
                 <Link
                   to="/"
-                  className={`mr-[3%] ${isSm || isMd ? "w-[50%]" : "w-[26%]"}`}
+                  className={`absolute ${
+                    (isMd || isSm) && !isSideways
+                      ? "bottom-[5%] w-[50%]"
+                      : "right-[5%] w-[26%]"
+                  }`}
                 >
                   <img
                     src={qr}
                     alt=""
-                    className={`aspect-square w-full cursor-pointer rounded-lg border-solid border-black shadow-md transition-all duration-200 [border-width:.35vw] hover:scale-105 hover:shadow-xl
-                      `}
+                    className={`aspect-square cursor-pointer rounded-lg border-solid border-black shadow-md transition-all duration-200 [border-width:.35vw] hover:scale-105 hover:shadow-xl`}
                   />
                 </Link>
               </Tippy>
-              <div
-                className={`flex h-full flex-col items-center justify-center gap-[5%] ${
-                  isSm || isMd ? "w-full" : "w-[67%]"
+              <img
+                src="/kaniel-kirby-1.jpg"
+                alt=""
+                className={`absolute aspect-square rounded-lg border-solid border-black object-cover [border-width:.35vw] ${
+                  (isMd || isSm) && !isSideways
+                    ? "top-[3%] w-[50%]"
+                    : "left-[25%] top-[2%] h-[43%] -translate-x-[30%]"
+                }`}
+              />
+              <h2
+                className={`absolute top-[42%] text-center font-body font-bold ${
+                  (isMd || isSm) && !isSideways
+                    ? "top-[35%] text-[4vh]"
+                    : "left-[23%] top-[48%] -translate-x-[30%] text-[5vw]"
                 }`}
               >
-                <img
-                  src="/kaniel-kirby-1.jpg"
-                  alt=""
-                  className={`relative aspect-square rounded-lg border-solid border-black object-cover [border-width:.35vw] ${
-                    isSm || isMd ? "w-[50%]" : "h-[43%] -translate-x-[30%]"
-                  }`}
-                />
-                <h2
-                  className={`text-center font-body text-[max(5vw,2rem)] font-bold ${
-                    isSm || isMd ? "" : "-translate-x-[30%]"
-                  }`}
+                Kaniel Kirby
+              </h2>
+              <ul
+                className={
+                  (isMd || isSm) && !isSideways
+                    ? "text-[2.5vh]"
+                    : "text-[3.5vw]"
+                }
+              >
+                <Tippy
+                  content="My Cell"
+                  placement={(isMd || isSm) && !isSideways ? "bottom" : "top"}
                 >
-                  Kaniel Kirby
-                </h2>
-                <ul
-                  className={`flex w-full flex-col text-[max(3vw,1.5rem)] ${
-                    isSm || isMd ? "items-center" : "items-start"
-                  }`}
+                  <li
+                    className={`group absolute ${
+                      (isMd || isSm) && !isSideways
+                        ? "left-0 top-[41%]"
+                        : "left-[5%] top-[73%]"
+                    }`}
+                  >
+                    <a
+                      href="tel:325.443.6046"
+                      className={`flex items-center gap-[3%] transition-transform duration-200 group-hover:scale-105
+                          ${
+                            (isMd || isSm) && !isSideways
+                              ? "flex items-center justify-between px-[5%]"
+                              : " left-[5%]"
+                          }
+                          `}
+                    >
+                      <img
+                        src={phone}
+                        alt=""
+                        className={`drop-shadow-lg transition-transform duration-200 group-hover:-rotate-12 ${
+                          (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
+                        }`}
+                      />
+                      <span className="w-full text-start">325.443.6046</span>
+                    </a>
+                  </li>
+                </Tippy>
+                <Tippy
+                  content="My LinkedIn"
+                  placement={(isMd || isSm) && !isSideways ? "bottom" : "top"}
                 >
-                  <Tippy
-                    content="My Cell"
-                    placement={isSm || isMd ? "bottom" : "top"}
+                  <li
+                    className={`group absolute ${
+                      (isMd || isSm) && !isSideways
+                        ? "left-0 top-[50%]"
+                        : "left-[5%] top-[58%]"
+                    }`}
                   >
-                    <li className="group">
-                      <a
-                        href="tel:325.443.6046"
-                        className={`flex items-center gap-[7%] transition-all duration-200 group-hover:scale-105
+                    <a
+                      href="https://www.linkedin.com/in/kanielrkirby/"
+                      className={`flex items-center gap-[3%] transition-transform duration-200 group-hover:scale-105
                           ${
-                            isSm || isMd
+                            (isMd || isSm) && !isSideways
                               ? "flex items-center justify-between px-[5%]"
                               : ""
                           }
                           `}
-                      >
-                        <img
-                          src={phone}
-                          alt=""
-                          className="w-[8%] drop-shadow-lg transition-all duration-200 group-hover:-rotate-12"
-                        />
-                        <span className="">325.443.6046</span>
-                      </a>
-                    </li>
-                  </Tippy>
-                  <Tippy
-                    content="My Email"
-                    placement={isSm || isMd ? "bottom" : "top"}
+                    >
+                      <img
+                        src={linkedin}
+                        alt=""
+                        className={`drop-shadow-lg transition-transform duration-200 group-hover:-rotate-12 ${
+                          (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
+                        }`}
+                      />
+                      <span className="w-full text-start">@kanielrkirby</span>
+                    </a>
+                  </li>
+                </Tippy>
+                <Tippy
+                  content="My Email"
+                  placement={(isMd || isSm) && !isSideways ? "bottom" : "top"}
+                >
+                  <li
+                    className={`group absolute ${
+                      (isMd || isSm) && !isSideways
+                        ? "left-[-1%] top-[58.5%]"
+                        : "left-[5%] top-[87%]"
+                    }`}
                   >
-                    <li className="group">
-                      <a
-                        href="mailto:kanielrkirby@runbox.com"
-                        className={`flex items-center gap-[7%] transition-all duration-200 group-hover:scale-105
-                          ${
-                            isSm || isMd
-                              ? "flex items-center justify-between px-[5%]"
-                              : ""
-                          }
-                          `}
-                      >
-                        <img
-                          src={mail}
-                          alt=""
-                          className="w-[8%] drop-shadow-lg transition-all duration-200 group-hover:-rotate-12"
-                        />
-                        <span className="text-[max(3vw,1.5rem)]">
-                          kanielrkirby@runbox.com
-                        </span>
-                      </a>
-                    </li>
-                  </Tippy>
-                  <Tippy
-                    content="My LinkedIn"
-                    placement={isSm || isMd ? "bottom" : "top"}
-                  >
-                    <li className="group">
-                      <a
-                        href="https://www.linkedin.com/in/kanielrkirby/"
-                        className={`flex items-center gap-[7%] transition-all duration-200 group-hover:scale-105
-                          ${
-                            isSm || isMd
-                              ? "flex items-center justify-between px-[5%]"
-                              : ""
-                          }
-                          `}
-                      >
-                        <img
-                          src={linkedin}
-                          alt=""
-                          className="w-[8%] drop-shadow-lg transition-all duration-200 group-hover:-rotate-12"
-                        />
-                        <span className="">@kanielrkirby</span>
-                      </a>
-                    </li>
-                  </Tippy>
-                </ul>
-              </div>
+                    <a
+                      href="mailto:kanielrkirby@runbox.com"
+                      className={`flex items-center gap-[3%] transition-transform duration-200 group-hover:scale-105
+                                    ${
+                                      (isMd || isSm) && !isSideways
+                                        ? "flex items-center justify-between px-[5%]"
+                                        : ""
+                                    }
+                                    `}
+                    >
+                      <img
+                        src={mail}
+                        alt=""
+                        className={`drop-shadow-lg transition-transform duration-200 group-hover:-rotate-12 ${
+                          (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
+                        }`}
+                      />
+                      <span className="w-full text-start">
+                        kanielrkirby@runbox.com
+                      </span>
+                    </a>
+                  </li>
+                </Tippy>
+              </ul>
             </div>
           }
         />
         <Tippy content="My Website" placement="bottom">
           <div>
-            <Link to="/" className="fancy link group flex gap-4">
+            <Link to="/" className="group flex gap-4 text-[1vw]">
               <img src={link} className="w-8" alt="" />
-              Back to my website!
+              <span className="link fancy">Back to my website!</span>
             </Link>
           </div>
         </Tippy>
@@ -204,16 +233,16 @@ function Card({
   className?: string;
 }) {
   const [flipped, setFlipped] = useState(false);
-  const { isSm, isMd } = useBreakpoint();
+  const { isSm, isMd, isSideways } = useBreakpoint();
 
   return (
     <div
       className={`relative transition-all duration-300 [perspective:1000px] ${
         className ?? ""
       } ${
-        isMd || isSm
-          ? " aspect-[2/3.5] h-[95%] min-h-[25rem] max-w-[90%]"
-          : "aspect-[3.5/2] w-[85%] min-w-[25rem]"
+        (isMd || isSm) && !isSideways
+          ? "aspect-[2/3.5] h-[80%]"
+          : "aspect-[3.5/2] w-[85%]"
       }
       `}
     >
@@ -229,7 +258,7 @@ function Card({
             <Tippy content="Flip card for more!" placement="bottom">
               <div
                 className={`absolute right-[2%] top-[4%] cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
-                  isSm || isMd ? "h-[6%]" : "w-[8%]"
+                  (isMd || isSm) && !isSideways ? "h-[6%]" : "w-[8%]"
                 }`}
                 onClick={(e) => {
                   setFlipped((prev) => !prev);
@@ -247,7 +276,7 @@ function Card({
             <Tippy content="Go back" placement="bottom">
               <div
                 className={`absolute right-[2%] top-[4%] cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
-                  isSm || isMd ? "h-[6%]" : "w-[8%]"
+                  (isMd || isSm) && !isSideways ? "h-[6%]" : "w-[8%]"
                 }`}
                 onClick={(e) => {
                   setFlipped((prev) => !prev);
@@ -266,7 +295,7 @@ function Card({
 }
 
 function CardBG({ flipped = false }: { flipped?: boolean }) {
-  const { isSm, isMd } = useBreakpoint();
+  const { isSm, isMd, isSideways } = useBreakpoint();
   return (
     <div
       className={`pointer-events-none absolute left-0 top-0 h-full w-full overflow-hidden opacity-70 ${
@@ -277,7 +306,7 @@ function CardBG({ flipped = false }: { flipped?: boolean }) {
         src={blueSplash}
         alt=""
         className={`absolute w-[60%] ${
-          isSm || isMd
+          (isMd || isSm) && !isSideways
             ? flipped
               ? "left-[80%] top-[30%]"
               : "left-[-20%] top-[80%]"
@@ -290,9 +319,9 @@ function CardBG({ flipped = false }: { flipped?: boolean }) {
         src={blueSplash}
         alt=""
         className={`absolute ${
-          isSm || isMd
+          (isMd || isSm) && !isSideways
             ? flipped
-              ? "left-[0%] top-[-5%] rotate-[60deg]"
+              ? "left-[0%] top-[-12%] rotate-[60deg]"
               : "right-[-50%] top-[75%]"
             : flipped
             ? "right-[-12%] top-[-70%] w-[80%]"
@@ -303,9 +332,9 @@ function CardBG({ flipped = false }: { flipped?: boolean }) {
         src={redSplash}
         alt=""
         className={`absolute ${
-          isSm || isMd
+          (isMd || isSm) && !isSideways
             ? flipped
-              ? "bottom-[-20%] left-[60%] hidden"
+              ? "bottom-[-25%] left-[0%] rotate-90"
               : "left-[-5%] top-[10%]"
             : flipped
             ? "right-[55%] top-[-25%] w-[70.5%]"
@@ -316,7 +345,7 @@ function CardBG({ flipped = false }: { flipped?: boolean }) {
         src={redSplash}
         alt=""
         className={`absolute bottom-[-73%] left-[-25%] w-[60%] ${
-          isSm || isMd
+          (isMd || isSm) && !isSideways
             ? flipped
               ? "bottom-[-7%] left-[30%] rotate-[110deg] scale-[175%]"
               : "left-[-20%] top-[-20%]"
