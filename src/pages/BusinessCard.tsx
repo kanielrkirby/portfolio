@@ -38,7 +38,7 @@ export default function BusinessCard() {
               />
               <div className="flex flex-col gap-[3%]">
                 <h1
-                  className={`font-body ${
+                  className={`whitespace-nowrap font-body ${
                     (isMd || isSm) && !isSideways
                       ? "text-[6vh] [line-height:7vh] "
                       : "text-[6vw] [line-height:7vw] "
