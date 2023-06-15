@@ -14,8 +14,8 @@ const conf = {
   sat: 0.25,
   angle: (Math.PI * 2) / 3,
   timeCoef: 0.04,
-  nx: 25,
-  ny: 70,
+  nx: 8,
+  ny: 4,
 };
 
 export default function Background({ className }: { className: string }) {
