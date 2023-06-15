@@ -38,7 +38,7 @@ export default function BusinessCard() {
               />
               <div className="flex flex-col gap-[3%]">
                 <h1
-                  className={`whitespace-nowrap font-body ${
+                  className={`whitespace-nowrap font-[monospace] ${
                     (isMd || isSm) && !isSideways
                       ? "text-[6vh] [line-height:7vh] "
                       : "text-[6vw] [line-height:7vw] "
@@ -47,7 +47,7 @@ export default function BusinessCard() {
                   Kaniel Kirby
                 </h1>
                 <h2
-                  className={`font-body opacity-70 ${
+                  className={`font-[monospace] opacity-70 ${
                     (isMd || isSm) && !isSideways ? "text-[3vh]" : "text-[3vw]"
                   }`}
                 >
@@ -93,9 +93,9 @@ export default function BusinessCard() {
                 }`}
               />
               <h2
-                className={`absolute top-[42%] text-center font-body font-bold ${
+                className={`absolute text-center font-[monospace] font-bold ${
                   (isMd || isSm) && !isSideways
-                    ? "top-[35%] text-[4vh]"
+                    ? "top-[33%] text-[4vh]"
                     : "left-[23%] top-[48%] -translate-x-[30%] text-[5vw]"
                 }`}
               >
@@ -103,7 +103,7 @@ export default function BusinessCard() {
               </h2>
               <ul
                 className={
-                  (isMd || isSm) && !isSideways
+                  "font-[monospace] " + (isMd || isSm) && !isSideways
                     ? "text-[2.5vh]"
                     : "text-[3.5vw]"
                 }
