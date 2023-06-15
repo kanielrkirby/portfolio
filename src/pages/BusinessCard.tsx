@@ -40,8 +40,8 @@ export default function BusinessCard() {
                 <h1
                   className={`whitespace-nowrap font-[courier] ${
                     (isMd || isSm) && !isSideways
-                      ? "text-[6vh] [line-height:7vh] "
-                      : "text-[6vw] [line-height:7vw] "
+                      ? "text-[5.75vh] [line-height:7vh] "
+                      : "text-[5.75vw] [line-height:7vw] "
                   }`}
                 >
                   Kaniel Kirby
