@@ -38,7 +38,7 @@ export default function BusinessCard() {
               />
               <div className="flex flex-col gap-[3%]">
                 <h1
-                  className={`whitespace-nowrap font-[monospace] ${
+                  className={`whitespace-nowrap font-[courier] ${
                     (isMd || isSm) && !isSideways
                       ? "text-[6vh] [line-height:7vh] "
                       : "text-[6vw] [line-height:7vw] "
@@ -47,7 +47,7 @@ export default function BusinessCard() {
                   Kaniel Kirby
                 </h1>
                 <h2
-                  className={`font-[monospace] opacity-70 ${
+                  className={`font-[courier] opacity-70 ${
                     (isMd || isSm) && !isSideways ? "text-[3vh]" : "text-[3vw]"
                   }`}
                 >
@@ -93,7 +93,7 @@ export default function BusinessCard() {
                 }`}
               />
               <h2
-                className={`absolute text-center font-[monospace] font-bold ${
+                className={`absolute text-center font-[courier] font-bold ${
                   (isMd || isSm) && !isSideways
                     ? "top-[33%] text-[4vh]"
                     : "left-[23%] top-[48%] -translate-x-[30%] text-[5vw]"
@@ -103,7 +103,7 @@ export default function BusinessCard() {
               </h2>
               <ul
                 className={
-                  "font-[monospace] " + (isMd || isSm) && !isSideways
+                  "font-[courier] " + (isMd || isSm) && !isSideways
                     ? "text-[2.5vh]"
                     : "text-[3.5vw]"
                 }
@@ -136,7 +136,9 @@ export default function BusinessCard() {
                           (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
                         }`}
                       />
-                      <span className="w-full text-start">325.443.6046</span>
+                      <span className="w-full text-start font-[courier]">
+                        325.443.6046
+                      </span>
                     </a>
                   </li>
                 </Tippy>
@@ -168,7 +170,9 @@ export default function BusinessCard() {
                           (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
                         }`}
                       />
-                      <span className="w-full text-start">@kanielrkirby</span>
+                      <span className="w-full text-start font-[courier]">
+                        @kanielrkirby
+                      </span>
                     </a>
                   </li>
                 </Tippy>
@@ -200,7 +204,7 @@ export default function BusinessCard() {
                           (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
                         }`}
                       />
-                      <span className="w-full text-start">
+                      <span className="w-full text-start font-[courier]">
                         kanielrkirby@runbox.com
                       </span>
                     </a>
