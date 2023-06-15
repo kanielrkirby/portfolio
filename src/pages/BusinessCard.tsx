@@ -104,8 +104,8 @@ export default function BusinessCard() {
               <ul
                 className={
                   "font-[courier] " + (isMd || isSm) && !isSideways
-                    ? "text-[2.5vh]"
-                    : "text-[3.5vw]"
+                    ? "text-[2.4vh]"
+                    : "text-[3.4vw]"
                 }
               >
                 <Tippy
@@ -183,7 +183,7 @@ export default function BusinessCard() {
                   <li
                     className={`group absolute ${
                       (isMd || isSm) && !isSideways
-                        ? "left-[-1.75%] top-[58.5%]"
+                        ? "left-[-2%] top-[58.5%]"
                         : "left-[5%] top-[87%]"
                     }`}
                   >

@@ -38,7 +38,7 @@ export default function Background({ className }: { className: string }) {
       <Canvas
         id="moving-canvas"
         className="no-bg-canvas brightness-75"
-        fallback={stoppedCanvas}
+        fallback={<div className="fixed h-full w-full bg-black" />}
       >
         {init()}
       </Canvas>
