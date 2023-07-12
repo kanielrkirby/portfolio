@@ -1,26 +1,16 @@
 ---
-import canvasImg from "../assets/images/canvas-img.png";
+import canvasImg from "../assets/images/canvas-img.webp";
 import { Picture } from "@astrojs/image/components";
 
 export interface Props extends astroHTML.JSX.CanvasHTMLAttributes {}
 ---
 
 <canvas class="bg -z-50" id="canvas" {...Astro.props}></canvas>
-<div class="bg canvas-img">
-    <Picture
-        src={canvasImg}
-        alt=""
-        class="canvas w-full h-full"
-        widths={[400, 800, 1200, 1800]}
-        format="avif"
-        sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, (max-width: 1200px) 1200w, (max-width: 1800px) 1800w"
-    />
-</div>
 <div class="bg bg-black opacity-20 -z-40"></div>
 
-<style>
+<style is:global>
     .bg {
-        @apply fixed w-full h-full top-0 left-0 transition-all duration-200 !important;
+        @apply fixed w-full h-full top-0 left-0 transition-all duration-200 select-none !important;
     }
     html:not(.moving) canvas.bg {
         @apply hidden;
@@ -33,7 +23,7 @@ export interface Props extends astroHTML.JSX.CanvasHTMLAttributes {}
 <script>
     import * as THREE from "three";
     import chroma from "chroma-js";
-    import { $settings, toggle } from "../store/settings";
+    import "../store/settings";
     class Polyline {
         tmp = new THREE.Vector3();
         points: THREE.Vector3[];

@@ -1,0 +1,39 @@
+<div
+    class="fixed bg-white z-[1000] top-0 left-0 w-full h-full transition-all duration-500"
+    id="loading-screen"
+>
+    <div class="opacity-40">
+        <div
+            class="rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto animate-spin border-b-black border-b-2 w-16 h-16"
+        >
+        </div>
+        <div
+            class="rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto animate-spin border-b-black border-t-6 w-14 h-14"
+        >
+        </div>
+    </div>
+</div>
+
+<style>
+    html.loading #loading-screen {
+        @apply block;
+    }
+    html.loading.fade #loading-screen {
+        @apply pointer-events-none opacity-0;
+    }
+    html:not(.loading) #loading-screen {
+        @apply hidden;
+    }
+</style>
+
+<script>
+    const loadingScreen = document.querySelector(
+        "#loading-screen"
+    ) as HTMLDivElement;
+
+    window.addEventListener("load", async (e) => {
+        document.documentElement.classList.add("fade");
+        loadingScreen.ontransitionend = loadingScreen.ontransitioncancel = () =>
+            document.documentElement.classList.remove("fade", "loading");
+    });
+</script>

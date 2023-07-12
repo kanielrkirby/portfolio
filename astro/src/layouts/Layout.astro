@@ -3,6 +3,8 @@ import { SEO, Props as SEOProps } from "astro-seo";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Background from "../components/Background.astro";
+import Loading from "../components/Loading.astro";
+import CanvasImg from "../components/pictures/CanvasImg.astro";
 
 export interface Props {
 	SEO: SEOProps;
@@ -13,7 +15,7 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -30,6 +32,14 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 		<Nav />
 		<slot />
 		<Footer />
-		{!backgroundDisabled && <Background />}
+		<CanvasImg />
+		<Background />
+		<Loading />
+		<style>
+			html,
+			body {
+				@apply w-full h-full;
+			}
+		</style>
 	</body>
 </html>
