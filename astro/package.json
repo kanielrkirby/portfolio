@@ -27,9 +27,8 @@
   },
   "module": "index.ts",
   "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+    "@prettier/plugin-xml": "^3.1.0",
+    "bun-types": "latest",
+    "prettier": "^3.0.0"
   }
 }
