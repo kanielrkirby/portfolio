@@ -1,0 +1,35 @@
+---
+import { SEO, Props as SEOProps } from "astro-seo";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Background from "../components/Background.astro";
+
+export interface Props {
+	SEO: SEOProps;
+	backgroundDisabled?: boolean;
+}
+
+const { SEO: seoProps, backgroundDisabled } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<SEO
+			{...seoProps}
+			titleDefault="Kaniel Kirby"
+			titleTemplate="%s | Kaniel Kirby"
+		/>
+	</head>
+	<body>
+		<Nav />
+		<slot />
+		<Footer />
+		{!backgroundDisabled && <Background />}
+	</body>
+</html>
