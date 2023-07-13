@@ -29,6 +29,7 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 		/>
 	</head>
 	<body>
+		<header></header>
 		<Nav />
 		<slot />
 		<Footer />
@@ -38,7 +39,7 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 		<style>
 			html,
 			body {
-				@apply w-full h-full;
+				@apply h-full w-full;
 			}
 		</style>
 
@@ -68,7 +69,7 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 			}
 
 			* {
-				@apply text-white font-body;
+				@apply font-body text-white;
 			}
 		</style>
 	</body>

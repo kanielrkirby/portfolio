@@ -1,6 +1,5 @@
-import defaultTheme from "tailwindcss/defaultTheme";
-
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -11,8 +10,8 @@ module.exports = {
       },
       fontFamily: {
         body: ["Fira Mono", ...defaultTheme.fontFamily.mono],
-        display: ["Comfortaa", ...defaultTheme.fontFamily.sans],
-        card: "Courier",
+        display: ["Courier", "monospace", ...defaultTheme.fontFamily.mono],
+        sans: ["Comfortaa", ...defaultTheme.fontFamily.sans],
       },
     },
   },

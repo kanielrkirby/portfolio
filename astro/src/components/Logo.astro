@@ -1,0 +1,11 @@
+---
+import { Image } from "@astrojs/image/components";
+import logo from "../assets/svgs/logo.svg";
+---
+
+<Image
+    {...Astro.props}
+    src={logo}
+    alt="Logo of a K"
+    class="w-20 h-20 hover:scale-110 cursor-pointer rounded-xl shadow-[0_0_10px_0_#00000080] hover:shadow-[0_0_10px_0_#00000080] transition-all duration-200"
+/>
