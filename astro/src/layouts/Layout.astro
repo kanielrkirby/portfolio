@@ -21,6 +21,7 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/node_modules/wenk/dist/wenk.min.css" />
 		<meta name="generator" content={Astro.generator} />
 		<SEO
 			{...seoProps}
@@ -33,39 +34,37 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 		<Nav />
 		<slot />
 		<Footer />
-		<CanvasImg />
-		<Background />
+		<!-- <CanvasImg /> -->
+		<!-- <Background /> -->
 		<Loading />
-		<style>
-			html,
-			body {
-				@apply h-full w-full;
-			}
-		</style>
-
 		<style is:global>
 			@font-face {
 				font-family: "Comfortaa";
-				src: url("/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf"),
+				src: url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf"),
 					url("https://fonts.bunny.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 			}
 			@font-face {
 				font-family: "Fira Mono";
 				font-weight: normal;
-				src: url("/assets/fonts/Fira_Mono/FiraMono-Regular.ttf"),
+				src: url("/src/assets/fonts/Fira_Mono/FiraMono-Regular.ttf"),
 					url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@400&display=swap");
 			}
 			@font-face {
 				font-family: "Fira Mono";
 				font-weight: bold;
-				src: url("/assets/fonts/Fira_Mono/FiraMono-Bold.ttf"),
+				src: url("/src/assets/fonts/Fira_Mono/FiraMono-Bold.ttf"),
 					url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@700&display=swap");
 			}
 			@font-face {
 				font-family: "Fira Mono";
 				font-weight: medium;
-				src: url("/assets/fonts/Fira_Mono/FiraMono-Medium.ttf"),
+				src: url("/src/assets/fonts/Fira_Mono/FiraMono-Medium.ttf"),
 					url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@500&display=swap");
+			}
+
+			html,
+			body {
+				@apply h-full w-full;
 			}
 
 			* {

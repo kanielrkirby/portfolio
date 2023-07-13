@@ -2,16 +2,23 @@
 import Logo from "./Logo.astro";
 ---
 
-<nav class="flex justify-between items-center p-4">
+<nav class="flex items-center justify-between p-4">
     <a href="/business-card">
         <Logo class="w-48" />
     </a>
-    <div class="flex gap-8 h-full">
-        <a class="text-2xl font-display font-medium" href="/"> My Projects</a>
-        <a class="text-2xl font-display font-medium" href="/contact">Contact</a>
-        <a class="text-2xl font-display font-medium" href="/about">About</a>
-        <a class="text-2xl font-display font-medium" href="/services"
+    <div class="flex h-full gap-8">
+        <a class="font-display text-2xl font-medium" href="/"> My Projects</a>
+        <a class="font-display text-2xl font-medium" href="/contact">Contact</a>
+        <a class="font-display text-2xl font-medium" href="/about">About</a>
+        <a class="font-display text-2xl font-medium" href="/services"
             >Services</a
         >
     </div>
+    <img
+        src="/src/assets/svgs/settings.svg"
+        alt="Settings wheel"
+        class="w-16 cursor-pointer transition-all duration-300 ease-in-out hover:rotate-90 hover:scale-105"
+        data-wenk="This is a tooltip."
+        data-wenk-pos="bottom"
+    />
 </nav>
