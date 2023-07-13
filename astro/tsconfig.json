@@ -1,10 +1,26 @@
 {
-  // "extends": "astro/tsconfigs/strict",
-  "include": ["src"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src", "public"],
   "compilerOptions": {
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "/src/*": ["src/*"],
+      "/public/*": ["public/*"]
+    },
+    "ignoreDeprecations": "5.0",
+    "allowJs": true
   }
 }

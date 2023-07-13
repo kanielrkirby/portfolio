@@ -1,0 +1,80 @@
+---
+import { Image } from "@astrojs/image/components";
+import discord from "../assets/svgs/discord.svg";
+import linkedin from "../assets/svgs/linkedin.svg";
+import mail from "../assets/svgs/mail.svg";
+import resume from "../assets/svgs/resume.svg";
+import reddit from "../assets/svgs/reddit.svg";
+import github from "../assets/svgs/github.svg";
+---
+
+<ul class="flex gap-2">
+    <li>
+        <a href="https://discordapp.com/users/347554007750803459/">
+            <Image
+                src={discord}
+                alt="Discord icon"
+                width={36}
+                height={36}
+                class="opacity-70 hover:opacity-90 hover:scale-110 transition-all duration-200"
+            />
+        </a>
+    </li>
+    <li>
+        <a href="mailto:kanielrkirby@runbox.com">
+            <Image
+                src={mail}
+                alt="Email icon"
+                width={36}
+                height={36}
+                class="opacity-70 hover:opacity-90 hover:scale-110 transition-all duration-200"
+            />
+        </a>
+    </li>
+    <li>
+        <a href="https://www.linkedincom/in/kaniel-kirby-9b1460261/">
+            <Image
+                src={linkedin}
+                alt="LinkedIn icon"
+                width={36}
+                height={36}
+                class="opacity-70 hover:opacity-90 hover:scale-110 transition-all duration-200"
+            />
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/piratey7007/">
+            <Image
+                src={github}
+                alt="Github icon"
+                width={36}
+                height={36}
+                class="opacity-70 hover:opacity-90 hover:scale-110 transition-all duration-200"
+            />
+        </a>
+    </li>
+    <li>
+        <a href="https://www.reddit.com/user/CompetitiveAd7245/">
+            <Image
+                src={reddit}
+                alt="Reddit icon"
+                width={36}
+                height={36}
+                class="opacity-70 hover:opacity-90 hover:scale-110 transition-all duration-200"
+            />
+        </a>
+    </li>
+    <li>
+        <a href="https://www.google.com/drive/">
+            <Image
+                src={resume}
+                alt="Resume icon"
+                width={36}
+                height={36}
+                class="opacity-70 hover:opacity-90 hover:scale-110 transition-all duration-200"
+            />
+        </a>
+    </li>
+</ul>
+
+<style></style>
