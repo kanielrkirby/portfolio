@@ -16,5 +16,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("./src/tailwind-plugin-tt/index.cjs")],
+  plugins: [
+    require("./src/tailwind-plugin-tt/index.cjs")({
+      class: "tt",
+    }),
+  ],
 };

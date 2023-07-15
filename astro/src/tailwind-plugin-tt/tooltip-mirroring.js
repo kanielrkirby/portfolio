@@ -1,10 +1,14 @@
-let f = (e) => e?.style?.setProperty("--tt-content", `"${e.innerText}"`);
+const prefix = document.currentScript.getAttribute("data-class") ?? "tt";
+
+let f = (e) => e?.style?.setProperty(`--${prefix}-content`, `"${e.innerText}"`);
 
 const o = new MutationObserver(([e]) => f(e.target));
 
 const o2 = new MutationObserver((mutations) => {
-  for (const e of document.querySelectorAll(".tt-mirror")) {
-    if (e?.style?.getPropertyValue("--tt-content") === `"${e.innerText}"`)
+  for (const e of document.querySelectorAll(`.${prefix}-mirror`)) {
+    if (
+      e?.style?.getPropertyValue(`--${prefix}-content`) === `"${e.innerText}"`
+    )
       continue;
     f(e);
     o.observe(e, {
@@ -13,12 +17,12 @@ const o2 = new MutationObserver((mutations) => {
   }
 });
 
-o2.observe(document.body, {
+o2.observe(document, {
   subtree: true,
   childList: true,
 });
 
-for (const e of document?.querySelectorAll(".tt-mirror")) {
+for (const e of document?.querySelectorAll(`.${prefix}-mirror`)) {
   f(e);
   o.observe(e, {
     childList: true,

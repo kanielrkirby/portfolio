@@ -21,7 +21,9 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<script src="../tailwind-plugin-tt/tooltip-mirroring.js"></script>
+		<script
+			data-class="tt"
+			src="/src/tailwind-plugin-tt/tooltip-mirroring.js"></script>
 		<meta name="generator" content={Astro.generator} />
 		<SEO
 			{...seoProps}
@@ -71,5 +73,6 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 				@apply font-body text-white;
 			}
 		</style>
-	</body><script></script>
+		<script></script>
+	</body>
 </html>
