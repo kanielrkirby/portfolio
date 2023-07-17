@@ -1,43 +1,35 @@
 <div
-    class="fixed left-0 top-0 z-[1000] h-full w-full bg-white transition-all duration-500"
-    id="loading-screen"
+  class="fixed left-0 top-0 z-[1000] h-full w-full bg-white transition-all duration-500"
+  id="loading-screen"
 >
-    <div class="opacity-50">
-        <div
-            class="absolute bottom-0 left-0 right-0 top-0 m-auto h-16 w-16 animate-spin rounded-full border-b-[6px] border-b-black"
-        >
-        </div>
-        <div
-            class="absolute bottom-0 left-0 right-0 top-0 m-auto h-16 w-16 animate-spin rounded-full border-t-4 border-black"
-        >
-        </div>
-        <div
-            class="absolute bottom-0 left-0 right-0 top-0 m-auto h-3 w-3 rounded-full bg-black"
-        >
-        </div>
-    </div>
+  <div
+    class="*:absolute *:h-full *:w-full *:rounded-full *:border-[5px] *:opacity-50 absolute-center aspect-square w-16"
+  >
+    <div class="animate-spin-slow border-t-black"></div>
+    <div class="animate-spin border-b-black"></div>
+  </div>
 </div>
 
 <style>
-    html.loading #loading-screen {
-        @apply block;
-    }
-    html.loading.fade #loading-screen {
-        @apply pointer-events-none opacity-0;
-    }
-    html:not(.loading) #loading-screen {
-        @apply hidden;
-    }
+  html.loading #loading-screen {
+    @apply block;
+  }
+  html.loading.fade #loading-screen {
+    @apply pointer-events-none opacity-0;
+  }
+  html:not(.loading) #loading-screen {
+    @apply hidden;
+  }
 </style>
 
 <script>
-    const loadingScreen = document.querySelector(
-        "#loading-screen"
-    ) as HTMLDivElement;
+  const loadingScreen = document.querySelector(
+    "#loading-screen"
+  ) as HTMLDivElement;
 
-    window.addEventListener("load", async (e) => {
-        document.documentElement.classList.add("fade");
-        loadingScreen.ontransitionend = loadingScreen.ontransitioncancel = () =>
-            document.documentElement.classList.remove("fade", "loading");
-    });
+  window.addEventListener("load", async (e) => {
+    document.documentElement.classList.add("fade");
+    loadingScreen.ontransitionend = loadingScreen.ontransitioncancel = () =>
+      document.documentElement.classList.remove("fade", "loading");
+  });
 </script>

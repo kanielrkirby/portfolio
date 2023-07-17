@@ -1,5 +1,5 @@
 ---
-import { SEO, Props as SEOProps } from "astro-seo";
+import { SEO } from "astro-seo";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Background from "../components/Background.astro";
@@ -7,8 +7,8 @@ import Loading from "../components/Loading.astro";
 import CanvasImg from "../components/pictures/CanvasImg.astro";
 
 export interface Props {
-	SEO: SEOProps;
-	backgroundDisabled?: boolean;
+  SEO: typeof SEO;
+  backgroundDisabled?: boolean;
 }
 
 const { SEO: seoProps, backgroundDisabled } = Astro.props;
@@ -16,63 +16,62 @@ const { SEO: seoProps, backgroundDisabled } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en" class="loading">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<script
-			data-class="tt"
-			src="/src/tailwind-plugin-tt/tooltip-mirroring.js"></script>
-		<meta name="generator" content={Astro.generator} />
-		<SEO
-			{...seoProps}
-			titleDefault="Kaniel Kirby"
-			titleTemplate="%s | Kaniel Kirby"
-		/>
-	</head>
-	<body>
-		<header></header>
-		<Nav />
-		<slot />
-		<Footer />
-		<!-- <CanvasImg /> -->
-		<!-- <Background /> -->
-		<Loading />
-		<style is:global>
-			@font-face {
-				font-family: "Comfortaa";
-				src: url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf"),
-					url("https://fonts.bunny.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
-			}
-			@font-face {
-				font-family: "Fira Mono";
-				font-weight: normal;
-				src: url("/src/assets/fonts/Fira_Mono/FiraMono-Regular.ttf"),
-					url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@400&display=swap");
-			}
-			@font-face {
-				font-family: "Fira Mono";
-				font-weight: bold;
-				src: url("/src/assets/fonts/Fira_Mono/FiraMono-Bold.ttf"),
-					url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@700&display=swap");
-			}
-			@font-face {
-				font-family: "Fira Mono";
-				font-weight: medium;
-				src: url("/src/assets/fonts/Fira_Mono/FiraMono-Medium.ttf"),
-					url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@500&display=swap");
-			}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      {...seoProps}
+      titleDefault="Kaniel Kirby"
+      titleTemplate="%s | Kaniel Kirby"
+    />
+  </head>
+  <body>
+    <header></header>
+    <Nav />
+    <slot />
+    <Footer />
+    <!-- <CanvasImg /> -->
+    <!-- <Background /> -->
+    <Loading />
+    <style is:global>
+      @font-face {
+        font-family: "Comfortaa";
+        src: url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf"),
+          url("https://fonts.bunny.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+      }
+      @font-face {
+        font-family: "Fira Mono";
+        font-weight: normal;
+        src: url("/src/assets/fonts/Fira_Mono/FiraMono-Regular.ttf"),
+          url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@400&display=swap");
+      }
+      @font-face {
+        font-family: "Fira Mono";
+        font-weight: bold;
+        src: url("/src/assets/fonts/Fira_Mono/FiraMono-Bold.ttf"),
+          url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@700&display=swap");
+      }
+      @font-face {
+        font-family: "Fira Mono";
+        font-weight: medium;
+        src: url("/src/assets/fonts/Fira_Mono/FiraMono-Medium.ttf"),
+          url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@500&display=swap");
+      }
 
-			html,
-			body {
-				@apply h-full w-full;
-			}
+      html,
+      body {
+        @apply h-full w-full;
+      }
 
-			* {
-				@apply font-body text-white;
-			}
-		</style>
-		<script></script>
-	</body>
+      * {
+        @apply font-body text-white;
+      }
+    </style>
+    <script>
+      import "../../tailwindcss-tt/tooltips";
+    </script>
+  </body>
 </html>

@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+const tailwindcssTt = require("./tailwindcss-tt/index.cjs");
 const defaultTheme = require("tailwindcss/defaultTheme");
 // import defaultTheme from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
@@ -17,8 +19,30 @@ module.exports = {
     },
   },
   plugins: [
-    require("./src/tailwind-plugin-tt/index.cjs")({
-      class: "tt",
+    tailwindcssTt,
+    plugin(({ addComponents, addVariant }) => {
+      addComponents({
+        ".absolute-center-within": {
+          position: "relative",
+          "*": {
+            position: "absolute",
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            margin: "auto",
+          },
+        },
+        ".absolute-center": {
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          margin: "auto",
+        },
+      });
+      addVariant("*", "& > *");
     }),
   ],
 };

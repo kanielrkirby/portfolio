@@ -3,7 +3,7 @@ const plugin = require("tailwindcss/plugin");
 const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-module.exports = plugin.withOptions(
+export default plugin.withOptions(
   (options = {}) =>
     ({
       addBase,
@@ -18,20 +18,26 @@ module.exports = plugin.withOptions(
       e,
       theme,
     }) => {
-      const c = options?.class ?? "tt";
-      // after
-      const a = options.pseudo === "before" ? "&::before" : "&::after";
-      const b = (v) => ({ [a]: v });
-      // hover
+      // class prefix
+      const classPrefix = options?.class ?? "tt";
+
+      // prefix value
+      const p = options.pseudo === "before" ? "&::before" : "&::after";
+
+      // prefix function
+      const b = (v) => ({ [p]: v });
+
+      // hover value
       const h = "&:hover";
-      // hover after
-      const ha = h + a;
+
+      // hover prefix value
+      const hp = h + p;
 
       // CSS Variables
       const d = (obj) => {
         const newObj = {};
         for (const [key, value] of Object.entries(obj))
-          newObj[`--${c}-` + key] = value;
+          newObj[`--${classPrefix}-` + key] = value;
         return {
           ":root": newObj,
         };
@@ -63,13 +69,13 @@ module.exports = plugin.withOptions(
         "relative-size",
       ];
 
-      const getBase = (content) => {
-        if (!validate(content)) content = `attr(data-${c})`;
+      const getBase = (content, pseudo) => {
+        if (!validate(content)) content = `attr(data-${classPrefix})`;
         return {
           position: "relative",
-          [`--${c}-content`]: content,
-          [a]: {
-            content: `var(--${c}-content)`,
+          [`--${classPrefix}-content`]: content,
+          [pseudo]: {
+            content: `var(--${classPrefix}-content)`,
             position: "absolute",
             top: "-100%",
             left: "-100%",
@@ -85,69 +91,76 @@ module.exports = plugin.withOptions(
             transition: "all .2s ease-in-out",
             pointerEvents: "none",
           },
-          [ha]: {
+          [hp]: {
             opacity: 1,
           },
         };
       };
 
       // Get Tooltip Placement
-      const pos = (pos, val) => ({
-        [a]: {
-          [pos ?? "bottom"]: val ?? `calc(-100% - var(--${c}-distance))`,
+      const pos = (pos, val, pseudo) => ({
+        [pseudo]: {
+          [pos ?? "bottom"]:
+            val ?? `calc(-100% - var(--${classPrefix}-distance))`,
         },
       });
 
       addComponents({
-        [`.${c}`]: getBase(),
-        [`.${c}-mirror`]: getBase(),
-      });
-
-      matchComponents({
-        [c]: getBase,
-      });
-
-      addUtilities({
-        [`.${c}-xs`]: b({
+        [`.${classPrefix}`]: getBase(null, p),
+        [`.${classPrefix}-mirror`]: getBase(null, p),
+        [`.${classPrefix}-xs`]: b({
           fontSize: theme("fontSize.xs", defaultTheme.fontSize.xs),
           padding: "0rem .5rem",
           borderRadius: ".2rem",
         }),
-        [`.${c}-sm`]: b({
+        [`.${classPrefix}-sm`]: b({
           fontSize: theme("fontSize.sm", defaultTheme.fontSize.sm),
           padding: ".15rem .6rem",
           borderRadius: ".2rem",
         }),
-        [`.${c}-md,:not(.${c}-xs):not(.${c}-sm):not(.${c}-md):not(.${c}-lg):not(.${c}-xl)`]:
+        [`.${classPrefix}-md,:not(.${classPrefix}-xs):not(.${classPrefix}-sm):not(.${classPrefix}-md):not(.${classPrefix}-lg):not(.${classPrefix}-xl)`]:
           b({
             fontSize: theme("fontSize.base", defaultTheme.fontSize.base),
             padding: ".20rem .7rem",
             borderRadius: ".22rem",
           }),
-        [`.${c}-lg`]: b({
+        [`.${classPrefix}-lg`]: b({
           fontSize: theme("fontSize.lg", defaultTheme.fontSize.lg),
           padding: ".4rem .7rem",
           borderRadius: ".25rem",
         }),
-        [`.${c}-xl`]: b({
+        [`.${classPrefix}-xl`]: b({
           fontSize: theme("fontSize.xl", defaultTheme.fontSize.xl),
           padding: ".5rem .75rem",
           borderRadius: ".3rem",
         }),
-        [`.${c}-top`]: b({ top: `calc(-320% - var(--${c}-spacing)) ` }),
-        [`.${c}-bottom,:not(.${c}-top):not(.${c}-bottom):not(.${c}-left):not(.${c}-right)`]:
-          b({ bottom: `calc(-320% - var(--${c}-spacing)) ` }),
-        [`.${c}-left`]: b({ left: `calc(-320% - var(--${c}-spacing)) ` }),
-        [`.${c}-right`]: b({ right: `calc(-320% - var(--${c}-spacing)) ` }),
-        [`.${c}-start`]: b({ textAlign: "start" }),
-        [`.${c}-center`]: b({ textAlign: "center" }),
-        [`.${c}-end`]: b({ textAlign: "end" }),
-        [`.${c}-justify`]: b({ textAlign: "justify" }),
+      });
+
+      matchComponents({
+        [classPrefix]: getBase,
+      });
+
+      addUtilities({
+        [`.${classPrefix}-top`]: b({
+          top: `calc(-320% - var(--${classPrefix}-spacing)) `,
+        }),
+        [`.${classPrefix}-bottom,:not(.${classPrefix}-top):not(.${classPrefix}-bottom):not(.${classPrefix}-left):not(.${classPrefix}-right)`]:
+          b({ bottom: `calc(-320% - var(--${classPrefix}-spacing)) ` }),
+        [`.${classPrefix}-left`]: b({
+          left: `calc(-320% - var(--${classPrefix}-spacing)) `,
+        }),
+        [`.${classPrefix}-right`]: b({
+          right: `calc(-320% - var(--${classPrefix}-spacing)) `,
+        }),
+        [`.${classPrefix}-start`]: b({ textAlign: "start" }),
+        [`.${classPrefix}-center`]: b({ textAlign: "center" }),
+        [`.${classPrefix}-end`]: b({ textAlign: "end" }),
+        [`.${classPrefix}-justify`]: b({ textAlign: "justify" }),
       });
 
       matchUtilities(
         {
-          [c]: pos,
+          [classPrefix]: pos,
         },
         { type: valueType }
       );
