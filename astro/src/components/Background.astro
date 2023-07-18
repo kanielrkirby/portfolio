@@ -6,15 +6,14 @@ export interface Props extends astroHTML.JSX.CanvasHTMLAttributes {}
 ---
 
 <canvas class="bg -z-50" id="canvas" {...Astro.props}></canvas>
-<div class="bg -z-40 bg-black opacity-20"></div>
+<div class="overlay bg -z-40 bg-black opacity-20"></div>
 
 <style is:global>
   .bg {
     @apply fixed left-0 top-0 h-full w-full select-none transition-all duration-200 !important;
   }
-  html:not(.moving) canvas.bg {
-    @apply hidden;
-  }
+  html:not(.moving) canvas.bg,
+  html:not(.moving) .overlay.bg,
   html.moving .canvas-img {
     @apply hidden;
   }
@@ -23,7 +22,6 @@ export interface Props extends astroHTML.JSX.CanvasHTMLAttributes {}
 <script>
   import * as THREE from "three";
   import chroma from "chroma-js";
-  import "../store/settings";
   class Polyline {
     tmp = new THREE.Vector3();
     points: THREE.Vector3[];

@@ -3,15 +3,15 @@ import { Picture } from "@astrojs/image/components";
 import canvasImg from "../../assets/images/canvas-img.webp";
 ---
 
-<div class="w-full h-full fixed top-0 left-0 canvas-img">
-    <Picture
-        src={canvasImg}
-        alt=""
-        class="w-full h-full object-fill"
-        widths={[800, 1200, 1800, 2400]}
-        format="avif"
-        loading="eager"
-        decoding="sync"
-        sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, (max-width: 1200px) 1200w, (max-width: 1800px) 1800w"
-    />
+<div class="canvas-img fixed left-0 top-0 -z-50 h-full w-full">
+  <Picture
+    src={canvasImg}
+    alt=""
+    class="h-full w-full object-fill"
+    widths={[800, 1200, 1800, 2400]}
+    format="avif"
+    loading="eager"
+    decoding="sync"
+    sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, (max-width: 1200px) 1200w, (max-width: 1800px) 1800w"
+  />
 </div>

@@ -1,17 +1,16 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import kanielKirby2 from "../../assets/images/kaniel-kirby-2.webp";
+import kanielKirby2 from "/src/assets/images/kaniel-kirby-2.webp";
 ---
 
-<div class="w-full h-full fixed top-0 left-0 canvas-img">
-    <Picture
-        src={kanielKirby2}
-        alt=""
-        class="w-full h-full object-fill"
-        widths={[800, 1200, 1800, 2400]}
-        format="avif"
-        loading="eager"
-        decoding="sync"
-        sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, (max-width: 1200px) 1200w, (max-width: 1800px) 1800w"
-    />
-</div>
+<Picture
+  src={kanielKirby2}
+  alt=""
+  class="h-full w-full object-cover"
+  widths={[800, 1200, 1800, 2400]}
+  format="avif"
+  loading="eager"
+  decoding="sync"
+  sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, (max-width: 1200px) 1200w, (max-width: 1800px) 1800w"
+  {...Astro.props}
+/>

@@ -1,34 +1,68 @@
 ---
+import KanielKirby from "../components/pictures/KanielKirby.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<h1>About Me</h1>
-<div>
-    <div></div>
-    <div>
+<Layout
+  SEO={{
+    title: "About",
+  }}
+>
+  <main class="flex w-full flex-col items-center">
+    <h1>About Me</h1>
+    <div class="flex gap-8">
+      <div
+        id="my-img-1"
+        role="tooltip"
+        aria-label="Click me!"
+        class="mt-b cursor-pointer"
+      >
+        <KanielKirby />
+      </div>
+      <div>
         <h2>Hey there!</h2>
         <p>
-            I'm Kaniel Kirby, a 20-year-old web developer from Abilene, Texas. I
-            have a passion for creating beautiful, user-friendly websites that
-            are interactive and visually engaging. I am proficient in
-            React-Typescript, a tech stack I use to build and design user
-            interfaces that are as functional as they are aesthetic.
+          I'm Kaniel Kirby, a 20-year-old web developer from Abilene, Texas. I
+          have a passion for creating beautiful, user-friendly websites that are
+          interactive and visually engaging. I am proficient in
+          React-Typescript, a tech stack I use to build and design user
+          interfaces that are as functional as they are aesthetic.
         </p>
         <p>
-            When I'm not building websites, I enjoy drinking coffee, making
-            music, and biking. I aspire to build a career around my skills and
-            talents in web development by creating functional and engaging
-            websites for my clientele. I enjoy working in a team setting and
-            leading projects. Being flexible and always willing to learn new
-            things, I quickly adapt to new technologies and techniques to ensure
-            my clients are satisfied with their results.
+          When I'm not building websites, I enjoy drinking coffee, making music,
+          and biking. I aspire to build a career around my skills and talents in
+          web development by creating functional and engaging websites for my
+          clientele. I enjoy working in a team setting and leading projects.
+          Being flexible and always willing to learn new things, I quickly adapt
+          to new technologies and techniques to ensure my clients are satisfied
+          with their results.
         </p>
         <p>
-            I began programming because I wanted to build websites the right
-            way. I believe every client deserves a website that is built with
-            the kind of care and passion that I put into my projects. Tired of
-            outdated, clunky web pages? So am I. I want to work with you every
-            step of the way as I create a personalized website that is
-            accessible for you and your consumers.
+          I began programming because I wanted to build websites the right way.
+          I believe every client deserves a website that is built with the kind
+          of care and passion that I put into my projects. Tired of outdated,
+          clunky web pages? So am I. I want to work with you every step of the
+          way as I create a personalized website that is accessible for you and
+          your consumers.
         </p>
+      </div>
     </div>
-</div>
+  </main>
+</Layout>
+
+<script>
+  import { incrementDev, $devCounter } from "src/store/settings";
+
+  const img = document.querySelector("#my-img-1") as HTMLPictureElement;
+  img.addEventListener("click", incrementDev);
+  $devCounter.subscribe((value) => {
+    if (value < 1) {
+      img.setAttribute("aria-label", "Congrats, you're a developer!");
+    } else {
+      img.setAttribute(
+        "aria-label",
+        `${8 - value} clicks until you're a developer!`
+      );
+    }
+  });
+</script>
