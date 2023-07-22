@@ -1,0 +1,9 @@
+---
+import {
+  Picture as Base,
+  PictureComponentLocalImageProps,
+} from "@astrojs/image/components";
+export interface Props extends PictureComponentLocalImageProps {}
+---
+
+<Base {...Astro.props} />
