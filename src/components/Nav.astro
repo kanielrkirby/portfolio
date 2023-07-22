@@ -2,9 +2,25 @@
 import Logo from "@/components/Logo.astro";
 ---
 
-<nav
-  class="flex items-center justify-between p-4 text-white max-md:justify-center"
->
+<nav class="flex items-center justify-between p-4 text-white">
+  <button
+    aria-label="Navigation"
+    class="group tt-br hidden h-16 max-md:block"
+    id="nav-btn"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+      class="h-full w-full transition-all duration-300 group-hover:rotate-6"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </button>
   <a
     aria-label="Business Card"
     href="/business-card"
@@ -12,33 +28,46 @@ import Logo from "@/components/Logo.astro";
   >
     <Logo class="w-48" />
   </a>
-  <div class="flex h-full items-center gap-8">
+  <div
+    class="me-8 flex h-full w-full place-content-end items-center gap-8 max-md:hidden"
+  >
     <a
-      class="text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080] max-md:hidden"
+      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
       href="/">My Projects</a
     >
     <a
-      class="text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:-rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080] max-md:hidden"
+      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:-rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
       href="/contact">Contact</a
     >
     <a
-      class="text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080] max-md:hidden"
+      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
       href="/about">About</a
     >
     <a
-      class="text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:-rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080] max-md:hidden"
+      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:-rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
       href="/services">Services</a
     >
-    <button
-      aria-label="Settings"
-      id="settings-wheel"
-      class="tt-bl relative aspect-square w-0 transition-all duration-200 descends-[html.dev]:h-16 descends-[html.dev]:w-14 max-md:!absolute max-md:right-2"
-    >
-      <img
-        src="/src/assets/svgs/settings.svg"
-        alt="settings wheel"
-        class="absolute-center w-full cursor-pointer transition-all duration-500 ease-in-out hover:rotate-90 hover:scale-105"
-      />
-    </button>
   </div>
+  <button
+    aria-label="Settings"
+    id="settings-wheel"
+    class="tt-bl relative aspect-square w-0 transition-all duration-200 descends-[html.dev]:h-16 descends-[html.dev]:w-14"
+  >
+    <img
+      src="/src/assets/svgs/settings.svg"
+      alt="settings wheel"
+      class="absolute-center w-full cursor-pointer transition-all duration-500 ease-in-out hover:rotate-90 hover:scale-105"
+    />
+  </button>
 </nav>
+
+<script>
+  const classes = ["opacity-100", "pointer-events-auto"];
+  const mobileNav = document.querySelector("#mobile-nav") as HTMLElement;
+  const button = document.querySelector("#nav-btn") as HTMLButtonElement;
+  button.addEventListener("submit", (e) => mobileNav.classList.add(...classes));
+  mobileNav.addEventListener("click", (e) => {
+    if ((e.target as HTMLElement).closest("a")) return;
+    mobileNav.classList.remove(...classes);
+  });
+</script>
