@@ -1,0 +1,32 @@
+---
+import KanielKirby2 from "/components/pictures/KanielKirby2.astro";
+import Layout from "/layouts/MainLayout.astro";
+import Iconbar from "/components/Iconbar.astro";
+---
+
+<Layout SEO={{ title: "Contact" }} shortfooter>
+  <main
+    class="relative left-0 right-0 mx-auto my-8 flex w-[90ch] max-w-[90%] flex-col items-center gap-8 text-center"
+  >
+    <div id="my-img-2" aria-label="Click me!" class="tt-t">
+      <KanielKirby2
+        class="aspect-square w-[20rem] cursor-pointer overflow-hidden rounded-[3rem] object-cover shadow-sm transition-all duration-200 hover:scale-105 hover:shadow-2xl"
+      />
+    </div>
+    <p>
+      I am always open to new opportunities and collaborations. If you'd like to
+      discuss a project or just chat about web development or programming, feel
+      free to contact me through the following channels:
+    </p>
+    <Iconbar />
+    <p>
+      I look forward to connecting with you and working together to create
+      amazing web experiences!
+    </p>
+  </main>
+</Layout>
+
+<script>
+  import { subscribeImage } from "../store/settings";
+  subscribeImage("#my-img-2");
+</script>

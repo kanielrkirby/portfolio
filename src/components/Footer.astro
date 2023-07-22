@@ -1,0 +1,16 @@
+---
+import Iconbar from "/components/Iconbar.astro";
+
+export interface Props {
+  short?: boolean;
+}
+
+const { short } = Astro.props;
+---
+
+<footer
+  class=`flex items-center ${short ? "justify-center": "justify-between max-md:flex-col-reverse max-md:gap-8 justify-center items-center"}`
+>
+  <a class="link" href="/credits">Credits and Attributions</a>
+  {!short && <Iconbar />}
+</footer>
