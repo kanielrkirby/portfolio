@@ -1,5 +1,5 @@
 import MicroModal from "micromodal";
-import { $settings, toggle } from "/store/settings";
+import { $settings, toggle } from "@/store/settings";
 
 MicroModal.init();
 

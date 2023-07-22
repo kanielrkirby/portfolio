@@ -24,6 +24,11 @@ module.exports = {
   plugins: [
     plugin(({ addComponents, addVariant, matchVariant, addBase, theme }) => {
       addBase({
+        "@font-face": {
+          "font-family": "Comfortaa",
+          src: `url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf"),
+            url("https://fonts.bunny.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap")`
+        },
         "h1,h2,h3,h4,h5,h6": {
           "font-family": theme("fontFamily.display"),
           "font-weight": theme("fontWeight.bold"),

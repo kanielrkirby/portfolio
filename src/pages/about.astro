@@ -1,7 +1,7 @@
 ---
-import KanielKirby from "/components/pictures/KanielKirby.astro";
-import Layout from "/layouts/MainLayout.astro";
-import constants from "/scripts/constants";
+import KanielKirby from "@/components/pictures/KanielKirby.astro";
+import Layout from "@/layouts/MainLayout.astro";
+import constants from "@/scripts/constants";
 ---
 
 <Layout
@@ -58,6 +58,6 @@ import constants from "/scripts/constants";
 </Layout>
 
 <script>
-  import { subscribeImage } from "/store/settings";
+  import { subscribeImage } from "@/store/settings";
   subscribeImage("#my-img-1");
 </script>

@@ -1,12 +1,12 @@
 ---
 import type { Props as SEOProps } from "astro-seo";
-import Nav from "/components/Nav.astro";
-import Footer from "/components/Footer.astro";
-import Background from "/components/Background.astro";
-import Loading from "/components/Loading.astro";
-import CanvasImg from "/components/pictures/CanvasImg.astro";
-import SettingsModal from "/components/SettingsModal.astro";
-import Base from "/layouts/BaseLayout.astro";
+import Nav from "@/components/Nav.astro";
+import Footer from "@/components/Footer.astro";
+import Background from "@/components/Background.astro";
+import Loading from "@/components/Loading.astro";
+import CanvasImg from "@/components/pictures/CanvasImg.astro";
+import SettingsModal from "@/components/SettingsModal.astro";
+import Base from "@/layouts/BaseLayout.astro";
 
 export interface Props {
   SEO: SEOProps;
@@ -33,18 +33,6 @@ const { SEO: seoProps, shortfooter } = Astro.props;
       <SettingsModal />
     </div>
     <style is:global>
-      @font-face {
-        font-family: "Comfortaa";
-        src: url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf"),
-          url("https://fonts.bunny.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
-      }
-      @font-face {
-        font-family: "Fira Mono";
-        font-weight: normal;
-        src: url("/src/assets/fonts/Fira_Mono/FiraMono-Regular.ttf"),
-          url("https://fonts.bunny.net/css2?family=Fira+Mono:wght@400&display=swap");
-      }
-
       html,
       body {
         @apply h-full w-full;
