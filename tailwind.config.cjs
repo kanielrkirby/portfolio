@@ -39,6 +39,7 @@ module.exports = {
             opacity: 1,
           },
           "*": {
+            "text-shadow": "none",
             "--tw-text-opacity": "1",
             color: "rgb(0,0,0,var(--tw-text-opacity))",
           },
@@ -47,6 +48,7 @@ module.exports = {
           "font-family": theme("fontFamily.body"),
           "font-size": theme("fontSize.lg"),
           color: "white",
+          "text-shadow": "1px 1px 4px #00000090",
           "&::selection": {
             color: "black",
             "background-color": colors.green[300],
