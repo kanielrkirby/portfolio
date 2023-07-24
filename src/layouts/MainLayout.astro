@@ -7,6 +7,7 @@ import Loading from "@/components/Loading.astro";
 import CanvasImg from "@/components/pictures/CanvasImg.astro";
 import SettingsModal from "@/components/SettingsModal.astro";
 import Base from "@/layouts/BaseLayout.astro";
+import NavigationModal from "@/components/NavigationModal.astro";
 
 export interface Props {
   SEO: SEOProps;
@@ -31,6 +32,7 @@ const { SEO: seoProps, shortfooter } = Astro.props;
     <div class="z-50" id="modal-root">
       <Loading />
       <SettingsModal />
+      <NavigationModal />
     </div>
     <style is:global>
       html,
@@ -39,7 +41,8 @@ const { SEO: seoProps, shortfooter } = Astro.props;
       }
     </style>
     <script>
-      import "../scripts/modal";
+      import "@/scripts/modal";
+      import "@/store/settings";
     </script>
   </body>
 </Base>

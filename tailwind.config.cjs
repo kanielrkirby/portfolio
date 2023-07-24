@@ -27,11 +27,21 @@ module.exports = {
         "@font-face": {
           "font-family": "Comfortaa",
           src: `url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf"),
-            url("https://fonts.bunny.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap")`
+            url("https://fonts.bunny.net/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap")`,
         },
         "h1,h2,h3,h4,h5,h6": {
           "font-family": theme("fontFamily.display"),
           "font-weight": theme("fontWeight.bold"),
+        },
+        ".modal": {
+          "&.is-open": {
+            "pointer-events": "auto",
+            opacity: 1,
+          },
+          "*": {
+            "--tw-text-opacity": "1",
+            color: "rgb(0,0,0,var(--tw-text-opacity))",
+          },
         },
         "*": {
           "font-family": theme("fontFamily.body"),
@@ -41,6 +51,9 @@ module.exports = {
             color: "black",
             "background-color": colors.green[300],
           },
+        },
+        "html.inverted *::selection": {
+          "background-color": colors.red[300],
         },
         h1: {
           "font-size": theme("fontSize.4xl"),
@@ -112,7 +125,7 @@ module.exports = {
             "margin-right": "auto",
             height: "100%",
             width: "0%",
-            "background-color": "#5eead4",
+            "background-color": colors.green[300],
           },
           "&:hover": {
             color: "black",
@@ -124,6 +137,9 @@ module.exports = {
               width: "100%",
             },
           },
+        },
+        "html.inverted .link::after": {
+          "background-color": colors.red[300],
         },
       });
       addVariant("*", "& > *");

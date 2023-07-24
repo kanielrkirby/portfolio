@@ -2,7 +2,6 @@ import { persistentMap as pMap } from "@nanostores/persistent";
 import { atom } from "nanostores";
 
 const html = document.documentElement;
-const canvas = document.querySelector("#canvas");
 const starterValue = 5;
 
 export interface SettingsI {

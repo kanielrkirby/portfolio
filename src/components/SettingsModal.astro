@@ -1,75 +1,65 @@
-<div
-  class="modal pointer-events-none fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50 opacity-0 backdrop-blur transition-all duration-500 selection:bg-red-300"
-  id="settings-modal"
-  aria-hidden="true"
-  tabindex="-1"
-  data-micromodal-close
->
-  <div
-    class="flex min-h-[20rem] w-[40rem] max-w-[95%] translate-y-16 flex-col items-center rounded-md bg-white p-8 transition-all duration-300 descends-[.modal.is-open]:translate-y-0"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="settings-modal-title"
-  >
-    <header class="relative flex w-full justify-center pt-16">
-      <h2 id="settings-modal-title">Settings</h2>
-      <button
-        class="!link-black link absolute right-0 top-0 hover:link-bg-black hover:link-red-500"
-        aria-label="Close modal"
-        data-micromodal-close>Close</button
-      >
-    </header>
-    <div
-      class="my-16 flex w-full max-w-xs flex-col justify-around gap-4"
-      id="settings-modal-content"
-    >
-      <label
-        class="group flex w-full cursor-pointer select-none justify-between rounded-sm bg-black bg-opacity-0 p-6 outline outline-[.5px] outline-black transition-all duration-200 hover:bg-opacity-5"
-        for="moving-background-input"
-      >
-        <span
-          class="font-semibold text-opacity-50 transition-all duration-200 group-hover:text-opacity-100"
-          >Moving Background</span
-        >
-        <input
-          class="cursor-pointer"
-          id="moving-background-input"
-          type="checkbox"
-        />
-      </label>
-      <label
-        class="group flex w-full cursor-pointer select-none justify-between rounded-sm bg-black bg-opacity-0 p-6 outline outline-[.5px] outline-black transition-all duration-200 hover:bg-opacity-5"
-        for="invert-background-input"
-      >
-        <span
-          class="font-semibold text-opacity-50 transition-all duration-200 group-hover:text-opacity-100"
-          >Invert Background</span
-        >
-        <input
-          class="cursor-pointer"
-          id="invert-background-input"
-          type="checkbox"
-        />
-      </label>
-      <label
-        class="group flex w-full cursor-pointer select-none justify-between rounded-sm bg-black bg-opacity-0 p-6 outline outline-[.5px] outline-black transition-all duration-200 hover:bg-opacity-5"
-        for="dev-mode-input"
-      >
-        <span
-          class="font-semibold text-opacity-50 transition-all duration-200 group-hover:text-opacity-100"
-          >Developer Mode</span
-        >
-        <input class="cursor-pointer" id="dev-mode-input" type="checkbox" />
-      </label>
-    </div>
-  </div>
-</div>
+---
+import Modal from "@/components/Modal.astro";
+---
 
-<style>
-  .modal.is-open {
-    @apply pointer-events-auto opacity-100;
-  }
-  .modal * {
-    @apply text-black;
-  }
-</style>
+<Modal name="settings" class="">
+  <label
+    class="group flex w-full cursor-pointer select-none justify-between rounded-sm bg-black bg-opacity-0 p-6 outline outline-[.5px] outline-black transition-all duration-200 hover:bg-opacity-5"
+    for="moving-background-input"
+  >
+    <span
+      class="font-semibold text-opacity-50 transition-all duration-200 group-hover:text-opacity-100"
+      >Moving Background</span
+    >
+    <input
+      class="cursor-pointer"
+      id="moving-background-input"
+      type="checkbox"
+    />
+  </label>
+  <label
+    class="group flex w-full cursor-pointer select-none justify-between rounded-sm bg-black bg-opacity-0 p-6 outline outline-[.5px] outline-black transition-all duration-200 hover:bg-opacity-5"
+    for="invert-background-input"
+  >
+    <span
+      class="font-semibold text-opacity-50 transition-all duration-200 group-hover:text-opacity-100"
+      >Invert Background</span
+    >
+    <input
+      class="cursor-pointer"
+      id="invert-background-input"
+      type="checkbox"
+    />
+  </label>
+  <label
+    class="group flex w-full cursor-pointer select-none justify-between rounded-sm bg-black bg-opacity-0 p-6 outline outline-[.5px] outline-black transition-all duration-200 hover:bg-opacity-5"
+    for="dev-mode-input"
+  >
+    <span
+      class="font-semibold text-opacity-50 transition-all duration-200 group-hover:text-opacity-100"
+      >Developer Mode</span
+    >
+    <input class="cursor-pointer" id="dev-mode-input" type="checkbox" />
+  </label>
+</Modal>
+
+<script>
+  import { $settings, toggle } from "@/store/settings";
+  const movingBackground = document.querySelector(
+    "#moving-background-input"
+  ) as HTMLInputElement;
+  const invertBackground = document.querySelector(
+    "#invert-background-input"
+  ) as HTMLInputElement;
+  const dev = document.querySelector("#dev-mode-input") as HTMLInputElement;
+
+  movingBackground.onchange = () => toggle("movingBackground");
+  invertBackground.onchange = () => toggle("invertBackground");
+  dev.onchange = () => toggle("dev");
+
+  $settings.subscribe((val) => {
+    movingBackground.checked = val.movingBackground;
+    dev.checked = val.dev;
+    invertBackground.checked = val.invertBackground;
+  });
+</script>

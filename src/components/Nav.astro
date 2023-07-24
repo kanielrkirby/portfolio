@@ -6,7 +6,7 @@ import Logo from "@/components/Logo.astro";
   <button
     aria-label="Navigation"
     class="group tt-br hidden h-16 max-md:block"
-    id="nav-btn"
+    id="navigation-modal-btn"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ import Logo from "@/components/Logo.astro";
   </div>
   <button
     aria-label="Settings"
-    id="settings-wheel"
+    id="settings-modal-btn"
     class="tt-bl relative aspect-square w-0 transition-all duration-200 descends-[html.dev]:h-16 descends-[html.dev]:w-14"
   >
     <img
@@ -60,14 +60,3 @@ import Logo from "@/components/Logo.astro";
     />
   </button>
 </nav>
-
-<script>
-  const classes = ["opacity-100", "pointer-events-auto"];
-  const mobileNav = document.querySelector("#mobile-nav") as HTMLElement;
-  const button = document.querySelector("#nav-btn") as HTMLButtonElement;
-  button.addEventListener("submit", (e) => mobileNav.classList.add(...classes));
-  mobileNav.addEventListener("click", (e) => {
-    if ((e.target as HTMLElement).closest("a")) return;
-    mobileNav.classList.remove(...classes);
-  });
-</script>
