@@ -144,6 +144,7 @@ module.exports = {
           "background-color": colors.red[300],
         },
       });
+      addVariant("flip", ".flipped & ");
       addVariant("*", "& > *");
       matchVariant("**", (selector) => "& > " + selector);
       matchVariant(

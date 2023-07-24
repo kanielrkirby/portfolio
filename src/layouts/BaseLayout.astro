@@ -3,9 +3,10 @@ import { SEO, Props as SEOProps } from "astro-seo";
 
 export interface Props {
   SEO: SEOProps;
+  class?: string;
 }
 
-const { SEO: seoProps } = Astro.props;
+const { SEO: seoProps, class: className = "" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ const { SEO: seoProps } = Astro.props;
       titleTemplate="%s | Kaniel Kirby"
     />
   </head>
-  <body>
+  <body class={className}>
     <slot />
   </body>
 </html>

@@ -1,0 +1,15 @@
+---
+import { Image } from "@astrojs/image/components";
+import redSplash from "@/assets/images/red-purple-splash.webp";
+import blueSplash from "@/assets/images/blue-pink-splash.webp";
+
+const { type, class: className = "", ...props } = Astro.props;
+---
+
+<Image
+  src={type === "red" ? redSplash : blueSplash}
+  alt=""
+  format="avif"
+  class={`absolute h-full w-full object-contain opacity-50 ${className}`}
+  {...props}
+/>

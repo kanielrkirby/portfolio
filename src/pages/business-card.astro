@@ -1,343 +1,148 @@
 ---
+import Logo from "@/components/Logo.astro";
+import KanielKirby2 from "@/components/pictures/KanielKirby2.astro";
 import Base from "@/layouts/BaseLayout.astro";
+import constants from "@/scripts/constants";
+import { Image } from "@astrojs/image/components";
+import Splash from "@/components/pictures/Splash.astro";
 ---
 
 <Base
   SEO={{
     title: "Business Card",
   }}
+  class="fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-neutral-900 [perspective:1000px]"
 >
-  <main>
-    <button>Button</button>
+  <main
+    id="business-card"
+    class="relative flex aspect-[2/3.5] flex-col items-center justify-center gap-4 transition-all duration-500 [transform-style:preserve-3d] flip:[transform:rotate3d(0,1,0,180deg)] max-md:h-[80%] md:aspect-[3.5/2] md:w-[95%]"
+  >
+    <!-- Front -->
+    <div
+      class="absolute h-full w-full overflow-hidden bg-black [-webkit-backface-visibility:hidden] [backface-visibility:hidden]"
+    >
+      <div class="absolute z-0 h-full w-full">
+        <Splash
+          type="blue"
+          class="max-md:bottom-[-50%] max-md:left-[-40%] md:bottom-[-55%] md:left-[-55%]"
+        />
+        <Splash
+          type="red"
+          class="max-md:right-[-50%] max-md:top-[-60%] md:right-[-50%] md:top-[-50%]"
+        />
+        <Splash type="red" class="max-md:bottom-0" />
+      </div>
+      <Logo
+        class="absolute-center aspect-square h-full w-full max-md:top-[-20%] max-md:h-[35%] md:top-[-25%] md:w-[35%]"
+      />
+      <h1
+        class="absolute-center h-fit w-fit font-body max-md:top-[18%] max-md:text-[6vh] md:top-[45%] md:text-[7.5vw]"
+      >
+        Kaniel Kirby
+      </h1>
+      <h2
+        class="absolute-center h-fit w-fit font-body opacity-70 max-md:top-[30%] max-md:text-[4vh] md:top-[70%] md:text-[5.25vw]"
+      >
+        Web Developer
+      </h2>
+    </div>
+    <!-- Back -->
+    <div
+      class="absolute flex h-full w-full justify-between gap-4 overflow-hidden bg-black [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotate3d(0,1,0,180deg)]"
+    >
+      <div class="absolute -z-10 h-full w-full">
+        <Splash type="blue" class="bottom-[-50%] left-[-50%]" />
+        <Splash
+          type="blue"
+          class="max-md:bottom-[-50%] max-md:right-[-40%] md:left-[-20%] md:top-[-50%]"
+        />
+        <Splash type="red" class="max-md:top-[-40%] md:right-[-40%]" />
+      </div>
+      <div
+        aria-label="Kaniel Kirby"
+        role="tooltip"
+        class="tt-b absolute top-[2%] aspect-square max-md:left-0 max-md:right-0 max-md:mx-auto max-md:h-[28%] md:left-[20%] md:w-[22%]"
+      >
+        <KanielKirby2
+          class="h-full w-full overflow-hidden rounded-[2%] object-cover"
+          format="avif"
+        />
+      </div>
+      <h1
+        class="absolute text-center font-body max-md:top-[34%] max-md:w-full max-md:text-[4vh] md:left-[8%] md:top-[38%] md:text-[5.5vw]"
+      >
+        Kaniel Kirby
+      </h1>
+      <a
+        role="tooltip"
+        aria-label="LinkedIn"
+        class="group tt-b absolute flex items-center justify-center gap-[2%] max-md:left-0 max-md:right-0 max-md:top-[42%] max-md:mx-auto max-md:h-[6vh] md:left-[10%] md:top-[52%] md:w-[8vw]"
+        href={constants.linkedin}
+      >
+        <Image
+          src={import("@/assets/svgs/linkedin-round.svg")}
+          alt="LinkedIn Icon"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-full max-md:w-fit md:h-fit md:w-full"
+        />
+        <span
+          class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
+          >@{constants.linkedin.split("/").findLast((link) => link)}</span
+        >
+      </a>
+      <a
+        role="tooltip"
+        aria-label="Phone Number"
+        class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[50%] max-md:mx-auto max-md:h-[6vh] md:left-[10%] md:top-[67%] md:w-[8vw]"
+        href={"tel:+1 " + constants.phone}
+      >
+        <Image
+          src={import("@/assets/svgs/phone-white.svg")}
+          alt="Phone Icon"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-full max-md:w-fit md:h-fit md:w-full"
+        />
+        <span
+          class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
+          >{constants.phone}</span
+        >
+      </a>
+      <a
+        role="tooltip"
+        aria-label="Email"
+        class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[58%] max-md:mx-auto max-md:h-[6vh] md:left-[10%] md:top-[82%] md:w-[8vw]"
+        href={"mailto:" + constants.email}
+      >
+        <Image
+          src={import("@/assets/svgs/mail-white.svg")}
+          alt="Email Icon"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-full max-md:w-fit md:h-fit md:w-full"
+        />
+        <span
+          class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
+          >{constants.email}</span
+        >
+      </a>
+      <a
+        href="/"
+        role="tooltip"
+        aria-label="My Website"
+        class="group tt-t absolute rounded-[1%] max-md:bottom-[2%] max-md:left-0 max-md:right-0 max-md:mx-auto max-md:h-[28%] max-md:w-fit md:bottom-0 md:right-[2%] md:top-0 md:my-auto md:h-fit md:w-[22%]"
+      >
+        <Image
+          src={import("@/assets/svgs/qr-code.svg")}
+          alt="QR Code to Kaniel's website"
+          class="h-full w-full rounded-[2%] border-[2%] border-black bg-white transition-all duration-200 group-hover:scale-[1.05]"
+        />
+      </a>
+    </div>
   </main>
 </Base>
 
-<!-- <div className="fixed left-0 top-0 z-10 flex h-full w-full flex-col items-center justify-center gap-[1rem] bg-neutral-900 text-center">
-        <Card
-          front={
-            <div
-              className={`-z-10 flex h-full w-full flex-col items-center justify-center`}
-            >
-              <Logo
-                className={`mb-[1%] aspect-square ${
-                  (isMd || isSm) && !isSideways ? "w-[50%]" : "h-[50%]"
-                }`}
-              />
-              <div className="flex flex-col gap-[3%]">
-                <h1
-                  className={`whitespace-nowrap font-[courier] ${
-                    (isMd || isSm) && !isSideways
-                      ? "text-[5.75vh] [line-height:7vh] "
-                      : "text-[5.75vw] [line-height:7vw] "
-                  }`}
-                >
-                  Kaniel Kirby
-                </h1>
-                <h2
-                  className={`font-[courier] opacity-70 ${
-                    (isMd || isSm) && !isSideways ? "text-[3vh]" : "text-[3vw]"
-                  }`}
-                >
-                  Web Developer
-                </h2>
-              </div>
-            </div>
-          }
-          back={
-            <div
-              className={`relative -z-10 flex h-full w-full items-center ${
-                (isMd || isSm) && !isSideways
-                  ? "flex-col-reverse"
-                  : "flex-row-reverse"
-              }`}
-            >
-              <Tippy
-                content="My Website"
-                placement={(isMd || isSm) && !isSideways ? "bottom" : "left"}
-              >
-                <Link
-                  to="/"
-                  className={`absolute ${
-                    (isMd || isSm) && !isSideways
-                      ? "bottom-[5%] w-[50%]"
-                      : "right-[5%] w-[26%]"
-                  }`}
-                >
-                  <img
-                    src={qr}
-                    alt=""
-                    className={`aspect-square cursor-pointer rounded-lg border-solid border-black shadow-md transition-all duration-200 [border-width:.35vw] hover:scale-105 hover:shadow-xl`}
-                  />
-                </Link>
-              </Tippy>
-              <img
-                src="/kaniel-kirby-1.jpg"
-                alt=""
-                className={`absolute aspect-square rounded-lg border-solid border-black object-cover [border-width:.35vw] ${
-                  (isMd || isSm) && !isSideways
-                    ? "top-[3%] w-[50%]"
-                    : "left-[25%] top-[2%] h-[43%] -translate-x-[30%]"
-                }`}
-              />
-              <h2
-                className={`absolute text-center font-[courier] font-bold ${
-                  (isMd || isSm) && !isSideways
-                    ? "top-[33%] text-[4vh]"
-                    : "left-[23%] top-[48%] -translate-x-[30%] text-[5vw]"
-                }`}
-              >
-                Kaniel Kirby
-              </h2>
-              <ul
-                className={
-                  "font-[courier] " + (isMd || isSm) && !isSideways
-                    ? "text-[2.4vh]"
-                    : "text-[3.4vw]"
-                }
-              >
-                <Tippy
-                  content="My Cell"
-                  placement={(isMd || isSm) && !isSideways ? "bottom" : "top"}
-                >
-                  <li
-                    className={`group absolute ${
-                      (isMd || isSm) && !isSideways
-                        ? "left-0 top-[41%]"
-                        : "left-[5%] top-[73%]"
-                    }`}
-                  >
-                    <a
-                      href="tel:325.443.6046"
-                      className={`flex items-center gap-[3%] transition-transform duration-200 group-hover:scale-105
-                          ${
-                            (isMd || isSm) && !isSideways
-                              ? "flex items-center justify-between px-[5%]"
-                              : " left-[5%]"
-                          }
-                          `}
-                    >
-                      <img
-                        src={phone}
-                        alt=""
-                        className={`drop-shadow-lg transition-transform duration-200 group-hover:-rotate-12 ${
-                          (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
-                        }`}
-                      />
-                      <span className="w-full text-start font-[courier]">
-                        325.443.6046
-                      </span>
-                    </a>
-                  </li>
-                </Tippy>
-                <Tippy
-                  content="My LinkedIn"
-                  placement={(isMd || isSm) && !isSideways ? "bottom" : "top"}
-                >
-                  <li
-                    className={`group absolute ${
-                      (isMd || isSm) && !isSideways
-                        ? "left-0 top-[50%]"
-                        : "left-[5%] top-[58%]"
-                    }`}
-                  >
-                    <a
-                      href="https://www.linkedin.com/in/kanielrkirby/"
-                      className={`flex items-center gap-[3%] transition-transform duration-200 group-hover:scale-105
-                          ${
-                            (isMd || isSm) && !isSideways
-                              ? "flex items-center justify-between px-[5%]"
-                              : ""
-                          }
-                          `}
-                    >
-                      <img
-                        src={linkedin}
-                        alt=""
-                        className={`drop-shadow-lg transition-transform duration-200 group-hover:-rotate-12 ${
-                          (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
-                        }`}
-                      />
-                      <span className="w-full text-start font-[courier]">
-                        @kanielrkirby
-                      </span>
-                    </a>
-                  </li>
-                </Tippy>
-                <Tippy
-                  content="My Email"
-                  placement={(isMd || isSm) && !isSideways ? "bottom" : "top"}
-                >
-                  <li
-                    className={`group absolute ${
-                      (isMd || isSm) && !isSideways
-                        ? "left-[-2%] top-[58.5%]"
-                        : "left-[5%] top-[87%]"
-                    }`}
-                  >
-                    <a
-                      href="mailto:kanielrkirby@runbox.com"
-                      className={`flex items-center gap-[3%] transition-transform duration-200 group-hover:scale-105
-                                    ${
-                                      (isMd || isSm) && !isSideways
-                                        ? "flex items-center justify-between px-[5%]"
-                                        : ""
-                                    }
-                                    `}
-                    >
-                      <img
-                        src={mail}
-                        alt=""
-                        className={`drop-shadow-lg transition-transform duration-200 group-hover:-rotate-12 ${
-                          (isSm || isMd) && !isSideways ? "h-[7vh]" : "w-[7vw]"
-                        }`}
-                      />
-                      <span className="w-full text-start font-[courier]">
-                        kanielrkirby@runbox.com
-                      </span>
-                    </a>
-                  </li>
-                </Tippy>
-              </ul>
-            </div>
-          }
-        />
-        <Tippy content="My Website" placement="bottom">
-          <div>
-            <Link to="/" className="group flex gap-4">
-              <img src={link} className="w-8" alt="" />
-              <span className="link fancy">Back to my website!</span>
-            </Link>
-          </div>
-        </Tippy>
-      </div>
-    </>
+<script>
+  import { $flipped, toggle } from "@/store/card";
+  const html = document.documentElement;
+  const card = document.querySelector("#business-card");
+  card?.addEventListener("click", toggle);
+  $flipped.subscribe((isFlipped) =>
+    isFlipped ? html.classList.add("flipped") : html.classList.remove("flipped")
   );
-}
-
-function Card({
-  front,
-  back,
-  className,
-}: {
-  front: JSX.Element | JSX.Element[];
-  back: JSX.Element | JSX.Element[];
-  className?: string;
-}) {
-  const [flipped, setFlipped] = useState(false);
-  const { isSm, isMd, isSideways } = useBreakpoint();
-
-  return (
-    <div
-      className={`relative transition-all duration-300 [perspective:1000px] ${
-        className ?? ""
-      } ${
-        (isMd || isSm) && !isSideways
-          ? "aspect-[2/3.5] h-[80%]"
-          : "aspect-[3.5/2] w-[85%]"
-      }
-      `}
-    >
-      <div
-        className={`relative h-full w-full rounded-md transition-all duration-300 [transform-style:preserve-3d]  ${
-          flipped
-            ? "shadow-[-7px_3px_13px_3px_#00000050] [transform:rotate3d(0,1,0,180deg)]"
-            : "shadow-[7px_3px_13px_3px_#00000050] [transform:rotate3d(0,1,0,0deg)]"
-        }`}
-      >
-        <div className="absolute flex h-full w-full flex-col items-center justify-center rounded-md bg-black transition-all duration-300 [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
-          <div className={`relative h-full w-full ${!flipped ? "z-10" : ""}`}>
-            <Tippy content="Flip card for more!" placement="bottom">
-              <div
-                className={`absolute right-[2%] top-[4%] cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
-                  (isMd || isSm) && !isSideways ? "h-[6%]" : "w-[8%]"
-                }`}
-                onClick={(e) => {
-                  setFlipped((prev) => !prev);
-                }}
-              >
-                <Flip className="h-full w-full" />
-              </div>
-            </Tippy>
-            {front}
-          </div>
-          <CardBG />
-        </div>
-        <div className="absolute flex h-full w-full flex-col items-center justify-center rounded-md bg-black transition-all duration-300 [transform:rotate3d(0,1,0,180deg)] [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
-          <div className={`relative h-full w-full ${flipped ? "z-10" : ""}`}>
-            <Tippy content="Go back" placement="bottom">
-              <div
-                className={`absolute right-[2%] top-[4%] cursor-pointer transition-all duration-200 hover:rotate-12 hover:scale-105 ${
-                  (isMd || isSm) && !isSideways ? "h-[6%]" : "w-[8%]"
-                }`}
-                onClick={(e) => {
-                  setFlipped((prev) => !prev);
-                }}
-              >
-                <Flip className="h-full w-full" />
-              </div>
-            </Tippy>
-            {back}
-          </div>
-          <CardBG flipped />
-        </div>
-      </div>
-    </div> -->
-
-<!-- <div
-      className={`pointer-events-none absolute left-0 top-0 h-full w-full overflow-hidden opacity-70 ${
-        flipped ? "[transform:rotate3d(0,1,0,180deg)]" : ""
-      }`}
-    >
-      <img
-        src={blueSplash}
-        alt=""
-        className={`absolute w-[60%] ${
-          (isMd || isSm) && !isSideways
-            ? flipped
-              ? "left-[80%] top-[30%]"
-              : "left-[-20%] top-[80%]"
-            : flipped
-            ? "bottom-[-70%] right-[-40%]"
-            : "bottom-[-70%] right-[-30%]"
-        }`}
-      />
-      <img
-        src={blueSplash}
-        alt=""
-        className={`absolute ${
-          (isMd || isSm) && !isSideways
-            ? flipped
-              ? "left-[0%] top-[-12%] rotate-[60deg]"
-              : "right-[-50%] top-[75%]"
-            : flipped
-            ? "right-[-12%] top-[-70%] w-[80%]"
-            : "right-[-20%] top-[-50%] w-[60%]"
-        }`}
-      />
-      <img
-        src={redSplash}
-        alt=""
-        className={`absolute ${
-          (isMd || isSm) && !isSideways
-            ? flipped
-              ? "bottom-[-25%] left-[0%] rotate-90"
-              : "left-[-5%] top-[10%]"
-            : flipped
-            ? "right-[55%] top-[-25%] w-[70.5%]"
-            : "left-[-24%] top-[-55%] w-[60%]"
-        }`}
-      />
-      <img
-        src={redSplash}
-        alt=""
-        className={`absolute bottom-[-73%] left-[-25%] w-[60%] ${
-          (isMd || isSm) && !isSideways
-            ? flipped
-              ? "bottom-[-7%] left-[30%] rotate-[110deg] scale-[175%]"
-              : "left-[-20%] top-[-20%]"
-            : flipped
-            ? "hidden"
-            : ""
-        }`}
-      />
-    </div> -->
+</script>

@@ -3,7 +3,7 @@ export interface Props {
   name: string;
   class?: string;
 }
-const { name, class: className } = Astro.props;
+const { name, class: className = "" } = Astro.props;
 ---
 
 <modal-component
@@ -31,7 +31,7 @@ const { name, class: className } = Astro.props;
       </button>
     </header>
     <div
-      class={`my-16 flex w-full max-w-xs flex-col justify-around gap-4 ${className}`}
+      class={`my-16 flex w-full flex-col justify-around gap-4 ${className}`}
       id={`${name}-modal-content`}
     >
       <slot />
