@@ -1,11 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import discord from "@/assets/svgs/discord.svg";
-import linkedin from "@/assets/svgs/linkedin.svg";
-import mail from "@/assets/svgs/mail.svg";
-import resume from "@/assets/svgs/resume.svg";
-import reddit from "@/assets/svgs/reddit.svg";
-import github from "@/assets/svgs/github.svg";
 ---
 
 <ul
@@ -14,10 +8,10 @@ import github from "@/assets/svgs/github.svg";
   <li aria-label="Discord">
     <a href="https://discordapp.com/users/347554007750803459/">
       <Image
-        src={discord}
+        src={import("@/assets/svgs/discord.svg")}
         alt="Discord icon"
-        width={36}
-        height={36}
+        width={100}
+        height={100}
         class="opacity-50 transition-all duration-200 hover:scale-110 hover:opacity-90"
       />
     </a>
@@ -25,10 +19,10 @@ import github from "@/assets/svgs/github.svg";
   <li aria-label="Email">
     <a href="mailto:kanielrkirby@runbox.com">
       <Image
-        src={mail}
+        src={import("@/assets/svgs/mail.svg")}
         alt="Email icon"
-        width={36}
-        height={36}
+        width={100}
+        height={100}
         class="opacity-50 transition-all duration-200 hover:scale-110 hover:opacity-90"
       />
     </a>
@@ -36,10 +30,10 @@ import github from "@/assets/svgs/github.svg";
   <li aria-label="LinkedIn">
     <a href="https://www.linkedincom/in/kaniel-kirby-9b1460261/">
       <Image
-        src={linkedin}
+        src={import("@/assets/svgs/linkedin.svg")}
         alt="LinkedIn icon"
-        width={36}
-        height={36}
+        width={100}
+        height={100}
         class="opacity-50 transition-all duration-200 hover:scale-110 hover:opacity-90"
       />
     </a>
@@ -47,10 +41,10 @@ import github from "@/assets/svgs/github.svg";
   <li aria-label="Github">
     <a href="https://github.com/piratey7007/">
       <Image
-        src={github}
+        src={import("@/assets/svgs/github.svg")}
         alt="Github icon"
-        width={36}
-        height={36}
+        width={100}
+        height={100}
         class="opacity-50 transition-all duration-200 hover:scale-110 hover:opacity-90"
       />
     </a>
@@ -58,10 +52,10 @@ import github from "@/assets/svgs/github.svg";
   <li aria-label="Reddit">
     <a href="https://www.reddit.com/user/CompetitiveAd7245/">
       <Image
-        src={reddit}
+        src={import("@/assets/svgs/reddit.svg")}
         alt="Reddit icon"
-        width={36}
-        height={36}
+        width={100}
+        height={100}
         class="opacity-50 transition-all duration-200 hover:scale-110 hover:opacity-90"
       />
     </a>
@@ -69,10 +63,10 @@ import github from "@/assets/svgs/github.svg";
   <li aria-label="Resume">
     <a href="https://www.google.com/drive/">
       <Image
-        src={resume}
+        src={import("@/assets/svgs/resume.svg")}
         alt="Resume icon"
-        width={36}
-        height={36}
+        width={100}
+        height={100}
         class="opacity-50 transition-all duration-200 hover:scale-110 hover:opacity-90"
       />
     </a>
