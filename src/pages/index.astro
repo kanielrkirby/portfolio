@@ -1,5 +1,4 @@
 ---
-import Background from "@/components/Background.astro";
 import Layout from "@/layouts/MainLayout.astro";
 const infoText = "More info.";
 const siteText = "See it yourself!";
@@ -10,10 +9,12 @@ const siteText = "See it yourself!";
     <h1 class="mb-8">My Projects</h1>
     <ul class="flex flex-col items-center gap-12">
       <li class="flex flex-col items-center gap-2">
-        <h2 class="text-2xl">Grizzly's Cafe</h2>
+        <h2 class="text-2xl">Grizzly Cafe</h2>
         <p>A basic cafe's website.</p>
         <button id="grizzly-info-btn" class="link">{infoText}</button>
-        <a class="link" href="">{siteText}</a>
+        <a rel="prefetch" class="link" href="https://grizzlycafe.netlify.app"
+          >{siteText}</a
+        >
         <img
           class="aspect-[2/1.25] w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black"
           src=""
@@ -24,66 +25,30 @@ const siteText = "See it yourself!";
         <h2 class="text-2xl">Polychrome</h2>
         <p>A versatile color palette generator with multiple algorithms.</p>
         <button id="polychrome-info-btn" class="link">{infoText}</button>
-        <a class="link" href="">{siteText}</a>
+        <a
+          rel="prefetch"
+          class="link"
+          href="https://piratey7007.github.io/polychrome">{siteText}</a
+        >
         <img
           class="aspect-[2/1.25] w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black"
           src=""
           alt="GIF of Polychrome"
         />
-        <div
-          class="modal pointer-events-none fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50 opacity-0 backdrop-blur transition-all duration-500 selection:bg-red-300"
-          id="polychrome-info-modal"
-          aria-hidden="true"
-          tabindex="-1"
-          data-micromodal-close
-        >
-          <div
-            class="flex min-h-[20rem] w-[40rem] max-w-[95%] translate-y-16 flex-col items-center rounded-md bg-white p-8 transition-all duration-300 descends-[.modal.is-open]:translate-y-0"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="polychrome-info-modal-title"
-          >
-            <header class="relative flex w-full justify-center pt-16">
-              <button
-                class="group absolute right-0 top-0 w-16"
-                aria-label="Close modal"
-                data-micromodal-close
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-full w-full"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    class="fill-[#00000000] transition-all duration-200 group-hover:fill-[#00000050]"
-                  ></path>
-                </svg>
-              </button>
-            </header>
-            <div
-              class="my-16 flex w-full max-w-xs flex-col justify-around gap-4"
-              id="navigation-modal-content"
-            >
-            </div>
-          </div>
-        </div>
       </li>
       <li class="flex flex-col items-center gap-2">
         <h2 class="text-2xl">Bazaar</h2>
         <p>A feature-rich online marketplace.</p>
         <button id="bazaar-info-btn" class="link">{infoText}</button>
-        <a class="link" href="">{siteText}</a>
+        <a
+          rel="prefetch"
+          class="link"
+          href="https://We-got-this-2023.github.io/bazaar">{siteText}</a
+        >
         <img
           class="aspect-[2/1.25] w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black"
           src=""
-          alt="GIF of Polychrome"
+          alt="GIF of Bazaar"
         />
       </li>
     </ul>
