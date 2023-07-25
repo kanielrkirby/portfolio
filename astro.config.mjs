@@ -3,7 +3,11 @@ import prefetch from "@astrojs/prefetch";
 import image from "@astrojs/image";
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
+import netlify from "@astrojs/netlify/functions";
 
+// https://astro.build/config
 export default defineConfig({
-  integrations: [prefetch(), image(), tailwind(), compress()],
+  integrations: [prefetch(), image(), tailwind(), compress({ svg: false })],
+  output: "server",
+  adapter: netlify(),
 });

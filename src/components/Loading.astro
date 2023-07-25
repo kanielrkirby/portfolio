@@ -29,9 +29,7 @@
     "#loading-screen"
   ) as HTMLDivElement;
 
-  window.addEventListener("load", async (e) => {
-    document.documentElement.classList.add("fade");
-    loadingScreen.ontransitionend = loadingScreen.ontransitioncancel = () =>
-      document.documentElement.classList.remove("fade", "loading");
-  });
+  document.documentElement.classList.add("fade");
+  loadingScreen.ontransitionend = loadingScreen.ontransitioncancel = () =>
+    document.documentElement.classList.remove("fade", "loading");
 </script>

@@ -30,11 +30,22 @@ const { SEO: seoProps, shortfooter } = Astro.props;
       <Background />
     </div>
     <div class="z-50" id="modal-root">
-      <Loading />
       <SettingsModal />
       <NavigationModal />
+      <Loading />
     </div>
     <style is:global>
+      @font-face {
+        font-family: "Comfortaa";
+        src: local("Comfortaa"),
+          url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.woff2")
+            format("woff2"),
+          url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.woff")
+            format("woff"),
+          url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf")
+            format("opentype"),
+          url("https://fonts.bunny.net/css?family=comfortaa:300,400,500,600,700)");
+      }
       html,
       body {
         @apply h-full w-full;
