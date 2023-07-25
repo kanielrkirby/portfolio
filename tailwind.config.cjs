@@ -164,6 +164,7 @@ module.exports = {
         ".tt-b,.tt-br,.tt-bl,.tt-t,.tt-tr,.tt-tl,.tt-l,.tt-r": {
           position: "relative",
           "&::after,&::before": {
+            "--tw-bg-opacity": "1",
             transform: "translate3d(0, 0, 0)",
             "-webkit-backface-visibility": "hidden",
             "backface-visibility": "hidden",
@@ -292,6 +293,8 @@ no-repeat`,
             transform: "translate3d(calc(0% + -16px), 0, 0)",
           },
         },
+        ".tt-t": {},
+        ".tt-b": {},
 
         ".tt-l": {
           "&::after,&::before": {
