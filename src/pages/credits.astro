@@ -1,0 +1,164 @@
+---
+import KanielKirby from "@/components/pictures/KanielKirby.astro";
+import Layout from "@/layouts/MainLayout.astro";
+import { Image } from "@astrojs/image/components";
+import KanielKirby2 from "@/components/pictures/KanielKirby2.astro";
+import Codepen from "@/components/Codepen.astro";
+---
+
+<Layout SEO={{ title: "Credits" }}>
+  <main
+    class="mb-8 flex h-full w-full flex-col items-center justify-center gap-8"
+  >
+    <h1>Credits & Attributions</h1>
+    <div class="flex w-full flex-col items-center">
+      <hr class="mb-4 w-[90%] bg-white" />
+      <p
+        class="flex w-full max-w-[90%] flex-col items-center gap-4 text-center"
+      >
+        <span class="text-base max-sm:text-sm"
+          >Hover anything to see where it came from.</span
+        >
+        <span class="text-base max-sm:text-sm">Click anything to see more.</span
+        >
+        <span class="text-base max-sm:text-sm"
+          >Everything else is made by me.</span
+        >
+      </p>
+      <hr class="mt-4 w-[90%] bg-white" />
+    </div>
+    <div class="grid grid-cols-2 gap-8 max-lg:grid-cols-1">
+      <div class="flex w-full flex-col items-center justify-center">
+        <h2 class="text-2xl">Icons</h2>
+        <div class="grid grid-cols-3 gap-2">
+          <a
+            role="tooltip"
+            aria-label="Icon from SVG Repo"
+            href=""
+            class="group rounded-full bg-black bg-opacity-5 p-2 transition-all duration-200 hover:scale-110 hover:bg-opacity-10"
+          >
+            <Image
+              class="w-8 opacity-50 transition-all duration-200 group-hover:opacity-100"
+              src={import("@/assets/svgs/github.svg")}
+              alt="Github icon."
+            />
+          </a>
+          <a
+            role="tooltip"
+            aria-label="Icon from SVG Repo"
+            href=""
+            class="group rounded-full bg-black bg-opacity-5 p-2 transition-all duration-200 hover:scale-110 hover:bg-opacity-10"
+          >
+            <Image
+              class="w-8 opacity-50 transition-all duration-200 group-hover:opacity-100"
+              src={import("@/assets/svgs/linkedin.svg")}
+              alt="LinkedIn icon."
+            />
+          </a>
+          <a
+            role="tooltip"
+            aria-label="Icon from SVG Repo"
+            href=""
+            class="group rounded-full bg-black bg-opacity-5 p-2 transition-all duration-200 hover:scale-110 hover:bg-opacity-10"
+          >
+            <Image
+              class="w-8 opacity-50 transition-all duration-200 group-hover:opacity-100"
+              src={import("@/assets/svgs/discord.svg")}
+              alt="Discord icon."
+            />
+          </a>
+          <a
+            role="tooltip"
+            aria-label="Icon from SVG Repo"
+            href=""
+            class="group rounded-full bg-black bg-opacity-5 p-2 transition-all duration-200 hover:scale-110 hover:bg-opacity-10"
+          >
+            <Image
+              class="w-8 opacity-50 transition-all duration-200 group-hover:opacity-100"
+              src={import("@/assets/svgs/reddit.svg")}
+              alt="Reddit icon."
+            />
+          </a>
+          <a
+            role="tooltip"
+            aria-label="Icon from SVG Repo"
+            href=""
+            class="group rounded-full bg-black bg-opacity-5 p-2 transition-all duration-200 hover:scale-110 hover:bg-opacity-10"
+          >
+            <Image
+              class="w-8 opacity-50 transition-all duration-200 group-hover:opacity-100"
+              src={import("@/assets/svgs/mail.svg")}
+              alt="Mail icon."
+            />
+          </a>
+          <a
+            role="tooltip"
+            aria-label="Icon from SVG Repo"
+            href=""
+            class="group rounded-full bg-black bg-opacity-5 p-2 transition-all duration-200 hover:scale-110 hover:bg-opacity-10"
+          >
+            <Image
+              class="w-8 opacity-50 transition-all duration-200 group-hover:opacity-100"
+              src={import("@/assets/svgs/resume.svg")}
+              alt="Resume icon."
+            />
+          </a>
+        </div>
+      </div>
+      <div class="flex w-full flex-col items-center justify-center gap-4">
+        <h2 class="text-2xl">Images</h2>
+        <div class="flex gap-4">
+          <a
+            href="/"
+            aria-label="Picture taken by Zoe M. Harris"
+            role="tooltip"
+            class="tt-b h-fit w-fit"
+          >
+            <KanielKirby
+              class="aspect-square w-48 overflow-hidden rounded-md object-cover"
+            />
+          </a>
+          <a
+            href="/"
+            aria-label="Picture taken by Zoe M. Harris"
+            role="tooltip"
+            class="tt-b h-fit w-fit"
+          >
+            <KanielKirby2
+              class="aspect-square w-48 overflow-hidden rounded-md object-cover"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="flex w-full flex-col items-center justify-center gap-4">
+        <h2 class="text-2xl">Background Animation</h2>
+        <Codepen />
+      </div>
+      <div
+        class="flex w-full flex-col items-center justify-center gap-4 text-center"
+      >
+        <h2 class="text-2xl">Libraries</h2>
+        <div class="grid grid-cols-2 gap-x-8 gap-y-2 max-sm:grid-cols-1">
+          <a class="link" href="https://astro.build">Astro</a>
+          <a class="link" href="https://github.com/jonasmerlin/astro-seo"
+            >Astro SEO</a
+          >
+          <a class="link" href="https://www.npmjs.com/package/astro-compress"
+            >Astro Compress</a
+          >
+          <a class="link" href="https://tailwindcss.com">TailwindCSS</a>
+          <a class="link" href="https://prettier.com">Prettier</a>
+          <a class="link" href="https://github.com/nanostores/nanostores"
+            >Nanostores</a
+          >
+          <a class="link" href="https://github.com/ghosh/microtip">Microtip</a>
+          <a class="link" href="https://github.com/ghosh/micromodal"
+            >Micromodal</a
+          >
+          <a class="link" href="https://threejs.org/">ThreeJS</a>
+          <a class="link" href="https://gka.github.io/chroma.js/">ChromaJS</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

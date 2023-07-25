@@ -10,6 +10,6 @@ const { type, class: className = "", ...props } = Astro.props;
   src={type === "red" ? redSplash : blueSplash}
   alt=""
   format="avif"
-  class={`absolute h-full w-full object-contain opacity-50 ${className}`}
+  class={`select-none absolute h-full w-full object-contain opacity-50 ${className}`}
   {...props}
 />

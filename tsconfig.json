@@ -11,11 +11,16 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*", "public/*"]
+      "@/*": [
+        "src/*",
+        "public/*"
+      ]
     },
     "ignoreDeprecations": "5.0",
     "allowJs": true,
     "strict": true,
-    "importsNotUsedAsValues": "error"
+    "importsNotUsedAsValues": "error",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
