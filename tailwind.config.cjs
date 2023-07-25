@@ -164,7 +164,6 @@ module.exports = {
         ".tt-b,.tt-br,.tt-bl,.tt-t,.tt-tr,.tt-tl,.tt-l,.tt-r": {
           position: "relative",
           "&::after,&::before": {
-            "--tw-bg-opacity": "1",
             transform: "translate3d(0, 0, 0)",
             "-webkit-backface-visibility": "hidden",
             "backface-visibility": "hidden",
@@ -175,7 +174,7 @@ module.exports = {
               "all var(--microtip-transition-duration, 0.18s) var(--microtip-transition-easing, ease-in-out) var(--microtip-transition-delay, 0s)",
             position: "absolute",
             "box-sizing": "border-box",
-            "z-index": 10,
+            "z-index": 20,
             "transform-origin": "top",
           },
           "&::before": {
