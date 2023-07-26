@@ -1,15 +1,21 @@
 ---
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 import redSplash from "@/assets/images/red-purple-splash.webp";
 import blueSplash from "@/assets/images/blue-pink-splash.webp";
 
 const { type, class: className = "", ...props } = Astro.props;
 ---
 
-<Image
+<!-- <Image
   src={type === "red" ? redSplash : blueSplash}
   alt=""
   format="avif"
+  class={`select-none absolute h-full w-full object-contain opacity-50 ${className}`}
+  {...props}
+  /> -->
+<img
+  src={type === "red" ? redSplash : blueSplash}
+  alt=""
   class={`select-none absolute h-full w-full object-contain opacity-50 ${className}`}
   {...props}
 />

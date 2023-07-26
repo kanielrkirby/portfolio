@@ -3,7 +3,7 @@ import Logo from "@/components/Logo.astro";
 import KanielKirby2 from "@/components/pictures/KanielKirby2.astro";
 import Base from "@/layouts/BaseLayout.astro";
 import constants from "@/scripts/constants";
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 import Splash from "@/components/pictures/Splash.astro";
 ---
 
@@ -14,13 +14,29 @@ import Splash from "@/components/pictures/Splash.astro";
   class="fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-neutral-900 [perspective:1000px]"
 >
   <main
-    id="business-card"
     class="relative flex aspect-[2/3.5] flex-col items-center justify-center gap-4 transition-all duration-500 [transform-style:preserve-3d] flip:[transform:rotate3d(0,1,0,180deg)] max-md:h-[80%] md:aspect-[3.5/2] md:w-[95%]"
   >
     <!-- Front -->
     <div
       class="absolute h-full w-full overflow-hidden bg-black [-webkit-backface-visibility:hidden] [backface-visibility:hidden]"
     >
+      <button
+        role="tooltip"
+        aria-label="See contact info"
+        id="flip-front"
+        class="tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
+      >
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          class="aspect-square h-full w-full transition-all duration-200 hover:rotate-12 hover:scale-105"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M84.8872 20.1561C77.4036 12.4318 66.9893 7.46713 55.442 7.00433C52.5429 6.88808 50.0969 9.12664 49.9797 12.0027C49.8626 14.8799 52.1182 17.3074 55.015 17.4251C63.7751 17.7791 71.621 21.5212 77.3177 27.3882C83.0067 33.2615 86.4893 41.1928 86.492 49.9834C86.4893 58.999 82.8244 67.1125 76.8749 73.0274C70.9151 78.9332 62.7384 82.569 53.6555 82.5716C44.5724 82.5689 36.3931 78.933 30.4357 73.0274C24.4863 67.1125 20.8212 58.9992 20.8187 49.9834C20.8187 49.3488 20.8381 48.7193 20.8741 48.095L27.133 51.161C27.8127 51.4933 28.6021 51.4984 29.2168 51.1767C29.834 50.8509 30.1988 50.2407 30.1832 49.5558L29.566 22.2555C29.5451 21.4747 29.0372 20.7328 28.2636 20.3489C27.4848 19.9716 26.5808 20.0193 25.9479 20.4834L3.73587 36.5989C3.17591 37.0036 2.91006 37.6613 3.0272 38.3439C3.13919 39.0288 3.62369 39.6454 4.30611 39.979L10.8644 43.191C10.5088 45.4077 10.3103 47.6736 10.3103 49.9834C10.3078 61.8452 15.171 72.6331 23.0064 80.4012C30.8341 88.1762 41.7015 93.0024 53.6553 93C65.6063 93.0026 76.4763 88.1762 84.3038 80.4014C92.1392 72.6331 97.0024 61.8454 97 49.9836C97.0024 38.4202 92.3813 27.8741 84.8872 20.1561Z"
+            class="fill-white"></path>
+        </svg>
+      </button>
       <div class="absolute z-0 h-full w-full">
         <Splash
           type="blue"
@@ -50,6 +66,23 @@ import Splash from "@/components/pictures/Splash.astro";
     <div
       class="absolute flex h-full w-full justify-between gap-4 overflow-hidden bg-black [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotate3d(0,1,0,180deg)]"
     >
+      <button
+        role="tooltip"
+        aria-label="Flip to front"
+        id="flip-back"
+        class="tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
+      >
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          class="aspect-square h-full w-full transition-all duration-200 hover:rotate-12 hover:scale-105"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M84.8872 20.1561C77.4036 12.4318 66.9893 7.46713 55.442 7.00433C52.5429 6.88808 50.0969 9.12664 49.9797 12.0027C49.8626 14.8799 52.1182 17.3074 55.015 17.4251C63.7751 17.7791 71.621 21.5212 77.3177 27.3882C83.0067 33.2615 86.4893 41.1928 86.492 49.9834C86.4893 58.999 82.8244 67.1125 76.8749 73.0274C70.9151 78.9332 62.7384 82.569 53.6555 82.5716C44.5724 82.5689 36.3931 78.933 30.4357 73.0274C24.4863 67.1125 20.8212 58.9992 20.8187 49.9834C20.8187 49.3488 20.8381 48.7193 20.8741 48.095L27.133 51.161C27.8127 51.4933 28.6021 51.4984 29.2168 51.1767C29.834 50.8509 30.1988 50.2407 30.1832 49.5558L29.566 22.2555C29.5451 21.4747 29.0372 20.7328 28.2636 20.3489C27.4848 19.9716 26.5808 20.0193 25.9479 20.4834L3.73587 36.5989C3.17591 37.0036 2.91006 37.6613 3.0272 38.3439C3.13919 39.0288 3.62369 39.6454 4.30611 39.979L10.8644 43.191C10.5088 45.4077 10.3103 47.6736 10.3103 49.9834C10.3078 61.8452 15.171 72.6331 23.0064 80.4012C30.8341 88.1762 41.7015 93.0024 53.6553 93C65.6063 93.0026 76.4763 88.1762 84.3038 80.4014C92.1392 72.6331 97.0024 61.8454 97 49.9836C97.0024 38.4202 92.3813 27.8741 84.8872 20.1561Z"
+            class="fill-white"></path>
+        </svg>
+      </button>
       <div class="absolute -z-10 h-full w-full">
         <Splash type="blue" class="bottom-[-50%] left-[-50%]" />
         <Splash
@@ -65,7 +98,6 @@ import Splash from "@/components/pictures/Splash.astro";
       >
         <KanielKirby2
           class="h-full w-full overflow-hidden rounded-[2%] object-cover"
-          format="avif"
         />
       </div>
       <h1
@@ -82,7 +114,7 @@ import Splash from "@/components/pictures/Splash.astro";
         <svg
           viewBox="0 0 101 101"
           fill="none"
-          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:h-[6vw] max-md:w-[6vh] md:w-[6vw]"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:w-[6vh] md:w-[6vw]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -108,7 +140,7 @@ import Splash from "@/components/pictures/Splash.astro";
         <svg
           viewBox="0 0 100 100"
           fill="none"
-          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:h-[6vw] max-md:w-[6vh] md:w-[6vw]"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:w-[6vh] md:w-[6vw]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -132,7 +164,7 @@ import Splash from "@/components/pictures/Splash.astro";
           viewBox="0 0 101 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:h-[6vw] max-md:w-[6vh] md:w-[6vw]"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:w-[6vh] md:w-[6vw]"
         >
           <path
             d="M13 27L50.5 54L88 27"
@@ -159,7 +191,7 @@ import Splash from "@/components/pictures/Splash.astro";
         aria-label="My Website"
         class="group tt-t absolute rounded-[1%] max-md:bottom-[2%] max-md:left-0 max-md:right-0 max-md:mx-auto max-md:h-[28%] max-md:w-fit md:bottom-0 md:right-[2%] md:top-0 md:my-auto md:h-fit md:w-[22%]"
       >
-        <Image
+        <img
           src="/svgs/qr-code.svg"
           width={500}
           height={500}
@@ -174,8 +206,8 @@ import Splash from "@/components/pictures/Splash.astro";
 <script>
   import { $flipped, toggle } from "@/store/card";
   const html = document.documentElement;
-  const card = document.querySelector("#business-card");
-  card?.addEventListener("click", toggle);
+  document.querySelector("#flip-front")!.addEventListener("click", toggle);
+  document.querySelector("#flip-back")!.addEventListener("click", toggle);
   $flipped.subscribe((isFlipped) =>
     isFlipped ? html.classList.add("flipped") : html.classList.remove("flipped")
   );

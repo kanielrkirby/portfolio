@@ -5,8 +5,11 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [prefetch(), tailwind(), compress()],
-  experimental: {
-    assets: true,
-  },
+  integrations: [
+    prefetch(),
+    tailwind(),
+    compress({
+      img: false,
+    }),
+  ],
 });
