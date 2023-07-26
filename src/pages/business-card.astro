@@ -3,7 +3,7 @@ import Logo from "@/components/Logo.astro";
 import KanielKirby2 from "@/components/pictures/KanielKirby2.astro";
 import Base from "@/layouts/BaseLayout.astro";
 import constants from "@/scripts/constants";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import Splash from "@/components/pictures/Splash.astro";
 ---
 
@@ -76,14 +76,24 @@ import Splash from "@/components/pictures/Splash.astro";
       <a
         role="tooltip"
         aria-label="LinkedIn"
-        class="group tt-b absolute flex items-center justify-center gap-[2%] max-md:left-0 max-md:right-0 max-md:top-[42%] max-md:mx-auto max-md:h-[6vh] md:left-[10%] md:top-[52%] md:w-[8vw]"
+        class="group tt-b absolute flex items-center justify-center gap-[2%] max-md:left-0 max-md:right-0 max-md:top-[42%] max-md:mx-auto md:left-[10%] md:top-[52%]"
         href={constants.linkedin}
       >
-        <Image
-          src={import("@/assets/svgs/linkedin-round.svg")}
-          alt="LinkedIn Icon"
-          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-full max-md:w-fit md:h-fit md:w-full"
-        />
+        <svg
+          viewBox="0 0 101 101"
+          fill="none"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:h-[6vw] max-md:w-[6vh] md:w-[6vw]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M23.2 5C13.1484 5 5 13.1484 5 23.2V77.8C5 87.8514 13.1484 96 23.2 96H77.8C87.8514 96 96 87.8514 96 77.8V23.2C96 13.1484 87.8514 5 77.8 5H23.2ZM14.1 23.2C14.1 18.1742 18.1742 14.1 23.2 14.1H77.8C82.8259 14.1 86.9 18.1742 86.9 23.2V77.8C86.9 82.8259 82.8259 86.9 77.8 86.9H23.2C18.1742 86.9 14.1 82.8259 14.1 77.8V23.2ZM36.85 45.95C36.85 43.437 34.8129 41.4 32.3 41.4C29.7871 41.4 27.75 43.437 27.75 45.95V73.25C27.75 75.763 29.7871 77.8 32.3 77.8C34.8129 77.8 36.85 75.763 36.85 73.25V45.95ZM39.125 30.025C39.125 33.7944 36.0694 36.85 32.3 36.85C28.5306 36.85 25.475 33.7944 25.475 30.025C25.475 26.2556 28.5306 23.2 32.3 23.2C36.0694 23.2 39.125 26.2556 39.125 30.025Z"
+            class="fill-white group-hover:fill-green-300"></path>
+          <path
+            d="M54.2324 43.347C53.4097 42.1699 52.0447 41.4 50.5 41.4C47.987 41.4 45.95 43.4407 45.95 45.9537V73.25C45.95 75.763 47.987 77.8 50.5 77.8C53.013 77.8 55.05 75.7626 55.05 73.2496V54.8822C56.8582 51.7963 59.4903 50.5 61.875 50.5C65.6997 50.5 68.7 54.1546 68.7 57.6499V73.25C68.7 75.763 70.737 77.8 73.25 77.8C75.763 77.8 77.8 75.7612 77.8 73.2482V57.6499C77.8 50.1624 71.7003 41.4 61.875 41.4C59.1614 41.4 56.5647 42.0835 54.2324 43.347Z"
+            class="fill-white group-hover:fill-green-300"></path>
+        </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
           >@{constants.linkedin.split("/").findLast((link) => link)}</span
@@ -92,14 +102,21 @@ import Splash from "@/components/pictures/Splash.astro";
       <a
         role="tooltip"
         aria-label="Phone Number"
-        class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[50%] max-md:mx-auto max-md:h-[6vh] md:left-[10%] md:top-[67%] md:w-[8vw]"
+        class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[50%] max-md:mx-auto md:left-[10%] md:top-[67%] md:w-full"
         href={"tel:+1 " + constants.phone}
       >
-        <Image
-          src={import("@/assets/svgs/phone-white.svg")}
-          alt="Phone Icon"
-          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-full max-md:w-fit md:h-fit md:w-full"
-        />
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:h-[6vw] max-md:w-[6vh] md:w-[6vw]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M34.0481 65.9522C50.0725 81.9763 64.9175 83.7309 69.2746 83.8913C74.5433 84.0851 79.9175 79.7847 82.24 75.3776C78.5333 71.0272 73.705 67.653 68.4146 63.9947C65.2967 67.1126 61.4517 72.9055 56.3275 70.833C53.4179 69.6563 46.2254 66.3442 39.9407 60.0597C33.6558 53.7747 30.3439 46.5822 29.1672 43.673C27.093 38.5443 32.8989 34.6923 36.0191 31.572C32.3627 26.1942 29.0441 21.2425 24.7028 17.7218C20.2385 20.0572 15.9127 25.3905 16.109 30.7256C16.2694 35.0825 18.0239 49.928 34.0481 65.9522ZM68.9679 92.2188C62.9642 91.998 45.9612 89.6505 28.1556 71.8447C10.3498 54.0388 8.00228 37.036 7.78137 31.0321C7.4447 21.8843 14.4522 12.996 22.5506 9.52533C24.4508 8.71091 26.7524 8.85996 28.5719 10.1872C35.2704 15.0733 39.8919 22.4806 43.8608 28.2806C45.5517 30.7517 45.2725 34.1039 43.1258 36.2506L37.474 41.9022C38.7857 44.7993 41.4619 49.7955 45.8333 54.1667C50.2046 58.5384 55.2008 61.2142 58.0979 62.5263L63.7467 56.8772C65.8954 54.7288 69.2621 54.4455 71.7387 56.1613C77.6554 60.2605 84.6042 64.8168 89.6708 71.3055C91.0938 73.128 91.3054 75.5113 90.4567 77.4922C86.97 85.628 78.1467 92.5568 68.9679 92.2188Z"
+            class="fill-white group-hover:fill-green-300"></path>
+        </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
           >{constants.phone}</span
@@ -108,14 +125,28 @@ import Splash from "@/components/pictures/Splash.astro";
       <a
         role="tooltip"
         aria-label="Email"
-        class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[58%] max-md:mx-auto max-md:h-[6vh] md:left-[10%] md:top-[82%] md:w-[8vw]"
+        class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[58%] max-md:mx-auto md:left-[10%] md:top-[82%] md:w-full"
         href={"mailto:" + constants.email}
       >
-        <Image
-          src={import("@/assets/svgs/mail-white.svg")}
-          alt="Email Icon"
-          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-full max-md:w-fit md:h-fit md:w-full"
-        />
+        <svg
+          viewBox="0 0 101 101"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="select-none transition-all duration-300 ease-in-out group-hover:-rotate-12 max-md:h-[6vh] max-md:h-[6vw] max-md:w-[6vh] md:w-[6vw]"
+        >
+          <path
+            d="M13 27L50.5 54L88 27"
+            class="stroke-white group-hover:stroke-green-300"
+            stroke-width="8"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M82.7778 19H18.2222C13.1289 19 9 23.0934 9 28.1429V73.8571C9 78.9066 13.1289 83 18.2222 83H82.7778C87.8711 83 92 78.9066 92 73.8571V28.1429C92 23.0934 87.8711 19 82.7778 19Z"
+            class="stroke-white group-hover:stroke-green-300"
+            stroke-width="8"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
           >{constants.email}</span
@@ -129,7 +160,9 @@ import Splash from "@/components/pictures/Splash.astro";
         class="group tt-t absolute rounded-[1%] max-md:bottom-[2%] max-md:left-0 max-md:right-0 max-md:mx-auto max-md:h-[28%] max-md:w-fit md:bottom-0 md:right-[2%] md:top-0 md:my-auto md:h-fit md:w-[22%]"
       >
         <Image
-          src={import("@/assets/svgs/qr-code.svg")}
+          src="/svgs/qr-code.svg"
+          width={500}
+          height={500}
           alt="QR Code to Kaniel's website"
           class="h-full w-full select-none rounded-[2%] border-[2%] border-black bg-white transition-all duration-200 group-hover:scale-[1.05]"
         />

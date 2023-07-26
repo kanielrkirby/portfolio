@@ -8,7 +8,7 @@ import { Scene } from "three/src/scenes/Scene";
 import { WebGLRenderer } from "three/src/renderers/WebGLRenderer";
 import { PerspectiveCamera } from "three/src/cameras/PerspectiveCamera";
 import { ShaderMaterial } from "three/src/materials/ShaderMaterial";
-import chroma from "chroma-js";
+import tc from "tinycolor2";
 class Polyline {
   tmp = new Vector3();
   points: Vector3[];
@@ -100,15 +100,30 @@ class Polyline {
   }
 }
 
+let colors = [
+  tc("#916ECA"),
+  tc("#D05FAD"),
+  tc("#F2698B"),
+  tc("#FD9E7E"),
+  tc("#EDBA5E"),
+];
+for (let i = 3; i > 0; i--) {
+  let temp = [...colors];
+  for (let i = 0; i < colors.length - 1; i++) {
+    const n = i * 2 + 1;
+    temp.splice(n, 0, tc.mix(colors[i], colors[i + 1]));
+  }
+  colors = temp;
+}
+
 const conf = {
-  cscale: chroma
-    .scale(["#916ECA", "#D05FAD", "#F2698B", "#FD9E7E", "#EDBA5E"])
-    .mode("lch"),
+  colors,
   darken: -1,
+  brighten: 1,
   sat: 0.25,
   angle: (Math.PI * 2) / 3.3,
   timeCoef: 0.02,
-  nx: 25,
+  nx: colors.length,
   ny: 70,
 };
 let renderer: Renderer, scene: Scene, camera: Camera;
@@ -130,6 +145,9 @@ window.addEventListener("resize", updateSize, false);
 
 initScene();
 requestAnimationFrame(animate);
+(document.querySelector("#canvas") as HTMLCanvasElement).classList.remove(
+  "hidden"
+);
 
 function initScene() {
   scene = new Scene();
@@ -142,7 +160,7 @@ function initScene() {
       uniform vec3 uRnd3;
       uniform vec3 uRnd4;
       uniform vec3 uRnd5;
-      attribute vec3 next, prev; 
+      attribute vec3 next, prev;
       attribute float side;
       varying vec2 vUv;
 
@@ -231,15 +249,10 @@ function initScene() {
           value: new Vector3(rnd(0.2, 0.5), rnd(0.3, 0.6), rnd(0.4, 0.7)),
         },
         uColor1: {
-          value: new Color(conf.cscale(i / conf.nx).hex()),
+          value: new Color(conf.colors[i].toHexString()),
         },
         uColor2: {
-          value: new Color(
-            conf
-              .cscale(i / conf.nx)
-              .darken(conf.darken)
-              .hex()
-          ),
+          value: new Color(conf.colors[i].brighten(15).toHexString()),
         },
       },
       vertexShader,

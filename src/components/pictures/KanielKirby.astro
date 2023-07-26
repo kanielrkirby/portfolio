@@ -1,13 +1,12 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import kanielKirby from "@/assets/images/kaniel-kirby-1.webp";
 ---
 
-<Picture
+<Image
   src={kanielKirby}
   alt=""
   class="h-full w-full object-cover"
-  widths={[800, 1200, 1800, 2400]}
   format="avif"
   loading="eager"
   decoding="sync"

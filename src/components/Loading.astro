@@ -1,5 +1,5 @@
 <div
-  class="fixed left-0 top-0 z-[1000] h-full w-full bg-white transition-all duration-500"
+  class="fixed left-0 top-0 z-[1000] h-full w-full bg-white transition-all"
   id="loading-screen"
 >
   <div
@@ -17,7 +17,7 @@
     @apply block;
   }
   html.loading.fade #loading-screen {
-    @apply pointer-events-none opacity-0;
+    @apply pointer-events-none opacity-0 duration-200;
   }
   html:not(.loading) #loading-screen {
     @apply hidden;

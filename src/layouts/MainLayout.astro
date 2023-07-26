@@ -4,7 +4,6 @@ import Nav from "@/components/Nav.astro";
 import Footer from "@/components/Footer.astro";
 import Background from "@/components/Background.astro";
 import Loading from "@/components/Loading.astro";
-import CanvasImg from "@/components/pictures/CanvasImg.astro";
 import SettingsModal from "@/components/SettingsModal.astro";
 import Base from "@/layouts/BaseLayout.astro";
 import NavigationModal from "@/components/NavigationModal.astro";
@@ -25,8 +24,10 @@ const { SEO: seoProps, shortfooter } = Astro.props;
       <slot />
       <Footer short={shortfooter} />
     </div>
-    <div class="-z-50" id="bg-root">
-      <CanvasImg />
+    <div
+      class="fixed left-0 top-0 -z-50 h-full w-full bg-neutral-800"
+      id="bg-root"
+    >
       <Background />
     </div>
     <div class="z-50" id="modal-root">
@@ -34,26 +35,27 @@ const { SEO: seoProps, shortfooter } = Astro.props;
       <NavigationModal />
       <Loading />
     </div>
-    <style is:global>
-      @font-face {
-        font-family: "Comfortaa";
-        src: local("Comfortaa"),
-          url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.woff2")
-            format("woff2"),
-          url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.woff")
-            format("woff"),
-          url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf")
-            format("opentype"),
-          url("https://fonts.bunny.net/css?family=comfortaa:300,400,500,600,700)");
-      }
-      html,
-      body {
-        @apply h-full w-full;
-      }
-    </style>
     <script>
       import "@/scripts/modal";
       import "@/store/settings";
     </script>
   </body>
 </Base>
+<style>
+  @font-face {
+    font-family: "Comfortaa";
+    src: local("Comfortaa"),
+      url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.woff2")
+        format("woff2"),
+      url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.woff")
+        format("woff"),
+      url("/src/assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf")
+        format("opentype"),
+      url("https://fonts.bunny.net/css?family=comfortaa:300,400,500,600,700)");
+    font-display: "swap";
+  }
+  html,
+  body {
+    @apply h-full w-full;
+  }
+</style>

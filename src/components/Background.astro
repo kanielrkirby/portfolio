@@ -1,22 +1,26 @@
 ---
+import { Image } from "astro:assets";
 export interface Props extends astroHTML.JSX.CanvasHTMLAttributes {}
+import img from "@/assets/images/canvas-img.webp";
 ---
 
+<div
+  class="absolute -z-30 h-full w-full opacity-30 descends-[html.inverted]:bg-black"
+>
+</div>
+<Image
+  src={img}
+  alt=""
+  class="absolute -z-50 h-full w-full object-fill saturate-[1.25] descends-[html.inverted]:invert descends-[html.inverted]:saturate-150"
+  format="avif"
+  loading="eager"
+  decoding="sync"
+  sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, (max-width: 1200px) 1200w, (max-width: 1800px) 1800w"
+/>
+
 <canvas
-  class="bg -z-50 descends-[html.inverted]:invert"
+  class="fixed left-0 top-0 -z-40 hidden h-full w-full descends-[html:not(.moving)]:hidden descends-[html.inverted]:invert"
   id="canvas"
   {...Astro.props}></canvas>
-<div class="overlay bg -z-40 bg-black opacity-20"></div>
-
-<style is:global>
-  .bg {
-    @apply fixed left-0 top-0 h-full w-full select-none transition-all duration-200 !important;
-  }
-  html:not(.moving) canvas.bg,
-  html:not(.moving) .overlay.bg,
-  html.moving .canvas-img {
-    @apply hidden;
-  }
-</style>
 
 <script src="@/scripts/three.ts"></script>
