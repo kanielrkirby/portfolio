@@ -2,11 +2,11 @@
 import Logo from "@/components/Logo.astro";
 ---
 
-<nav class="flex items-center justify-between p-4 text-white">
+<nav class="flex items-center justify-between gap-8 p-4 text-white">
   <button
     aria-label="Navigation"
-    class="group tt-br hidden h-16 max-md:block"
-    id="navigation-modal-btn"
+    class="group tt-br w-16 md:hidden"
+    id="nav-modal-btn"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,41 +24,41 @@ import Logo from "@/components/Logo.astro";
   <a
     aria-label="Business Card"
     href="/business-card"
-    class="tt-br min-w-fit font-display max-md:tt-b"
+    class="tt-b left-0 right-0 mx-auto w-fit md:tt-br max-md:absolute"
   >
     <Logo
-      class="w-20 cursor-pointer shadow-[0_0_10px_0_#00000080] after:bg-black hover:scale-110 hover:shadow-[0_0_10px_0_#00000080]"
+      class="hover:shadow-3xl w-20 shadow-lg shadow-[#00000050] hover:scale-105"
     />
   </a>
   <div
-    class="me-8 flex h-full w-full place-content-end items-center gap-8 max-md:hidden"
+    class="flex h-full w-full place-content-end items-center gap-8 max-md:hidden"
   >
     <a
-      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
+      class="text-xl transition-all duration-300 hover:rotate-6 hover:scale-105"
       href="/">My Projects</a
     >
     <a
-      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:-rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
+      class="text-xl transition-all duration-300 hover:-rotate-6 hover:scale-105"
       href="/contact">Contact</a
     >
     <a
-      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
+      class="text-xl transition-all duration-300 hover:rotate-6 hover:scale-105"
       href="/about">About</a
     >
     <a
-      class="rounded-sm text-xl transition-all duration-300 [text-shadow:3px_3px_4px_#00000050] hover:-rotate-6 hover:scale-105 hover:[text-shadow:4px_4px_6px_#00000080]"
+      class="text-xl transition-all duration-300 hover:-rotate-6 hover:scale-105"
       href="/services">Services</a
     >
   </div>
   <button
     aria-label="Settings"
     id="settings-modal-btn"
-    class="tt-bl relative aspect-square w-0 transition-all duration-200 descends-[html.dev]:h-16 descends-[html.dev]:w-14"
+    class="tt-bl relative aspect-square w-0 transition-all duration-300 descends-[html.dev]:w-16"
   >
     <svg
       viewBox="0 0 100 100"
       fill="none"
-      class="absolute-center w-full cursor-pointer transition-all duration-500 ease-in-out hover:rotate-90 hover:scale-105"
+      class="absolute bottom-0 left-0 right-0 top-0 m-auto w-full cursor-pointer transition-all duration-300 hover:rotate-45 hover:scale-105"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clip-path="url(#clip0_20_92)">

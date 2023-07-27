@@ -1,15 +1,15 @@
 ---
-// import { Image } from "astro:assets";
+import { Image } from "astro:assets";
 import kanielKirby from "@/assets/images/kaniel-kirby-1.webp";
 ---
 
-<!-- <Image
+<Image
   src={kanielKirby}
-  alt=""
+  alt="Image of Kaniel Kirby"
   format="avif"
   loading="eager"
   decoding="sync"
   sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, (max-width: 1200px) 1200w, (max-width: 1800px) 1800w"
   {...Astro.props}
-/>   -->
-<img src={kanielKirby} alt="Image of Kaniel Kirby" {...Astro.props} />
+/>
+<!-- <img src={kanielKirby} alt="Image of Kaniel Kirby" {...Astro.props} /> -->

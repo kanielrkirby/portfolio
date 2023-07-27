@@ -7,7 +7,7 @@ const { name, class: className = "" } = Astro.props;
 ---
 
 <modal-component
-  class="modal pointer-events-none fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50 opacity-0 backdrop-blur transition-all duration-500 selection:bg-red-300"
+  class="modal fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur transition-opacity duration-500 selection:bg-red-300"
   id={`${name}-modal`}
   aria-hidden="true"
   tabindex="-1"
@@ -15,12 +15,12 @@ const { name, class: className = "" } = Astro.props;
   data-name={name}
 >
   <div
-    class="flex min-h-[20rem] w-[40rem] max-w-[95%] translate-y-16 flex-col items-center rounded-md bg-white p-8 transition-all duration-300 descends-[.modal.is-open]:translate-y-0"
+    class="flex h-fit w-[40rem] max-w-[95%] flex-col items-center rounded-md bg-white p-8 transition-all duration-300 descends-[.modal:not(.is-open)]:translate-y-16"
     role="dialog"
     aria-modal="true"
     aria-labelledby={`${name}-modal-title`}
   >
-    <header class="relative flex w-full justify-center pt-16">
+    <header class="relative flex w-full justify-center">
       <h1 id={`${name}-modal-title`} class="capitalize">{name}</h1>
       <button
         class="link-black link-bg-black link absolute right-0 top-0 hover:link-red-500"

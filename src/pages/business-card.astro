@@ -11,9 +11,10 @@ import Splash from "@/components/pictures/Splash.astro";
   SEO={{
     title: "Business Card",
   }}
-  class="fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-neutral-900 [perspective:1000px]"
+  class="fixed left-0 top-0 flex h-screen w-screen items-center justify-center [perspective:1000px]"
 >
   <main
+    id="business-card"
     class="relative flex aspect-[2/3.5] flex-col items-center justify-center gap-4 transition-all duration-500 [transform-style:preserve-3d] flip:[transform:rotate3d(0,1,0,180deg)] max-md:h-[80%] md:aspect-[3.5/2] md:w-[95%]"
   >
     <!-- Front -->
@@ -23,18 +24,18 @@ import Splash from "@/components/pictures/Splash.astro";
       <button
         role="tooltip"
         aria-label="See contact info"
-        id="flip-front"
-        class="tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
+        class="flip-btn group tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
       >
         <svg
           viewBox="0 0 100 100"
           fill="none"
-          class="aspect-square h-full w-full transition-all duration-200 hover:rotate-12 hover:scale-105"
+          class="aspect-square h-full w-full transition-all duration-200 hover:rotate-12 hover:scale-110"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M84.8872 20.1561C77.4036 12.4318 66.9893 7.46713 55.442 7.00433C52.5429 6.88808 50.0969 9.12664 49.9797 12.0027C49.8626 14.8799 52.1182 17.3074 55.015 17.4251C63.7751 17.7791 71.621 21.5212 77.3177 27.3882C83.0067 33.2615 86.4893 41.1928 86.492 49.9834C86.4893 58.999 82.8244 67.1125 76.8749 73.0274C70.9151 78.9332 62.7384 82.569 53.6555 82.5716C44.5724 82.5689 36.3931 78.933 30.4357 73.0274C24.4863 67.1125 20.8212 58.9992 20.8187 49.9834C20.8187 49.3488 20.8381 48.7193 20.8741 48.095L27.133 51.161C27.8127 51.4933 28.6021 51.4984 29.2168 51.1767C29.834 50.8509 30.1988 50.2407 30.1832 49.5558L29.566 22.2555C29.5451 21.4747 29.0372 20.7328 28.2636 20.3489C27.4848 19.9716 26.5808 20.0193 25.9479 20.4834L3.73587 36.5989C3.17591 37.0036 2.91006 37.6613 3.0272 38.3439C3.13919 39.0288 3.62369 39.6454 4.30611 39.979L10.8644 43.191C10.5088 45.4077 10.3103 47.6736 10.3103 49.9834C10.3078 61.8452 15.171 72.6331 23.0064 80.4012C30.8341 88.1762 41.7015 93.0024 53.6553 93C65.6063 93.0026 76.4763 88.1762 84.3038 80.4014C92.1392 72.6331 97.0024 61.8454 97 49.9836C97.0024 38.4202 92.3813 27.8741 84.8872 20.1561Z"
-            class="fill-white"></path>
+            class="fill-white transition-all duration-200 group-hover:fill-green-300"
+          ></path>
         </svg>
       </button>
       <div class="absolute z-0 h-full w-full">
@@ -49,15 +50,15 @@ import Splash from "@/components/pictures/Splash.astro";
         <Splash type="red" class="max-md:bottom-0" />
       </div>
       <Logo
-        class="absolute-center aspect-square h-full w-full select-none max-md:top-[-20%] max-md:h-[35%] md:top-[-25%] md:w-[35%]"
+        class="absolute bottom-0 left-0 right-0 top-0 m-auto aspect-square h-full w-full select-none max-md:top-[-20%] max-md:h-[35%] md:top-[-25%] md:w-[35%]"
       />
       <h1
-        class="absolute-center h-fit w-fit font-body max-md:top-[22%] max-md:text-[6vh] md:top-[45%] md:text-[7.5vw]"
+        class="absolute bottom-0 left-0 right-0 top-0 m-auto h-fit w-fit font-body max-md:top-[22%] max-md:text-[6vh] md:top-[45%] md:text-[7.5vw]"
       >
         Kaniel Kirby
       </h1>
       <h2
-        class="absolute-center h-fit w-fit font-body opacity-70 max-md:top-[38%] max-md:text-[4vh] md:top-[70%] md:text-[5.25vw]"
+        class="absolute bottom-0 left-0 right-0 top-0 m-auto h-fit w-fit font-body opacity-70 max-md:top-[38%] max-md:text-[4vh] md:top-[70%] md:text-[5.25vw]"
       >
         Web Developer
       </h2>
@@ -69,8 +70,7 @@ import Splash from "@/components/pictures/Splash.astro";
       <button
         role="tooltip"
         aria-label="Flip to front"
-        id="flip-back"
-        class="tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
+        class="flip-btn group tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
       >
         <svg
           viewBox="0 0 100 100"
@@ -80,7 +80,8 @@ import Splash from "@/components/pictures/Splash.astro";
         >
           <path
             d="M84.8872 20.1561C77.4036 12.4318 66.9893 7.46713 55.442 7.00433C52.5429 6.88808 50.0969 9.12664 49.9797 12.0027C49.8626 14.8799 52.1182 17.3074 55.015 17.4251C63.7751 17.7791 71.621 21.5212 77.3177 27.3882C83.0067 33.2615 86.4893 41.1928 86.492 49.9834C86.4893 58.999 82.8244 67.1125 76.8749 73.0274C70.9151 78.9332 62.7384 82.569 53.6555 82.5716C44.5724 82.5689 36.3931 78.933 30.4357 73.0274C24.4863 67.1125 20.8212 58.9992 20.8187 49.9834C20.8187 49.3488 20.8381 48.7193 20.8741 48.095L27.133 51.161C27.8127 51.4933 28.6021 51.4984 29.2168 51.1767C29.834 50.8509 30.1988 50.2407 30.1832 49.5558L29.566 22.2555C29.5451 21.4747 29.0372 20.7328 28.2636 20.3489C27.4848 19.9716 26.5808 20.0193 25.9479 20.4834L3.73587 36.5989C3.17591 37.0036 2.91006 37.6613 3.0272 38.3439C3.13919 39.0288 3.62369 39.6454 4.30611 39.979L10.8644 43.191C10.5088 45.4077 10.3103 47.6736 10.3103 49.9834C10.3078 61.8452 15.171 72.6331 23.0064 80.4012C30.8341 88.1762 41.7015 93.0024 53.6553 93C65.6063 93.0026 76.4763 88.1762 84.3038 80.4014C92.1392 72.6331 97.0024 61.8454 97 49.9836C97.0024 38.4202 92.3813 27.8741 84.8872 20.1561Z"
-            class="fill-white"></path>
+            class="fill-white transition-all duration-200 group-hover:fill-green-300"
+          ></path>
         </svg>
       </button>
       <div class="absolute -z-10 h-full w-full">
@@ -121,10 +122,12 @@ import Splash from "@/components/pictures/Splash.astro";
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M23.2 5C13.1484 5 5 13.1484 5 23.2V77.8C5 87.8514 13.1484 96 23.2 96H77.8C87.8514 96 96 87.8514 96 77.8V23.2C96 13.1484 87.8514 5 77.8 5H23.2ZM14.1 23.2C14.1 18.1742 18.1742 14.1 23.2 14.1H77.8C82.8259 14.1 86.9 18.1742 86.9 23.2V77.8C86.9 82.8259 82.8259 86.9 77.8 86.9H23.2C18.1742 86.9 14.1 82.8259 14.1 77.8V23.2ZM36.85 45.95C36.85 43.437 34.8129 41.4 32.3 41.4C29.7871 41.4 27.75 43.437 27.75 45.95V73.25C27.75 75.763 29.7871 77.8 32.3 77.8C34.8129 77.8 36.85 75.763 36.85 73.25V45.95ZM39.125 30.025C39.125 33.7944 36.0694 36.85 32.3 36.85C28.5306 36.85 25.475 33.7944 25.475 30.025C25.475 26.2556 28.5306 23.2 32.3 23.2C36.0694 23.2 39.125 26.2556 39.125 30.025Z"
-            class="fill-white group-hover:fill-green-300"></path>
+            class="fill-white transition-all duration-200 group-hover:fill-green-300"
+          ></path>
           <path
             d="M54.2324 43.347C53.4097 42.1699 52.0447 41.4 50.5 41.4C47.987 41.4 45.95 43.4407 45.95 45.9537V73.25C45.95 75.763 47.987 77.8 50.5 77.8C53.013 77.8 55.05 75.7626 55.05 73.2496V54.8822C56.8582 51.7963 59.4903 50.5 61.875 50.5C65.6997 50.5 68.7 54.1546 68.7 57.6499V73.25C68.7 75.763 70.737 77.8 73.25 77.8C75.763 77.8 77.8 75.7612 77.8 73.2482V57.6499C77.8 50.1624 71.7003 41.4 61.875 41.4C59.1614 41.4 56.5647 42.0835 54.2324 43.347Z"
-            class="fill-white group-hover:fill-green-300"></path>
+            class="fill-white transition-all duration-200 group-hover:fill-green-300"
+          ></path>
         </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
@@ -147,7 +150,8 @@ import Splash from "@/components/pictures/Splash.astro";
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M34.0481 65.9522C50.0725 81.9763 64.9175 83.7309 69.2746 83.8913C74.5433 84.0851 79.9175 79.7847 82.24 75.3776C78.5333 71.0272 73.705 67.653 68.4146 63.9947C65.2967 67.1126 61.4517 72.9055 56.3275 70.833C53.4179 69.6563 46.2254 66.3442 39.9407 60.0597C33.6558 53.7747 30.3439 46.5822 29.1672 43.673C27.093 38.5443 32.8989 34.6923 36.0191 31.572C32.3627 26.1942 29.0441 21.2425 24.7028 17.7218C20.2385 20.0572 15.9127 25.3905 16.109 30.7256C16.2694 35.0825 18.0239 49.928 34.0481 65.9522ZM68.9679 92.2188C62.9642 91.998 45.9612 89.6505 28.1556 71.8447C10.3498 54.0388 8.00228 37.036 7.78137 31.0321C7.4447 21.8843 14.4522 12.996 22.5506 9.52533C24.4508 8.71091 26.7524 8.85996 28.5719 10.1872C35.2704 15.0733 39.8919 22.4806 43.8608 28.2806C45.5517 30.7517 45.2725 34.1039 43.1258 36.2506L37.474 41.9022C38.7857 44.7993 41.4619 49.7955 45.8333 54.1667C50.2046 58.5384 55.2008 61.2142 58.0979 62.5263L63.7467 56.8772C65.8954 54.7288 69.2621 54.4455 71.7387 56.1613C77.6554 60.2605 84.6042 64.8168 89.6708 71.3055C91.0938 73.128 91.3054 75.5113 90.4567 77.4922C86.97 85.628 78.1467 92.5568 68.9679 92.2188Z"
-            class="fill-white group-hover:fill-green-300"></path>
+            class="fill-white transition-all duration-200 group-hover:fill-green-300"
+          ></path>
         </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
@@ -192,23 +196,23 @@ import Splash from "@/components/pictures/Splash.astro";
         class="group tt-t absolute rounded-[1%] max-md:bottom-[2%] max-md:left-0 max-md:right-0 max-md:mx-auto max-md:h-[28%] max-md:w-fit md:bottom-0 md:right-[2%] md:top-0 md:my-auto md:h-fit md:w-[22%]"
       >
         <img
-          src="/svgs/qr-code.svg"
+          src="@/assets/images/qr-code.svg"
           width={500}
           height={500}
           alt="QR Code to Kaniel's website"
-          class="h-full w-full select-none rounded-[2%] border-[2%] border-black bg-white transition-all duration-200 group-hover:scale-[1.05]"
+          class="h-full w-full select-none rounded-[2%] border-[2%] border-black bg-white transition-all duration-200 group-hover:scale-105"
         />
       </a>
     </div>
   </main>
 </Base>
 
-<script>
-  import { $flipped, toggle } from "@/store/card";
-  const html = document.documentElement;
-  document.querySelector("#flip-front")!.addEventListener("click", toggle);
-  document.querySelector("#flip-back")!.addEventListener("click", toggle);
-  $flipped.subscribe((isFlipped) =>
-    isFlipped ? html.classList.add("flipped") : html.classList.remove("flipped")
-  );
+<script is:inline>
+  document
+    .querySelectorAll("#business-card .flip-btn")
+    .forEach((x) =>
+      x.addEventListener("click", () =>
+        document.documentElement.classList.toggle("flipped")
+      )
+    );
 </script>

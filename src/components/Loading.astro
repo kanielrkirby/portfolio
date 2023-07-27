@@ -1,35 +1,30 @@
 <div
-  class="fixed left-0 top-0 z-[1000] h-full w-full bg-white transition-all"
+  class="fixed left-0 top-0 z-50 h-full w-full bg-white opacity-0 transition-all duration-200 descends-[.fade]:pointer-events-none descends-[html:not(.loading)]:hidden"
   id="loading-screen"
 >
   <div
     aria-label="Loading..."
     role="tooltip"
-    class="tt-b absolute-center aspect-square w-16 transition-all duration-200 hover:scale-105 *:absolute *:h-full *:w-full *:rounded-full *:border-[5px] *:opacity-50"
+    class="tt-b aspect-square w-16 transition-all duration-200 hover:scale-105"
   >
-    <div class="animate-spin-slow border-t-black"></div>
-    <div class="animate-spin border-b-black"></div>
+    <div
+      class="absolute h-full w-full animate-spin-slow border-[5px] border-t-black opacity-50"
+    >
+    </div>
+    <div
+      class="absolute h-full w-full animate-spin border-[5px] border-b-black opacity-50"
+    >
+    </div>
   </div>
 </div>
-
-<style>
-  html.loading #loading-screen {
-    @apply block;
-  }
-  html.loading.fade #loading-screen {
-    @apply pointer-events-none opacity-0 duration-200;
-  }
-  html:not(.loading) #loading-screen {
-    @apply hidden;
-  }
-</style>
 
 <script>
   const loadingScreen = document.querySelector(
     "#loading-screen"
-  ) as HTMLDivElement;
-
-  document.documentElement.classList.add("fade");
-  loadingScreen.ontransitionend = loadingScreen.ontransitioncancel = () =>
-    document.documentElement.classList.remove("fade", "loading");
+  ) as HTMLElement;
+  setTimeout(() => {
+    document.documentElement.classList.add("fade");
+    loadingScreen.ontransitionend = loadingScreen.ontransitioncancel = () =>
+      document.documentElement.classList.remove("fade", "loading");
+  }, 300);
 </script>

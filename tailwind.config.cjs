@@ -16,28 +16,21 @@ module.exports = {
       },
       fontFamily: {
         display: ["Comfortaa", ...defaultTheme.fontFamily.sans],
-        body: ["Courier New", "monospace", ...defaultTheme.fontFamily.mono],
-        secondary: ["Courier", "monospace", ...defaultTheme.fontFamily.mono],
+        body: [
+          "Courier New",
+          "Courier",
+          "monospace",
+          ...defaultTheme.fontFamily.mono,
+        ],
       },
     },
   },
   plugins: [
     plugin(({ addComponents, addVariant, matchVariant, addBase, theme }) => {
       addBase({
-        "h1,h2,h3,h4,h5,h6": {
+        "h1,h2,h3": {
           "font-family": theme("fontFamily.display"),
           "font-weight": theme("fontWeight.bold"),
-        },
-        ".modal": {
-          "&.is-open": {
-            "pointer-events": "auto",
-            opacity: 1,
-          },
-          "*": {
-            "text-shadow": "none",
-            "--tw-text-opacity": "1",
-            color: "rgb(0,0,0,var(--tw-text-opacity))",
-          },
         },
         "*": {
           "font-family": theme("fontFamily.body"),
@@ -60,19 +53,6 @@ module.exports = {
         },
         h3: {
           "font-size": theme("fontSize.2xl"),
-        },
-        h4: {
-          "font-size": theme("fontSize.xl"),
-        },
-        "picture img": {
-          "background-color": "#00000050",
-          display: "flex",
-          "justify-content": "center",
-          "items-center": "center",
-          width: "100%",
-          height: "100%",
-          "text-align": "center",
-          "vertical-align": "middle",
         },
       });
       const flattened = flattenColorPalette(theme("colors"));
@@ -248,6 +228,18 @@ no-repeat`,
         },
       });
       addComponents({
+        ".modal": {
+          opacity: 0,
+          "pointer-events": "none",
+          "*": {
+            color: "black",
+            "text-shadow": "none",
+          },
+          "&.is-open": {
+            "pointer-events": "auto",
+            opacity: 1,
+          },
+        },
         ".tt-tl": {
           "&::after": {
             transform: "translate3d(calc(-100% + 16px), 0, 0)",

@@ -9,7 +9,7 @@ const { short } = Astro.props;
 ---
 
 <footer
-  class=`flex items-center p-2 ${short ? "justify-center": "justify-between max-md:flex-col-reverse max-md:gap-8 justify-center items-center"}`
+  class=`flex items-center gap-8 p-4 ${short ? "justify-center": "justify-between max-md:flex-col-reverse"}`
 >
   <a rel="prefetch" class="link" href="/credits">Credits and Attributions</a>
   {!short && <Iconbar />}

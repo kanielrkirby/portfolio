@@ -17,6 +17,9 @@ const { SEO: seoProps, shortfooter } = Astro.props;
 ---
 
 <Base SEO={seoProps}>
+  <script>
+    import "@/store/settings";
+  </script>
   <body>
     <div id="root">
       <header></header>
@@ -37,7 +40,7 @@ const { SEO: seoProps, shortfooter } = Astro.props;
     </div>
     <script>
       import "@/scripts/modal";
-      import "@/store/settings";
+      import "@/scripts/three";
     </script>
   </body>
 </Base>
@@ -45,9 +48,12 @@ const { SEO: seoProps, shortfooter } = Astro.props;
   @font-face {
     font-family: "Comfortaa";
     src: local("Comfortaa"),
-      url("/src/assets/fonts/Comfortaa/Comfortaa-Medium.woff2") format("woff2"),
-      url("/src/assets/fonts/Comfortaa/Comfortaa-Medium.woff") format("woff"),
-      url("/src/assets/fonts/Comfortaa/Comfortaa-Medium.ttf") format("opentype"),
+      url("/src/assets/fonts/Comfortaa/Comfortaa-Medium.min.woff2")
+        format("woff2"),
+      url("/src/assets/fonts/Comfortaa/Comfortaa-Medium.min.woff")
+        format("woff"),
+      url("/src/assets/fonts/Comfortaa/Comfortaa-Medium.min.ttf")
+        format("opentype"),
       url("https://fonts.bunny.net/css?family=comfortaa:500)");
     font-display: "swap";
   }
