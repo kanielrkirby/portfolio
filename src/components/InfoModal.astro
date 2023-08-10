@@ -1,0 +1,18 @@
+---
+import Modal from "./Modal.astro";
+---
+
+<!-- "I have developed Polychrome, a custom color palette generator that offers a range of versatile algorithms. This innovative tool took me three months to build entirely from scratch. By incorporating TypeScript and PostCSS, I streamlined the development process to be efficient and accessible. In order to create the most effective algorithms, I dedicated significant time to studying color theory and delving into the intricacies of color interactions. Additionally, I personally designed and crafted all the scalable vector graphics (SVGs), including the logo and icons. Furthermore, I made sure to optimize the website for seamless responsiveness on mobile devices.", -->
+<Modal name="info">
+  <p id="info-content"></p>
+</Modal>
+
+<script>
+  import { $info } from "@/store/info";
+  const title = document.querySelector("#info-modal-title") as HTMLElement;
+  const content = document.querySelector("#info-content") as HTMLElement;
+  $info.subscribe(({ title: t, content: c }) => {
+    title.innerText = t;
+    content.innerText = c;
+  });
+</script>

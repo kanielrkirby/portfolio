@@ -7,6 +7,7 @@ import Loading from "@/components/Loading.astro";
 import SettingsModal from "@/components/SettingsModal.astro";
 import Base from "@/layouts/BaseLayout.astro";
 import NavigationModal from "@/components/NavigationModal.astro";
+import InfoModal from "@/components/InfoModal.astro";
 
 export interface Props {
   SEO: SEOProps;
@@ -36,9 +37,10 @@ const { SEO: seoProps, shortfooter } = Astro.props;
     <div class="z-50" id="modal-root">
       <SettingsModal />
       <NavigationModal />
+      <InfoModal />
       <!-- <Loading /> -->
     </div>
-    <script>
+    <script defer async type="module">
       import "@/scripts/modal";
       import "@/scripts/three";
     </script>
@@ -57,6 +59,7 @@ const { SEO: seoProps, shortfooter } = Astro.props;
       url("https://fonts.bunny.net/css?family=comfortaa:500)");
     font-display: "swap";
   }
+
   html,
   body {
     @apply h-full w-full;

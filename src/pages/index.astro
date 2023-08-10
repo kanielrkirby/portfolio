@@ -8,48 +8,66 @@ const siteText = "See it yourself!";
   <main class="mb-8 flex flex-col items-center gap-4 text-center">
     <h1 class="mb-8">My Projects</h1>
     <ul class="flex flex-col items-center gap-12">
-      <li class="flex flex-col items-center gap-2">
-        <h2 class="text-2xl">Grizzly Cafe</h2>
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">Grizzly Cafe</h2>
         <p>A basic cafe's website.</p>
-        <button id="grizzly-info-btn" class="link">{infoText}</button>
+        <p class="info-modal-content sr-only">Stuff</p>
+        <button class="info-modal-btn link">{infoText}</button>
         <a rel="prefetch" class="link" href="https://grizzlycafe.netlify.app"
           >{siteText}</a
         >
-        <img
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black"
-          src=""
-          alt="GIF of Grizzly Cafe"
-        />
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md"
+          controls
+          muted
+          autoplay
+        >
+          <source src="movie.mp4" type="video/mp4" />
+          <source src="movie.ogg" type="video/ogg" />
+          Your browser does not support the video tag.
+        </video>
       </li>
-      <li class="flex flex-col items-center gap-2">
-        <h2 class="text-2xl">Polychrome</h2>
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">Polychrome</h2>
         <p>A versatile color palette generator with multiple algorithms.</p>
-        <button id="polychrome-info-btn" class="link">{infoText}</button>
+        <p class="info-modal-content sr-only">Stuff</p>
+        <button class="info-modal-btn link">{infoText}</button>
         <a
           rel="prefetch"
           class="link"
           href="https://piratey7007.github.io/polychrome">{siteText}</a
         >
-        <img
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black"
-          src=""
-          alt="GIF of Polychrome"
-        />
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md"
+          controls
+          muted
+          autoplay
+        >
+          <source src="movie.mp4" type="video/mp4" />
+          <source src="movie.ogg" type="video/ogg" />
+          Your browser does not support the video tag.
+        </video>
       </li>
-      <li class="flex flex-col items-center gap-2">
-        <h2 class="text-2xl">Bazaar</h2>
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">Bazaar</h2>
         <p>A feature-rich online marketplace.</p>
-        <button id="bazaar-info-btn" class="link">{infoText}</button>
+        <p class="info-modal-content sr-only">Stuff</p>
+        <button class="info-modal-btn link">{infoText}</button>
         <a
           rel="prefetch"
           class="link"
           href="https://We-got-this-2023.github.io/bazaar">{siteText}</a
         >
-        <img
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black"
-          src=""
-          alt="GIF of Bazaar"
-        />
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md"
+          controls
+          muted
+          autoplay
+        >
+          <source src="movie.mp4" type="video/mp4" />
+          <source src="movie.ogg" type="video/ogg" />
+          Your browser does not support the video tag.
+        </video>
       </li>
     </ul>
   </main>
