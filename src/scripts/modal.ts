@@ -9,3 +9,7 @@ export function initModal(btnClasses: string | string[], modalId: string) {
     }
   }
 }
+
+export function closeModal(name: string) {
+  MicroModal.close(`${name}-modal`);
+}

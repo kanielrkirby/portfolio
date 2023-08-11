@@ -4,6 +4,7 @@ import KanielKirby2 from "@/components/pictures/KanielKirby2.astro";
 import Base from "@/layouts/BaseLayout.astro";
 import constants from "@/scripts/constants";
 // import { Image } from "astro:assets";
+import qr from "@/assets/images/qr-code.svg";
 import Splash from "@/components/pictures/Splash.astro";
 ---
 
@@ -24,7 +25,7 @@ import Splash from "@/components/pictures/Splash.astro";
       <button
         role="tooltip"
         aria-label="See contact info"
-        class="flip-btn group tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
+        class="flip-btn group tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square transition-all max-md:h-[10%] md:w-[12%]"
       >
         <svg
           viewBox="0 0 100 100"
@@ -70,7 +71,7 @@ import Splash from "@/components/pictures/Splash.astro";
       <button
         role="tooltip"
         aria-label="Flip to front"
-        class="flip-btn group tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square max-md:h-[10%] md:w-[12%]"
+        class="flip-btn group tt-bl absolute right-[2.5%] top-[2.5%] z-50 aspect-square opacity-0 transition-all max-md:h-[10%] md:w-[12%]"
       >
         <svg
           viewBox="0 0 100 100"
@@ -196,7 +197,7 @@ import Splash from "@/components/pictures/Splash.astro";
         class="group tt-t absolute rounded-[1%] max-md:bottom-[2%] max-md:left-0 max-md:right-0 max-md:mx-auto max-md:h-[28%] max-md:w-fit md:bottom-0 md:right-[2%] md:top-0 md:my-auto md:h-fit md:w-[22%]"
       >
         <img
-          src="@/assets/images/qr-code.svg"
+          src={qr.src}
           width={500}
           height={500}
           alt="QR Code to Kaniel's website"
@@ -207,12 +208,12 @@ import Splash from "@/components/pictures/Splash.astro";
   </main>
 </Base>
 
-<script is:inline>
-  document
-    .querySelectorAll("#business-card .flip-btn")
-    .forEach((x) =>
-      x.addEventListener("click", () =>
-        document.documentElement.classList.toggle("flipped")
-      )
-    );
+<script>
+  for (const x of document.querySelectorAll("#business-card .flip-btn"))
+    x.addEventListener("click", () => {
+      document.documentElement.classList.toggle("flipped");
+      for (const btn of document.querySelectorAll(".flip-btn")) {
+        btn.classList.toggle("opacity-0");
+      }
+    });
 </script>

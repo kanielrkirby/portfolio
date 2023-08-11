@@ -20,6 +20,11 @@ const { SEO: seoProps, shortfooter } = Astro.props;
 <Base SEO={seoProps}>
   <script>
     import "@/store/settings";
+    import "@/scripts/modal";
+    import "@/scripts/swup";
+  </script>
+  <script defer async type="module">
+    import "@/scripts/three";
   </script>
   <body>
     <div id="root">
@@ -40,10 +45,6 @@ const { SEO: seoProps, shortfooter } = Astro.props;
       <InfoModal />
       <!-- <Loading /> -->
     </div>
-    <script defer async type="module">
-      import "@/scripts/modal";
-      import "@/scripts/three";
-    </script>
   </body>
 </Base>
 <style>

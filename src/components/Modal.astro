@@ -21,7 +21,6 @@ const { name, class: className = "" } = Astro.props;
     aria-labelledby={`${name}-modal-title`}
   >
     <header class="relative flex w-full justify-center">
-      <h1 id={`${name}-modal-title`} class="capitalize">{name}</h1>
       <button
         class="link-black link-bg-black link absolute right-0 top-0 hover:link-red-500"
         aria-label="Close modal"
@@ -29,6 +28,7 @@ const { name, class: className = "" } = Astro.props;
       >
         Close
       </button>
+      <h1 id={`${name}-modal-title`} class="mt-8 capitalize">{name}</h1>
     </header>
     <div
       class={`my-16 flex w-full flex-col justify-around gap-4 ${className}`}
@@ -48,6 +48,5 @@ const { name, class: className = "" } = Astro.props;
       initModal(`${name}-modal-btn`, `${name}-modal`);
     }
   }
-
   customElements.define("modal-component", Modal);
 </script>
