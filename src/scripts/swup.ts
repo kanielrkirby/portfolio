@@ -8,15 +8,17 @@ import SwupA11yPlugin from "@swup/a11y-plugin";
 
 const swup = new Swup({
   plugins: [
+    new SwupSlideTheme({
+      mainElement: "main",
+    }),
     new SwupA11yPlugin(),
     new SwupHeadPlugin(),
-    new SwupSlideTheme(),
     new SwupScriptsPlugin(),
     new SwupProgressPlugin(),
   ],
-  animationSelector: false,
   containers: ["main:not(#business-card)"],
 });
-window.swup = swup;
 
-window.swup.hooks.on("page:view", () => closeModal("nav"));
+swup.hooks.before("page:load", () => closeModal("nav"));
+
+window.swup = swup;

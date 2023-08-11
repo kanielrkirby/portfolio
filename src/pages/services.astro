@@ -1,0 +1,19 @@
+---
+import Layout from "@/layouts/MainLayout.astro";
+import constants from "@/scripts/constants";
+---
+
+<Layout
+  SEO={{
+    title: "Services",
+  }}
+>
+  <main class="flex w-full flex-col items-center gap-8">
+    <h1>Services</h1>
+  </main>
+</Layout>
+
+<script>
+  import { subscribeImage } from "@/store/settings";
+  subscribeImage("#my-img-1");
+</script>
