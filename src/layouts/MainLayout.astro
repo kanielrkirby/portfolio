@@ -22,9 +22,7 @@ const { SEO: seoProps, shortfooter } = Astro.props;
     import "@/store/settings";
     import "@/scripts/modal";
     import "@/scripts/swup";
-  </script>
-  <script defer async type="module">
-    import "@/scripts/three";
+    (async () => await import("@/scripts/three"))();
   </script>
   <body>
     <div id="root">
