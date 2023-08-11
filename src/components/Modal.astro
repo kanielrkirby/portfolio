@@ -11,11 +11,12 @@ const { name, class: className = "" } = Astro.props;
   id={`${name}-modal`}
   aria-hidden="true"
   tabindex="-1"
-  data-micromodal-close
   data-name={name}
 >
+  <div class="absolute left-0 top-0 z-40 h-full w-full" data-micromodal-close>
+  </div>
   <div
-    class="flex h-fit w-[40rem] max-w-[95%] flex-col items-center rounded-md bg-white p-8 transition-all duration-300 descends-[.modal:not(.is-open)]:translate-y-16"
+    class="z-50 flex h-fit w-[40rem] max-w-[95%] flex-col items-center rounded-md bg-white p-8 transition-all duration-300 descends-[.modal:not(.is-open)]:translate-y-16"
     role="dialog"
     aria-modal="true"
     aria-labelledby={`${name}-modal-title`}

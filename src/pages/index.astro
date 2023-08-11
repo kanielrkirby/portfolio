@@ -10,7 +10,7 @@ const siteText = "See it yourself!";
     <ul class="flex flex-col items-center gap-12">
       <li class="info-container flex flex-col items-center gap-2">
         <h2 class="info-modal-title text-2xl">Grizzly Cafe</h2>
-        <p>A basic cafe's website.</p>
+        <p>A basic online cafe interface.</p>
         <p class="info-modal-content sr-only">
           The Grizzly Cafe is a pseudo-local cafe's website, where I utilized
           Google Lighthouse and learned how to effectively optimize a website to
@@ -21,19 +21,22 @@ const siteText = "See it yourself!";
           >{siteText}</a
         >
         <video
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md"
-          controls
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
           muted
-          autoplay
+          onmouseover="this.play()"
+          onmouseout="this.pause()"
+          loop
         >
-          <source src="movie.mp4" type="video/mp4" />
-          <source src="movie.ogg" type="video/ogg" />
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691783812/Grizzly_Cafe_yggums.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       </li>
       <li class="info-container flex flex-col items-center gap-2">
         <h2 class="info-modal-title text-2xl">Polychrome</h2>
-        <p>A versatile color palette generator with multiple algorithms.</p>
+        <p>A versatile color palette generator.</p>
         <p class="info-modal-content sr-only">
           Polychrome is a custom color palette generator that offers a range of
           versatile algorithms. This innovative tool took me three months to
@@ -53,13 +56,16 @@ const siteText = "See it yourself!";
           href="https://piratey7007.github.io/polychrome">{siteText}</a
         >
         <video
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md"
-          controls
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
           muted
-          autoplay
+          onmouseover=";this.play()"
+          onmouseout="this.pause()"
+          loop
         >
-          <source src="movie.mp4" type="video/mp4" />
-          <source src="movie.ogg" type="video/ogg" />
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/Polychrome_xd4pdn.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       </li>
@@ -87,13 +93,56 @@ const siteText = "See it yourself!";
           href="https://We-got-this-2023.github.io/bazaar">{siteText}</a
         >
         <video
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md"
-          controls
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
           muted
-          autoplay
+          onmouseover=";this.play()"
+          onmouseout="this.pause()"
+          loop
         >
-          <source src="movie.mp4" type="video/mp4" />
-          <source src="movie.ogg" type="video/ogg" />
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/Polychrome_xd4pdn.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </li>
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">Slipstream</h2>
+        <p>A self-hosted video platform.</p>
+        <p class="info-modal-content sr-only">
+          Slipstream stands as an open-source, self-hosted video streaming
+          platform that combines video optimization with a range of robust
+          features. The platform allows users to conveniently upload and share
+          videos and images using unique links. Notably, it's an ongoing project
+          with development efforts aimed at introducing x264 conversion for web
+          optimization and x264 + HLS conversion for streaming. Of special
+          interest is the implementation of a retention policy, automatically
+          removing videos based on view count or specific date/time criteria.
+          Upcoming enhancements encompass diverse aspects such as media
+          customization, playlist management, and embedding capabilities. In
+          this collaborative effort, our team consisted of two developers, the
+          platform's owner, and myself. I took on a significant role in frontend
+          development, particularly with Vue.js. Through this experience, I
+          enriched my Vue.js skills and played a vital part in revitalizing the
+          user interface, ultimately enhancing the overall user experience.
+        </p>
+        <button class="info-modal-btn link">{infoText}</button>
+        <a
+          rel="prefetch"
+          class="link"
+          href="https://github.com/ChrisToxz/Slipstream">{siteText}</a
+        >
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+          muted
+          onmouseover=";this.play()"
+          onmouseout="this.pause()"
+          loop
+        >
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/Polychrome_xd4pdn.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       </li>
