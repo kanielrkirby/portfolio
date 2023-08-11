@@ -1573,6 +1573,13 @@
     shelljs-live "^0.0.5"
     swup "^4.0.0"
 
+"@swup/preload-plugin@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@swup/preload-plugin/-/preload-plugin-3.1.2.tgz#0f645be8b897c166331c9c04709ebf717bb72145"
+  integrity sha512-1t6C4CcttmGuYVj3PKyWzMGL3wGnCqHgvUH+Zj8J7zD0XapNdpLrmlEX2y1FNQIIrhmFMb+8wVvLGTHeVerezg==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+
 "@swup/prettier-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@swup/prettier-config/-/prettier-config-1.1.0.tgz#64df1175d2b41040f65e739ad3e612ab33165195"
