@@ -1538,7 +1538,7 @@
     magic-string "^0.25.0"
     string.prototype.matchall "^4.0.6"
 
-"@swup/a11y-plugin@^4.1.1":
+"@swup/a11y-plugin@^4.0.0":
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/@swup/a11y-plugin/-/a11y-plugin-4.1.1.tgz#af8303886717ef72a9d1a1b6e76df907427bb295"
   integrity sha512-3SJxM9L71jGW1bBrE9NATW9wRt2qFB9spzWZjRVjag3//C9JlElzaSFTJeWDX7LyPra2+jpSXXlkajxGCbla/A==
@@ -1547,15 +1547,80 @@
     focus-options-polyfill "^1.5.0"
     on-demand-live-region "^0.1.3"
 
+"@swup/astro@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@swup/astro/-/astro-1.0.2.tgz#3e74ba0ae24516f9150b0e6f751cb95b6412f0bf"
+  integrity sha512-2BdiXS4XGtLuH/svF0ZrdNmUjgjhiOXlnggtnsFgx8Vc/0LTO+vq1khoEAnEy2ufUh3IrclX0T7c0jWMA06Wtg==
+  dependencies:
+    "@swup/a11y-plugin" "^4.0.0"
+    "@swup/body-class-plugin" "^3.0.0"
+    "@swup/debug-plugin" "^4.0.0"
+    "@swup/fade-theme" "^2.0.0"
+    "@swup/forms-plugin" "^3.0.0"
+    "@swup/head-plugin" "^2.0.0"
+    "@swup/overlay-theme" "^2.0.0"
+    "@swup/parallel-plugin" "^0.1.1"
+    "@swup/preload-plugin" "^3.0.0"
+    "@swup/progress-plugin" "^3.0.0"
+    "@swup/route-name-plugin" "^4.0.0"
+    "@swup/scripts-plugin" "^2.0.0"
+    "@swup/scroll-plugin" "^3.0.0"
+    "@swup/slide-theme" "^2.0.0"
+    swup "^4.0.0"
+
+"@swup/body-class-plugin@^3.0.0":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@swup/body-class-plugin/-/body-class-plugin-3.1.1.tgz#269fd8bf515224c38f2cf8c1320ea45743b1dcb9"
+  integrity sha512-HX9N2QWNpqk3JQcD46cdpmJ0WTZpMHH7GYMbY6OQZTrxYgE3/3pBKKkVibs6icY+5nscATmzgb39WhCisi1qDQ==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+
 "@swup/browserslist-config@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@swup/browserslist-config/-/browserslist-config-1.0.1.tgz#2692e00a554618f86ab8523210cee282a2370e46"
   integrity sha512-/3nBqG7LqmK1uqaCSTA6s2NwQBDQXNyLAFBzlX6uaxqjIQcAZyq6K+sgcQ40oj02Vn/2mLSkeL9DOfP7BPOwVA==
 
-"@swup/head-plugin@^2.1.1":
+"@swup/debug-plugin@^4.0.0":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@swup/debug-plugin/-/debug-plugin-4.0.1.tgz#47195ad4fd4efd687473f632e6d67eff0c97991f"
+  integrity sha512-iA03He2WMRJd7oRRlWMvffhGstKQ8DDNp5LGS9kPyLQZqXHV7f5sVvIVotFGgOn264SRgK7FU7g7bYnhCRa1xQ==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+
+"@swup/fade-theme@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@swup/fade-theme/-/fade-theme-2.0.0.tgz#00a5b421965edf2f505f7e03c16e12f9ac00c919"
+  integrity sha512-gMbrGZyKwkuBop69Ih/GQmQXFw4PxWIOzzIumij7KSH6n4HflgqhEk7RcdCELl4lpAiGJJYGsdVlVVtIRBvcQA==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+    "@swup/theme" "^2.0.0"
+
+"@swup/forms-plugin@^3.0.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@swup/forms-plugin/-/forms-plugin-3.2.0.tgz#e6c93a7de10c0a8a2db7b2f9c472bc421255b121"
+  integrity sha512-scI8gZLEfqhiRmUUC5+QqTWLXWXr1fcyVbKdDlY67zMl2P7xOqx53kOUz4WRASIpKc93Q+2dyEwD0gZgX3dQ2A==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+
+"@swup/head-plugin@^2.0.0":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@swup/head-plugin/-/head-plugin-2.1.1.tgz#b2986fbf523b37e13a47f46fbb0eee63ff1c3a71"
   integrity sha512-cquC0/wWWqwC1blHjzSPkATCSy/PYpMcGGmdAs8ncK99v58Zuxtdyo2J+MZuJBWQsUzCe8YqCrJK+pCHmWOrnA==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+
+"@swup/overlay-theme@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@swup/overlay-theme/-/overlay-theme-2.0.0.tgz#a2d088519b18023cc23035786fe48aeae80c2d10"
+  integrity sha512-rYim0K5vkih3YeRrZQ1NIM2h9Moo6ajbxRYoCMR4/q8Q25N0BZioK5RJFrQz8CiOvKTBy4Sh3WePsOViteGrNg==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+    "@swup/theme" "^2.0.0"
+
+"@swup/parallel-plugin@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@swup/parallel-plugin/-/parallel-plugin-0.1.1.tgz#444955e6c3d6d8179f453b03a5e3a1613ed355f0"
+  integrity sha512-bCwhVylszanLeyoa7hygipH+0bUoxkdJx/2jE9rvGvmlTR6gAuMHwbxuv+Gx0hUXK/FGD7V6teVEKlSbfJgJnA==
   dependencies:
     "@swup/plugin" "^3.0.0"
 
@@ -1573,7 +1638,7 @@
     shelljs-live "^0.0.5"
     swup "^4.0.0"
 
-"@swup/preload-plugin@^3.1.2":
+"@swup/preload-plugin@^3.0.0":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@swup/preload-plugin/-/preload-plugin-3.1.2.tgz#0f645be8b897c166331c9c04709ebf717bb72145"
   integrity sha512-1t6C4CcttmGuYVj3PKyWzMGL3wGnCqHgvUH+Zj8J7zD0XapNdpLrmlEX2y1FNQIIrhmFMb+8wVvLGTHeVerezg==
@@ -1585,10 +1650,17 @@
   resolved "https://registry.yarnpkg.com/@swup/prettier-config/-/prettier-config-1.1.0.tgz#64df1175d2b41040f65e739ad3e612ab33165195"
   integrity sha512-EF4DMdIGieEsuY2XK0PuLf7Uw7yUQOMbA6IdCMvvRvKXj03WLLpnNIFfFp+6hmMtXRSUE88VBpRyp6Giiu1Pbg==
 
-"@swup/progress-plugin@^3.1.0":
+"@swup/progress-plugin@^3.0.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@swup/progress-plugin/-/progress-plugin-3.1.0.tgz#2a84d78ecbc196dd9ced11300d6a4f5be9c7ea60"
   integrity sha512-zre97WXL/F1Ccya7LtWcLCwKA9bRSmvZZvvJcT+jLiw/pj2zHIm0VWGP7wr41v4v5ySyG24GdHFbOXT0QD5qQg==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+
+"@swup/route-name-plugin@^4.0.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@swup/route-name-plugin/-/route-name-plugin-4.1.0.tgz#eb9a9599608c37334968804cc787277d340f2fec"
+  integrity sha512-1tw3WeExEKwI3pVMXTptCGxFUDOSEpc63D741eeUCjjGW/f9q7ekuqEaPQd5YJ6POpzDjdt1jjuC9yv54CbeXA==
   dependencies:
     "@swup/plugin" "^3.0.0"
 
@@ -1598,6 +1670,14 @@
   integrity sha512-nb1a0n0qkLGiEW4ITbTr8pLO/wjjKcbGg/dBWfstmJ/6ehwHqmAU0kY+yUn3DISfaPPoo+txO4KolHf2VRSgGQ==
   dependencies:
     "@swup/plugin" "^3.0.0"
+
+"@swup/scroll-plugin@^3.0.0":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@swup/scroll-plugin/-/scroll-plugin-3.1.1.tgz#9dfd8bf0e996d86d8d129f6f35ba7e241aa077f8"
+  integrity sha512-aoMz1oA1cO0EQX6Ggcaoucxn3e1n5AZJ7vD79ztKOsrLJzxiMP0ZMvZa0UzBGGzIus9DV5Ju3rEsJOLLwjxE8A==
+  dependencies:
+    "@swup/plugin" "^3.0.0"
+    scrl "^2.0.0"
 
 "@swup/slide-theme@^2.0.0":
   version "2.0.0"
@@ -6038,6 +6118,11 @@ sass-formatter@^0.7.5:
   dependencies:
     suf-log "^2.5.3"
 
+scrl@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/scrl/-/scrl-2.0.0.tgz#5d65404efba69f5c71ff37411aa164164f6e52e9"
+  integrity sha512-BbbVXxrOn58Ge4wjOORIRVZamssQu08ISLL/AC2z9aATIsKqZLESwZVW5YR0Yz0C7qqDRHb4yNXJlQ8yW0SGHw==
+
 section-matter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"
@@ -6442,7 +6527,7 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-swup@^4.0.0, swup@^4.2.0:
+swup@^4.0.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/swup/-/swup-4.2.0.tgz#3139eb41aaea6646bdcafdc7e120d27c13128bfb"
   integrity sha512-z1ek0C9s1CgWJs63d0LxZCEVbZbU99b8I606pk2qVpkd6XtUOPI8Wcj7a4oh4StNZSKAsHbC07fbLmAIPI2MkQ==

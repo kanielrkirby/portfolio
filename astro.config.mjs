@@ -4,6 +4,8 @@ import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 // import netlify from "@astrojs/netlify/functions";
 
+import swup from "@swup/astro";
+
 // https://astro.build/config
 export default defineConfig({
   image: { service: { entrypoint: "astro/assets/services/sharp" } },
@@ -13,7 +15,18 @@ export default defineConfig({
     "/projects": "/",
     "*": "/404",
   },
-  integrations: [prefetch(), tailwind(), compress()],
+  integrations: [
+    swup({
+      theme: "slide",
+      reloadScripts: false,
+      progress: true,
+      globalInstance: true,
+      containers: ["main:not(#business-card)"],
+    }),
+    prefetch(),
+    tailwind(),
+    compress(),
+  ],
   experimental: {
     assets: true,
   },
