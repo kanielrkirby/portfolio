@@ -2023,9 +2023,9 @@ astro-seo@^0.7.4:
   integrity sha512-bo5PiB4Y30PP9QS6OnYcVOr1fKDE52mvJys/3HgeiM2h+/hS7jESUHZMx6VX7yRid1yMGHsp2OyVTA9DrdPyPg==
 
 astro@^2.10.6:
-  version "2.10.6"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.10.6.tgz#4b4f37ed63c99cb56392948257f1821dc125839c"
-  integrity sha512-rKVu51uEewPHTSpvXYmq6EdBPcXNDZtj+lj+0+TsJaQeJcO0AVQdEceBXcm3GtHON0GGE13J/xwjYzU81eYoOA==
+  version "2.10.7"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.10.7.tgz#069368f03e7a00c0bdf75c82aba1fc417f74d768"
+  integrity sha512-R8aF4yphrsbhxW2UxHZ1DslBn8e8vPQ23+Z/OnajNE1Q4HEZCOZ4CAbHJx2PDwq2p+CRWArNalpr3+rTqyOYBQ==
   dependencies:
     "@astrojs/compiler" "^1.8.0"
     "@astrojs/internal-helpers" "^0.1.2"
