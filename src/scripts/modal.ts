@@ -1,6 +1,6 @@
 import MicroModal from "micromodal";
 MicroModal.init();
-export function initModal(btnClasses: string | string[], modalId: string) {
+export function initModal(Modal: HTMLElement, btnClasses: string | string[], modalId: string) {
   if (typeof btnClasses === "string") btnClasses = [btnClasses];
   for (let btnClass of btnClasses) {
     if (!btnClass.startsWith(".")) btnClass = "." + btnClass;
@@ -8,8 +8,11 @@ export function initModal(btnClasses: string | string[], modalId: string) {
       item?.addEventListener("click", () => MicroModal.show(modalId));
     }
   }
-  document.querySelector(modalId)?.classList.remove("hidden")
-  document.querySelector(modalId)?.classList.add("flex")
+  Modal.classList.add("invisible", "hidden");
+  setTimeout(() => {
+    Modal.classList.remove("hidden", "invisible");
+  }, 1000);
+
 }
 
 export function closeModal(name: string) {

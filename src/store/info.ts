@@ -1,7 +1,5 @@
 import { atom } from "nanostores";
 
-const modal = document.querySelector("#info-modal")!;
-
 export const $info = atom({
   title: "",
   content: "",

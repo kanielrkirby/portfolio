@@ -7,7 +7,7 @@ const { name, class: className = "" } = Astro.props;
 ---
 
 <modal-component
-  class="modal hidden fixed left-0 top-0 z-50 h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur transition-opacity duration-500 selection:bg-red-300"
+  class="modal flex fixed left-0 top-0 z-50 h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur transition-opacity duration-500 selection:bg-red-300"
   id={`${name}-modal`}
   aria-hidden="true"
   tabindex="-1"
@@ -42,11 +42,11 @@ const { name, class: className = "" } = Astro.props;
 
 <script>
   import { initModal } from "@/scripts/modal";
-  class Modal extends HTMLElement {
+  export class Modal extends HTMLElement {
     constructor() {
       super();
       const name = this.getAttribute("data-name");
-      initModal(`${name}-modal-btn`, `${name}-modal`);
+      initModal(this, `${name}-modal-btn`, `${name}-modal`);
     }
   }
   customElements.define("modal-component", Modal);
