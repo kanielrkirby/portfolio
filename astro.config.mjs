@@ -25,7 +25,7 @@ export default defineConfig({
     }),
     prefetch(),
     tailwind(),
-//    compress(),
+    compress(),
   ],
   experimental: {
     assets: true,
