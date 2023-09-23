@@ -8,6 +8,8 @@ export function initModal(btnClasses: string | string[], modalId: string) {
       item?.addEventListener("click", () => MicroModal.show(modalId));
     }
   }
+  document.querySelector(modalId)?.classList.remove("hidden")
+  document.querySelector(modalId)?.classList.add("flex")
 }
 
 export function closeModal(name: string) {
