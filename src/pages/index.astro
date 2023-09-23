@@ -56,7 +56,7 @@ const siteText = "See it yourself!";
         <video
           class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
           muted
-          onmouseover=";this.play()"
+          onmouseover="; this.play()"
           onmouseout="this.pause()"
           loop
           preload="none"
@@ -156,6 +156,45 @@ const siteText = "See it yourself!";
           />
           Your browser does not support the video tag.
         </video> -->
+      </li>
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">NeoVim Alpine</h2>
+        <p>
+          A fully fleshed out NeoVim configuration, completely containerized.
+        </p>
+        <p class="info-modal-content sr-only">
+          During my endeavor with the NeoVim Alpine Project, I delved deeply
+          into the multifaceted world of containerization. This immersive
+          experience not only enabled me to master the intricacies of NeoVim
+          within an Alpine environment but also provided a profound
+          understanding of language servers, which I integrated seamlessly using
+          lazy.nvim. My journey further enhanced my expertise in Docker,
+          allowing me to craft optimized images and harness the capabilities of
+          docker-compose. I explored the lightweight and resource-efficient
+          Alpine Linux distribution, ensuring a streamlined and powerful
+          backend. To elevate the project's front-end experience, I unearthed
+          and adeptly implemented a range of NeoVim plugins, further optimizing
+          its functionality. Central to this project's success was my deep dive
+          into the Lua language, which I utilized to sculpt a superior and
+          user-friendly NeoVim configuration.
+        </p>
+        <button class="info-modal-btn link">{infoText}</button>
+        <a class="link" href="https://github.com/piratey7007/nvim-alpine"
+          >{siteText}</a
+        >
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+          muted
+          onmouseover=";this.play()"
+          onmouseout="this.pause()"
+          loop
+        >
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/b5ta7zxxlf0qx2cqm3kn.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
       </li>
     </ul>
   </main>
