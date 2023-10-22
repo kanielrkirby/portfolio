@@ -9,60 +9,66 @@ const siteText = "See it yourself!";
     <h1 class="mb-8">My Projects</h1>
     <ul class="flex flex-col items-center gap-12">
       <li class="info-container flex flex-col items-center gap-2">
-        <h2 class="info-modal-title text-2xl">Grizzly Cafe</h2>
-        <p>A basic online cafe interface.</p>
+        <h2 class="info-modal-title text-2xl">ReSignal</h2>
+        <p>
+          Built out of necessity, a simple Signal-like interface for old
+          messages.
+        </p>
         <p class="info-modal-content sr-only">
-          The Grizzly Cafe is a pseudo-local cafe's website, where I utilized
-          Google Lighthouse and learned how to effectively optimize a website to
-          be more performant and accessible.
+          ReSignal emerged from a common struggle among my circle—losing
+          precious conversations during device switches. This project simplifies
+          revisiting those memories, providing a Signal-like environment right
+          on your computer, complete with message threads, attachments, and a
+          smooth UI, making it easy to comfortably scroll through past
+          conversations as if it were still on your device. It's not perfect,
+          it's more of a workaround honestly, but I had fun doing it, and it
+          solved the problem for my circle.
         </p>
         <button class="info-modal-btn link">{infoText}</button>
-        <a class="link" href="https://grizzlycafe.netlify.app">{siteText}</a>
+        <a class="link" href="https://github.com/piratey7007/resignal"
+          >{siteText}</a
+        >
         <video
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
           muted
-          onmouseover="this.play()"
-          onmouseout="this.pause()"
+          onmouseover="; this.play()"
+                    onmouseout="this.pause()"
           loop
-          preload="none"
-          poster=""
         >
           <source
-            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691783812/Grizzly_Cafe_yggums.mp4"
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/yqb4lqgwowuy973mcggg.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
       </li>
       <li class="info-container flex flex-col items-center gap-2">
-        <h2 class="info-modal-title text-2xl">Polychrome</h2>
-        <p>A versatile color palette generator.</p>
+        <h2 class="info-modal-title text-2xl">Rediss</h2>
+        <p>Peeling back the layers of in-memory databases and Redis.</p>
         <p class="info-modal-content sr-only">
-          Polychrome is a custom color palette generator that offers a range of
-          versatile algorithms. This innovative tool took me three months to
-          build entirely from scratch. By incorporating TypeScript and PostCSS,
-          I streamlined the development process to be efficient and accessible.
-          In order to create the most effective algorithms, I dedicated
-          significant time to studying color theory and delving into the
-          intricacies of color interactions. Additionally, I personally designed
-          and crafted all the scalable vector graphics (SVGs), including the
-          logo and icons. Furthermore, I made sure to optimize the website for
-          seamless responsiveness on mobile devices.
+          Creating Rediss, I stepped into database design, using Redis as a
+          model and Go as my tool. This personal challenge led me through the
+          intricacies of managing TCP servers, decoding RESP protocols, and
+          exploring AOF persistence techniques, as well as finally taking on
+          learning Go concurrency. I took on challenges such as setting up a
+          monorepo, defining a Makefile for the project, and delving deep into
+          several codebases to find other solutions to the problems I was
+          facing. As a result, I gained a deeper understanding of the
+          complexities of databases and the intricacies of Redis.
         </p>
         <button class="info-modal-btn link">{infoText}</button>
-        <a class="link" href="https://piratey7007.github.io/polychrome"
+        <a class="link" href="https://github.com/piratey7007/rediss"
           >{siteText}</a
         >
         <video
-          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
           muted
           onmouseover="; this.play()"
-          onmouseout="this.pause()"
+                    onmouseout="this.pause()"
           loop
-          preload="none"
         >
           <source
-            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/Polychrome_xd4pdn.mp4"
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/jemeji8ffqyxvjiktako.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -111,6 +117,106 @@ const siteText = "See it yourself!";
           Your browser does not support the video tag.
         </video> -->
       </li>
+
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">Grizzly Cafe</h2>
+        <p>A basic online cafe interface.</p>
+        <p class="info-modal-content sr-only">
+          The Grizzly Cafe is a pseudo-local cafe's website, where I utilized
+          Google Lighthouse and learned how to effectively optimize a website to
+          be more performant and accessible.
+        </p>
+        <button class="info-modal-btn link">{infoText}</button>
+        <a class="link" href="https://grizzlycafe.netlify.app">{siteText}</a>
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+          muted
+          onmouseover="this.play()"
+                    onmouseout="this.pause()"
+          loop
+          preload="none"
+          poster=""
+        >
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691783812/Grizzly_Cafe_yggums.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </li>
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">Polychrome</h2>
+        <p>A versatile color palette generator.</p>
+        <p class="info-modal-content sr-only">
+          Polychrome is a custom color palette generator that offers a range of
+          versatile algorithms. This innovative tool took me three months to
+          build entirely from scratch. By incorporating TypeScript and PostCSS,
+          I streamlined the development process to be efficient and accessible.
+          In order to create the most effective algorithms, I dedicated
+          significant time to studying color theory and delving into the
+          intricacies of color interactions. Additionally, I personally designed
+          and crafted all the scalable vector graphics (SVGs), including the
+          logo and icons. Furthermore, I made sure to optimize the website for
+          seamless responsiveness on mobile devices.
+        </p>
+        <button class="info-modal-btn link">{infoText}</button>
+        <a class="link" href="https://piratey7007.github.io/polychrome"
+          >{siteText}</a
+        >
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] overflow-hidden rounded-md bg-black object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+          muted
+          onmouseover="; this.play()"
+                    onmouseout="this.pause()"
+          loop
+          preload="none"
+        >
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/Polychrome_xd4pdn.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </li>
+      <li class="info-container flex flex-col items-center gap-2">
+        <h2 class="info-modal-title text-2xl">NeoVim Alpine</h2>
+        <p>
+          A fully fleshed out NeoVim configuration, completely containerized.
+        </p>
+        <p class="info-modal-content sr-only">
+          During my endeavor with the NeoVim Alpine Project, I delved deeply
+          into the multifaceted world of containerization. This immersive
+          experience not only enabled me to master the intricacies of NeoVim
+          within an Alpine environment but also provided a profound
+          understanding of language servers, which I integrated seamlessly using
+          lazy.nvim. My journey further enhanced my expertise in Docker,
+          allowing me to craft optimized images and harness the capabilities of
+          docker-compose. I explored the lightweight and resource-efficient
+          Alpine Linux distribution, ensuring a streamlined and powerful
+          backend. To elevate the project's front-end experience, I unearthed
+          and adeptly implemented a range of NeoVim plugins, further optimizing
+          its functionality. Central to this project's success was my deep dive
+          into the Lua language, which I utilized to sculpt a superior and
+          user-friendly NeoVim configuration.
+        </p>
+        <button class="info-modal-btn link">{infoText}</button>
+        <a class="link" href="https://github.com/piratey7007/nvim-alpine"
+          >{siteText}</a
+        >
+        <video
+          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+          muted
+          onmouseover="; this.play()"
+                    onmouseout="this.pause()"
+          loop
+        >
+          <source
+            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/b5ta7zxxlf0qx2cqm3kn.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </li>
       <li class="info-container flex flex-col items-center gap-2">
         <h2 class="info-modal-title text-2xl">Slipstream</h2>
         <p>A self-hosted video platform.</p>
@@ -156,45 +262,6 @@ const siteText = "See it yourself!";
           />
           Your browser does not support the video tag.
         </video> -->
-      </li>
-      <li class="info-container flex flex-col items-center gap-2">
-        <h2 class="info-modal-title text-2xl">NeoVim Alpine</h2>
-        <p>
-          A fully fleshed out NeoVim configuration, completely containerized.
-        </p>
-        <p class="info-modal-content sr-only">
-          During my endeavor with the NeoVim Alpine Project, I delved deeply
-          into the multifaceted world of containerization. This immersive
-          experience not only enabled me to master the intricacies of NeoVim
-          within an Alpine environment but also provided a profound
-          understanding of language servers, which I integrated seamlessly using
-          lazy.nvim. My journey further enhanced my expertise in Docker,
-          allowing me to craft optimized images and harness the capabilities of
-          docker-compose. I explored the lightweight and resource-efficient
-          Alpine Linux distribution, ensuring a streamlined and powerful
-          backend. To elevate the project's front-end experience, I unearthed
-          and adeptly implemented a range of NeoVim plugins, further optimizing
-          its functionality. Central to this project's success was my deep dive
-          into the Lua language, which I utilized to sculpt a superior and
-          user-friendly NeoVim configuration.
-        </p>
-        <button class="info-modal-btn link">{infoText}</button>
-        <a class="link" href="https://github.com/piratey7007/nvim-alpine"
-          >{siteText}</a
-        >
-        <video
-          class="aspect-video w-[30rem] max-w-[90%] cursor-pointer overflow-hidden rounded-md object-cover object-bottom shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
-          muted
-          onmouseover=";this.play()"
-          onmouseout="this.pause()"
-          loop
-        >
-          <source
-            src="https://res.cloudinary.com/dvcab5t30/video/upload/v1691782050/b5ta7zxxlf0qx2cqm3kn.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
       </li>
     </ul>
   </main>

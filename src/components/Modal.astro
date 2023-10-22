@@ -7,7 +7,7 @@ const { name, class: className = "" } = Astro.props;
 ---
 
 <modal-component
-  class="modal flex fixed left-0 top-0 z-50 h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur transition-opacity duration-500 selection:bg-red-300"
+  class="modal flex fixed left-0 top-0 z-50 h-full w-full max-h-[100vh] items-center justify-center bg-black bg-opacity-50 backdrop-blur transition-opacity duration-500 selection:bg-red-300"
   id={`${name}-modal`}
   aria-hidden="true"
   tabindex="-1"
@@ -16,7 +16,7 @@ const { name, class: className = "" } = Astro.props;
   <div class="absolute left-0 top-0 z-40 h-full w-full" data-micromodal-close>
   </div>
   <div
-    class="z-50 flex h-fit w-[40rem] max-w-[95%] flex-col items-center rounded-md bg-white p-8 transition-all duration-300 descends-[.modal:not(.is-open)]:translate-y-16"
+    class="z-50 flex h-fit w-[40rem] max-w-[95%] flex-col items-center max-h-[100vh] rounded-md bg-white p-8 transition-all duration-300 descends-[.modal:not(.is-open)]:translate-y-16"
     role="dialog"
     aria-modal="true"
     aria-labelledby={`${name}-modal-title`}
@@ -32,7 +32,7 @@ const { name, class: className = "" } = Astro.props;
       <h1 id={`${name}-modal-title`} class="mt-8 capitalize">{name}</h1>
     </header>
     <div
-      class={`my-16 flex w-full flex-col justify-around gap-4 ${className}`}
+      class={`my-16 flex w-full flex-col gap-4 overflow-y-scroll ${className}`}
       id={`${name}-modal-content`}
     >
       <slot />

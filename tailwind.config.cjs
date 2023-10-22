@@ -32,6 +32,16 @@ module.exports = {
           "font-family": theme("fontFamily.display"),
           "font-weight": theme("fontWeight.bold"),
         },
+        "*::-webkit-scrollbar": {
+          width: "0.5rem",
+        },
+        "*::-webkit-scrollbar-track": {
+          "background-color": "transparent",
+        },
+        "*::-webkit-scrollbar-thumb": {
+          "background-color": "#00000060",
+          "border-radius": "1rem",
+        },
         "*": {
           "font-family": theme("fontFamily.body"),
           "font-size": theme("fontSize.lg"),
