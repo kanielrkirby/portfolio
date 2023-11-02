@@ -39,6 +39,8 @@ yarn
 yarn dev
 ```
 
+**Open the instance on localhost:3000**
+
 ## Contributing
 
 This is my portfolio, sorry!
