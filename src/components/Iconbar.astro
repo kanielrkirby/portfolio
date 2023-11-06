@@ -1,5 +1,5 @@
 ---
-import constants from '../scripts/constants'
+import { constants, links } from '../scripts/constants'
 ---
 
 <div class="flex gap-2">
@@ -19,7 +19,7 @@ import constants from '../scripts/constants'
         fill="black"></path>
     </svg>
   </a>
-  <a class="tt-tr" aria-label="Email" href={`mailto:${constants.email}`}>
+  <a class="tt-tr" aria-label="Email" href={`${links.email}${constants.email}`}>
     <svg
       viewBox="0 0 101 101"
       fill="none"
@@ -43,7 +43,7 @@ import constants from '../scripts/constants'
   <a
     class="tt-t"
     aria-label="LinkedIn"
-    href={constants.linkedin}
+    href={`${links.linkedin}${constants.linkedin}`}
   >
     <svg
       class="aspect-square w-10 opacity-50 transition-all duration-200 hover:scale-105 hover:opacity-100"
@@ -62,7 +62,7 @@ import constants from '../scripts/constants'
         fill="black"></path>
     </svg>
   </a>
-  <a class="tt-t" aria-label="Github" href={constants.github}>
+  <a class="tt-t" aria-label="Github" href={`${links.github}${constants.github}`}>
     <svg
       viewBox="0 0 100 100"
       fill="none"
@@ -79,7 +79,7 @@ import constants from '../scripts/constants'
   <a
     class="tt-tl"
     aria-label="Reddit"
-    href={constants.reddit}
+    href={`${links.reddit}${constants.reddit}`}
   >
     <svg
       viewBox="0 0 100 100"

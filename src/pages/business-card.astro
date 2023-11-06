@@ -2,8 +2,7 @@
 import Logo from "@/components/Logo.astro";
 import KanielKirby2 from "@/components/pictures/KanielKirby2.astro";
 import Base from "@/layouts/BaseLayout.astro";
-import constants from "@/scripts/constants";
-// import { Image } from "astro:assets";
+import { constants, links } from "@/scripts/constants";
 import qr from "@/assets/images/qr-code.svg";
 import Splash from "@/components/pictures/Splash.astro";
 ---
@@ -111,7 +110,7 @@ import Splash from "@/components/pictures/Splash.astro";
         role="tooltip"
         aria-label="LinkedIn"
         class="group tt-b absolute flex items-center justify-center gap-[2%] max-md:left-0 max-md:right-0 max-md:top-[42%] max-md:mx-auto md:left-[10%] md:top-[56%]"
-        href={constants.linkedin}
+        href={`${links.linkedin}${constants.linkedin}`}
       >
         <svg
           viewBox="0 0 101 101"
@@ -132,14 +131,14 @@ import Splash from "@/components/pictures/Splash.astro";
         </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
-          >@{constants.linkedin.split("/").findLast((link) => link)}</span
+          >@{constants.linkedin}</span
         >
       </a>
       <a
         role="tooltip"
         aria-label="Phone Number"
         class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[50%] max-md:mx-auto md:left-[10%] md:top-[71%] md:w-full"
-        href={"tel:+1 " + constants.phone}
+        href={`${links.phone}${constants.phone}`}
       >
         <svg
           viewBox="0 0 100 100"
@@ -156,14 +155,14 @@ import Splash from "@/components/pictures/Splash.astro";
         </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
-          >{constants.phone}</span
+          >{`${links.phone}${constants.phone}`}</span
         >
       </a>
       <a
         role="tooltip"
         aria-label="Email"
         class="group tt-b absolute flex items-center justify-center gap-[2.5%] max-md:left-0 max-md:right-0 max-md:top-[58%] max-md:mx-auto md:left-[10%] md:top-[86%] md:w-full"
-        href={"mailto:" + constants.email}
+        href={`${links.email}${constants.email}`}
       >
         <svg
           viewBox="0 0 101 101"
@@ -186,7 +185,7 @@ import Splash from "@/components/pictures/Splash.astro";
         </svg>
         <span
           class="w-full font-body transition-all duration-200 group-hover:scale-[1.05] group-hover:text-green-300 max-md:text-[2.6vh] md:text-[4.5vw]"
-          >{constants.email}</span
+          >{`${links.email}${constants.email}`}</span
         >
       </a>
       <a
