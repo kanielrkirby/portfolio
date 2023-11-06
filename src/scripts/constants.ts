@@ -4,5 +4,8 @@ const constants = {
   phone: "325.443.6046",
   email: "kanielrkirby@runbox.com",
   site: "kanielrkirby.com",
+  github: "https://github.com/kanielrkirby",
+  reddit: "https://www.reddit.com/user/CompetitiveAd7245/",
+  discord: "https://discordapp.com/users/347554007750803459/",
 } as const;
 export default constants;
