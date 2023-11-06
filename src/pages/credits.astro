@@ -3,6 +3,7 @@ import KanielKirby from "@/components/pictures/KanielKirby.astro";
 import Layout from "@/layouts/MainLayout.astro";
 import KanielKirby2 from "@/components/pictures/KanielKirby2.astro";
 import Codepen from "@/components/Codepen.astro";
+import { links } from "@/scripts/constants";
 ---
 
 <Layout SEO={{ title: "Credits" }}>
@@ -169,7 +170,7 @@ import Codepen from "@/components/Codepen.astro";
         <h2 class="text-2xl">Images</h2>
         <div class="flex gap-4">
           <a
-            href="https://linkedin.com/in/zoe-harris-cadmuswriting"
+            href={`${links.linkedin}zoe-harris-cadmuswriting`}
             aria-label="Picture taken by Zoe M. Harris"
             role="tooltip"
             class="tt-b h-fit w-fit"
@@ -179,7 +180,7 @@ import Codepen from "@/components/Codepen.astro";
             />
           </a>
           <a
-            href="https://linkedin.com/in/zoe-harris-cadmuswriting"
+            href={`${links.linkedin}zoe-harris-cadmuswriting`}
             aria-label="Picture taken by Zoe M. Harris"
             role="tooltip"
             class="tt-b h-fit w-fit"
