@@ -1,5 +1,5 @@
 export const constants = {
-  resume: "https://docs.google.com/document/d/e/2PACX-1vSdbxUkU2KQlcZMpRnGIJUkxmAHUhQmmHlbtEg84pT5dwvRB2vEIaKHan4rnp849iZgaEbhv8CutHy7/pub",
+  resume: "@/assets/resume.pdf",
   linkedin: "kanielrkirby",
   phone: "325.443.6046",
   email: "kanielrkirby@runbox.com",
