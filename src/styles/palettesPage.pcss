@@ -1,0 +1,148 @@
+.palettes-page {
+  height: 100%;
+  max-width: 100%;
+  .saved-palettes-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 24em);
+    justify-content: space-around;
+    @media (hover: none) {
+      justify-items: center;
+    }
+    max-width: 100%;
+    min-height: fit-content;
+    gap: 2em;
+    margin: 2em;
+    height: 100%;
+    margin-top: 1em;
+    margin-bottom: 4em;
+  }
+  .when-empty {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 80vh;
+    max-width: 80vw;
+    h2 {
+      position: absolute;
+      top: 0;
+      font-size: 1.25em;
+    }
+    svg {
+      max-width: 98%;
+      height: 70%;
+    }
+    a {
+      border-style: none;
+      background-color: #003bd0;
+      border-radius: 50px;
+      padding: 0.75em 1.2em;
+      font-size: 1.5em;
+      color: white;
+      box-shadow: 3px 3px 10px #003bd080;
+      cursor: pointer;
+      translate: -1px -1px;
+      transition: scale 0.15s ease, background-color 0.15s ease,
+        box-shadow 0.15s ease, translate 0.2s ease;
+      text-decoration: none;
+      @media (hover: hover) {
+        &:hover {
+          scale: 1.075;
+          translate: -4px -4px;
+          background-color: #006aff;
+          box-shadow: 4px 5px 15px #006aff80;
+        }
+      }
+      &:active {
+        scale: 1.075;
+        translate: 1px 1px;
+        background-color: #002196;
+        box-shadow: 1px 1px 5px #00219680;
+      }
+    }
+    &.hidden {
+      display: none;
+    }
+    @media (--phone) {
+      max-width: 90vw;
+      svg {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+  }
+  .palette-container {
+    height: fit-content;
+    padding: 0.25em;
+    width: min(24em, 95vw);
+    max-width: 95vw;
+  }
+  .palette {
+    user-select: none;
+    display: flex;
+    height: 8em;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px 2px #00000050;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 0;
+    height: 100%;
+    transition: all 0.1s ease;
+    flex-basis: 100%;
+    cursor: pointer;
+    color: black;
+    .text {
+      opacity: 0;
+      font-size: 1.04rem;
+      text-shadow: 1px 1px 5px #a8a8a850;
+      transition: all 0.1s ease;
+    }
+    &:hover {
+      flex-basis: 250%;
+      .text {
+        opacity: 1;
+      }
+    }
+    &.isLight {
+      color: white;
+      .text {
+        text-shadow: 1px 1px 5px black;
+      }
+    }
+  }
+  .options {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    .more {
+      cursor: pointer;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: scale 0.2s, rotate 0.2s;
+      svg {
+        width: 3em;
+        height: 3em;
+        margin: 0em 1em;
+        padding: 0.5em;
+      }
+      @media (hover: hover) {
+        &:hover {
+          scale: 1.2;
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+}

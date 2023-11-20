@@ -1,0 +1,347 @@
+.create-page.visible {
+  position: absolute;
+  overflow: hidden;
+  touch-action: manipulation;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 9em);
+  .palette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid black;
+    color: rgb(229, 229, 229);
+    background-color: rgb(24, 24, 24);
+    box-shadow: 2px 2px 20px #00000080;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .palette:empty::after {
+    content: "Palette goes here!";
+    font-size: 5em;
+  }
+  .swatch {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    color: black;
+    transition: translate 0.2s ease;
+    &.is-dragging {
+      z-index: 1;
+      transition: translate 0s;
+    }
+    &.is-released {
+      z-index: 1;
+    }
+    &.snap {
+      transition: translate 0s;
+    }
+    .icon {
+      visibility: hidden;
+      scale: 0;
+      position: relative;
+      width: 4.5em;
+      height: 3.5em;
+      z-index: 1;
+      cursor: pointer;
+      padding: 1em;
+      border-radius: 1em;
+      overflow: visible;
+      transition: scale 0.2s ease, background-color 0.075s ease;
+      use {
+        &[href="#icon-lock-arm"] {
+          transform: translateX(-50%);
+          transition: transform 0.15s ease;
+        }
+      }
+      @media (hover: hover) {
+        &:hover {
+          background-color: #00000030;
+        }
+      }
+      &.locked {
+        visibility: initial;
+        scale: 1 !important;
+        use[href="#icon-lock-arm"] {
+          transform: translateX(0%);
+        }
+      }
+    }
+    @media (hover: hover) {
+      &:hover {
+        .options .icon {
+          visibility: initial;
+          scale: 0.7;
+        }
+      }
+    }
+    &.isLight {
+      color: #e9e9e9;
+      .options .icon {
+        fill: #e9e9e9;
+        @media (hover: hover) {
+          &:hover {
+            background-color: #ffffff50;
+          }
+        }
+      }
+    }
+    &.init {
+      width: 0%;
+      animation: width-appear 0.2s ease-in-out forwards;
+      * {
+        display: none;
+      }
+    }
+    &.deinit {
+      animation: width-appear 0.2s ease-in-out reverse forwards;
+      * {
+        display: none;
+      }
+    }
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .info-container {
+    display: flex;
+    width: 0;
+    height: 0;
+    justify-content: space-around;
+    align-items: center;
+    .info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: fit-content;
+      max-width: 7em;
+      gap: 0.225em;
+      flex-direction: row;
+      background-color: rgb(203, 209, 217);
+      padding: 0.5rem;
+      user-select: none;
+      border-radius: 0.5em;
+      box-shadow: inset 2px 2px 5px 1px black;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+      .hex {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        z-index: 1;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: 1rem;
+        width: fit-content;
+        height: 100%;
+        margin: 0;
+      }
+      .icon {
+        cursor: pointer;
+        fill: black !important;
+        scale: 1 !important;
+        visibility: initial;
+        padding: 0;
+        border-radius: 0;
+        width: 2em;
+        height: 2em;
+        @media (hover: hover) {
+          &:hover {
+            background-color: initial;
+          }
+        }
+      }
+      @media (hover: hover) {
+        &:hover {
+          background-color: white;
+          box-shadow: inset 1px 1px 2.5px 1px black;
+        }
+      }
+    }
+  }
+
+  .popover {
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    padding: 1em;
+    width: 90%;
+    position: absolute;
+    background: #fbfbfb;
+    border-radius: 1em;
+    overflow: hidden;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px black;
+    height: fit-content;
+    .color-picker {
+      background-color: black;
+      aspect-ratio: 1/1;
+      cursor: crosshair;
+    }
+    .huebar {
+      height: 1em;
+      background: linear-gradient(
+        to right,
+        red,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        magenta,
+        red
+      );
+      cursor: pointer;
+      input {
+        height: 100%;
+        width: 100%;
+      }
+      .huebar-cursor {
+        width: 10px;
+        height: 100%;
+      }
+    }
+  }
+
+  .detector {
+    position: absolute;
+    right: 0;
+    width: 30%;
+    height: 60%;
+    &.left {
+      left: 0;
+      right: initial;
+    }
+  }
+
+  .plus-container {
+    position: relative;
+    height: 100%;
+    width: 0;
+    z-index: 10;
+    right: 0;
+    margin: auto;
+    translate: 50% 0;
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 3em;
+      height: 3em;
+      border-radius: 100%;
+      box-shadow: 2px 2px 10px 2px #00000080;
+      background-color: white;
+      translate: -50%;
+      animation: grow-appear 0.1s ease;
+    }
+    svg {
+      width: 3em;
+      transition: scale 0.2s ease;
+      cursor: pointer;
+    }
+  }
+}
+
+body.vertical {
+  .create-page {
+    .palette {
+      flex-direction: column;
+      .swatch {
+        .options {
+          height: 0;
+          width: 100%;
+          .info-container {
+            width: fit-content;
+          }
+        }
+        &.init {
+          width: 0%;
+          animation: height-appear 0.2s ease-in-out forwards;
+          * {
+            display: none;
+          }
+        }
+        &.deinit {
+          animation: height-appear 0.2s ease-in-out reverse forwards;
+          * {
+            display: none;
+          }
+        }
+        .detector {
+          right: initial;
+          bottom: 0;
+          height: 30%;
+          width: 80%;
+        }
+        .detector.left {
+          left: initial;
+          top: 0;
+        }
+        .options {
+          flex-direction: row;
+          width: 100%;
+          .info {
+            width: 10em;
+            .hex {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .plus-container {
+        height: 0;
+        z-index: 15;
+        width: 100%;
+        translate: 0 50%;
+        .circle {
+          translate: 0;
+        }
+      }
+    }
+  }
+}
+
+body.landscape-thin {
+  .create-page .options {
+    .info-container {
+      rotate: -90deg;
+    }
+  }
+}
+
+body.mobile {
+  .main-header {
+    height: 5rem;
+  }
+  .create-page {
+    .swatch .options {
+      .icon {
+        scale: 0.7;
+        visibility: visible;
+        fill: #00000090;
+      }
+    }
+    .swatch.isLight .options .icon {
+      fill: #ffffff90;
+    }
+  }
+}
